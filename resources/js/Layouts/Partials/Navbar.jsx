@@ -3,16 +3,35 @@ import { Link } from '@inertiajs/react';
 import CompanyLogo from '@/Components/CompanyLogo';
 import ChevronBottom from '@/Components/svg/ChevronBottom';
 import { Hamburger } from '@/Components/svg/Hamburger';
+import SwapTheme from '@/Components/SwapTheme';
 
 const Navbar = () => {
     const currentLocation = window.location.pathname;
     const [navbarFixed, setNavbarFixed] = useState(false);
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        let dataTheme = document.querySelector('html');
+        const att = document.createAttribute('data-theme');
+        att.value = theme;
+
+        dataTheme?.setAttributeNode(att);
+    }, [theme]);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const toggleTheme = () => {
+        if (theme === 'light') {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    };
 
     const handleScroll = () => {
         if (window.scrollY !== 0) {
@@ -53,28 +72,23 @@ const Navbar = () => {
                             </a>
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link href="#sejarah">Layanan 1</Link>
+                                    <Link>Layanan 1</Link>
                                 </li>
                                 <li>
-                                    <Link href="#visi-misi">Layanan 2</Link>
+                                    <Link>Layanan 2</Link>
                                 </li>
                                 <li>
-                                    <Link href="#struktur-organisasi">
-                                        Layanan 3
-                                    </Link>
+                                    <Link>Layanan 3</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <Link>Contact</Link>
-                        </li>
-                        <li>
-                            <Link>About</Link>
+                            <Link>Kontak</Link>
                         </li>
                     </ul>
                 </div>
                 <Link href="/">
-                    <CompanyLogo className="w-16 fill-base-content" />
+                    <CompanyLogo className="w-16" />
                 </Link>
             </div>
 
@@ -149,14 +163,14 @@ const Navbar = () => {
                         <Link>Karir</Link>
                     </li>
                     <li>
-                        <Link>Kontak</Link>
+                        <Link href={route('company.contact-us')}>Kontak</Link>
                     </li>
                 </ul>
             </div>
 
             {/* Lang */}
             <div className="navbar-end">
-                <div className="hidden md:flex">
+                {/* <div className="hidden md:flex">
                     <button className="btn btn-sm btn-ghost btn-circle">
                         ID
                     </button>
@@ -164,7 +178,8 @@ const Navbar = () => {
                     <button className="btn btn-sm btn-ghost btn-circle">
                         EN
                     </button>
-                </div>
+                </div> */}
+                <SwapTheme onClick={toggleTheme} />
             </div>
         </nav>
     );

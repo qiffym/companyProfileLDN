@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-neutral text-neutral-content flex flex-wrap md:flex-nowrap justify-around">
             <div className="">
-                <CompanyLogo className="w-24 fill-neutral-content" />
+                <CompanyLogo className="w-24" />
                 <p>
                     PT. Lovina Dhea Nusantara
                     <br />
