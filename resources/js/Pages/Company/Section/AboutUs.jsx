@@ -1,4 +1,3 @@
-import { Link } from '@inertiajs/react';
 import foto from '../../../../../public/assets/img/ptldnmockup.jpg';
 
 const AboutUs = () => {

@@ -11,20 +11,20 @@ const Organization = () => {
                 Struktur Organisasi
             </h1>
 
-            <div class="carousel w-full">
+            <div className="carousel w-full">
                 <div
                     id="item1"
-                    class="carousel-item w-full transition-transform"
+                    className="carousel-item w-full transition-transform"
                 >
                     <img
                         src={foto}
                         alt="img"
-                        class="w-full rounded-box hidden md:flex"
+                        className="w-full rounded-box hidden md:flex"
                     />
                     <img
                         src={fotoMobile}
                         alt="img"
-                        class="w-full rounded-box md:hidden"
+                        className="w-full rounded-box md:hidden"
                     />
                 </div>
             </div>
