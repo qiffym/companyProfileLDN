@@ -58,6 +58,9 @@ const Navbar = () => {
                         className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li>
+                            <Link href={route('home')}>Beranda</Link>
+                        </li>
+                        <li>
                             <Link
                                 href={route('company.profile')}
                                 className="justify-between"
@@ -83,7 +86,9 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link>Kontak</Link>
+                            <Link href={route('company.contact-us')}>
+                                Kontak
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -95,6 +100,9 @@ const Navbar = () => {
             {/* Large view */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
+                    <li>
+                        <Link href={route('home')}>Beranda</Link>
+                    </li>
                     <li tabIndex={0}>
                         <Link href={route('company.profile')}>
                             Profil Perusahaan
@@ -169,7 +177,8 @@ const Navbar = () => {
             </div>
 
             {/* Lang */}
-            <div className="navbar-end">
+            <div className="navbar-end pr-4 lg:pr-0">
+                <SwapTheme onClick={toggleTheme} />
                 {/* <div className="hidden md:flex">
                     <button className="btn btn-sm btn-ghost btn-circle">
                         ID
@@ -179,7 +188,6 @@ const Navbar = () => {
                         EN
                     </button>
                 </div> */}
-                <SwapTheme onClick={toggleTheme} />
             </div>
         </nav>
     );

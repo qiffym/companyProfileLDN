@@ -1,16 +1,16 @@
 import { Link } from '@inertiajs/react';
-import foto from '../../../../../public/assets/img/meme.jpg';
+import foto from '../../../../../public/assets/img/ptldnmockup.jpg';
 
 const AboutUs = () => {
     return (
         <section
             id="about-us"
-            className="hero min-h-screen bg-base-200 text-base-content pt-12 lg:pt-0"
+            className="hero min-h-screen bg-base-200 text-base-content"
         >
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
                     src={foto}
-                    className="w-full md:max-w-sm rounded-lg shadow-2xl"
+                    className="w-full md:max-w-xl rounded-box shadow-2xl"
                 />
                 <div className="mr-10">
                     <h1 className="text-2xl md:text-5xl font-bold ">

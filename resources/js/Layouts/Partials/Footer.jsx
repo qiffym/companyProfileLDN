@@ -1,14 +1,15 @@
 import CompanyLogo from '@/Components/CompanyLogo';
 
 const Footer = () => {
+    const year = new Date().getFullYear();
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content flex flex-wrap md:flex-nowrap justify-around">
+        <footer className="footer p-10 bg-neutral text-neutral-content flex flex-wrap md:flex-nowrap justify-around xl:px-[15%]">
             <div className="">
                 <CompanyLogo className="w-24" />
                 <p>
-                    PT. Lovina Dhea Nusantara
+                    PT Lovina Dhea Nusantara
                     <br />
-                    Providing reliable tech since 1992
+                    Copyright &copy; {year} All right reserved
                 </p>
             </div>
             <div>

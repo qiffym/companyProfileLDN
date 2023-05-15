@@ -3,7 +3,7 @@ import foto from '../../../../../public/assets/img/companyLogo.png';
 const Vision = () => {
     return (
         <section id="vision" className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row items-center lg:items-start justify-between lg:border-2 lg:border-primary bg-base-200 lg:bg-base-100 shadow rounded-box p-10">
+            <div className="hero-content flex-col xl:px-28 lg:flex-row lg:mx-24 items-center lg:items-start justify-between lg:border-2 lg:border-primary bg-base-200 lg:bg-base-100 lg:shadow  rounded-box p-10">
                 <div className="shrink">
                     <img
                         src={foto}
