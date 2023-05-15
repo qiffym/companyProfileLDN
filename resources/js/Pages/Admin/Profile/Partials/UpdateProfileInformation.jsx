@@ -91,14 +91,16 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
                                 )}
                         </div>
 
-                        <div className="divider max-w-lg"></div>
+                        {/* <div className="divider max-w-lg"></div> */}
 
-                        <button
-                            className="btn btn-primary btn-wide"
-                            disabled={processing}
-                        >
-                            Update
-                        </button>
+                        <div className="flex max-w-lg justify-end">
+                            <button
+                                className="btn btn-primary btn-wide"
+                                disabled={processing}
+                            >
+                                Update Profile
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

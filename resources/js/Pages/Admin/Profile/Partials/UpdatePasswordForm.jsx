@@ -56,7 +56,6 @@ const UpdatePasswordForm = () => {
                             setData('current_password', e.target.value)
                         }
                         onError={errors.current_password}
-                        ref={currentPasswordInput}
                     />
 
                     <Input
@@ -66,7 +65,6 @@ const UpdatePasswordForm = () => {
                         value={data.password}
                         onChange={(e) => setData('password', e.target.value)}
                         onError={errors.password}
-                        ref={passwordInput}
                     />
 
                     <Input
@@ -80,9 +78,9 @@ const UpdatePasswordForm = () => {
                         onError={errors.password_confirmation}
                     />
                 </div>
-                <div className="divider max-w-lg"></div>
+                {/* <div className="divider max-w-lg"></div> */}
 
-                <div className="flex items-center gap-4">
+                <div className="flex max-w-lg justify-end">
                     <button
                         className="btn btn-primary btn-wide"
                         disabled={processing}

@@ -13,11 +13,7 @@ const Navbar = ({ auth }) => {
     );
 
     const toggleTheme = (e) => {
-        if (e.target.checked) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
+        e.target.checked ? setTheme('dark') : setTheme('light');
     };
 
     const handleScroll = () => {
@@ -189,7 +185,7 @@ const Navbar = ({ auth }) => {
             {/* Lang */}
             <div className="navbar-end pr-4 lg:pr-0">
                 <SwapTheme
-                    onClick={toggleTheme}
+                    onChange={toggleTheme}
                     checked={theme === 'light' ? false : true}
                 />
             </div>

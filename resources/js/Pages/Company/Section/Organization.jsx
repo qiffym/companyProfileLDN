@@ -12,10 +12,7 @@ const Organization = () => {
             </h1>
 
             <div className="carousel w-full">
-                <div
-                    id="item1"
-                    className="carousel-item w-full transition-transform"
-                >
+                <div id="item1" className="carousel-item w-full">
                     <img
                         src={foto}
                         alt="img"
