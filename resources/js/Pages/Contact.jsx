@@ -16,7 +16,7 @@ const Contact = ({ title }) => {
                 </div>
                 <div className="h-[95vh] bg-primary text-primary-content mt-24 md:mt-0 ">
                     <Wave className="fill-base-200" />
-                    <div className="flex flex-wrap gap-5 w-full justify-between px-[8%] 2xl:px-[22%] lg:-mt-10 2xl:-mt-36">
+                    <div className="flex flex-wrap w-full justify-between px-[8%] 2xl:px-[20%] lg:-mt-10 2xl:-mt-36">
                         <div className="max-w-lg">
                             <h1 className="text-4xl font-bold mb-3">
                                 PT Lovina Dhea Nusantara

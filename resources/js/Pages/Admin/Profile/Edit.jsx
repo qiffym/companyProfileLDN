@@ -16,6 +16,7 @@ const Edit = ({ auth, title, status, mustVerifyEmail, flash }) => {
                 />
                 <div className="divider "></div>
                 <UpdatePasswordForm />
+                <div className="divider "></div>
             </main>
         </AdminLayout>
     );

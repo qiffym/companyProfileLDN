@@ -8,25 +8,12 @@ import SwapTheme from '@/Components/SwapTheme';
 const Navbar = ({ auth }) => {
     const currentLocation = window.location.pathname;
     const [navbarFixed, setNavbarFixed] = useState(false);
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState(
+        localStorage.getItem('theme') ?? 'light'
+    );
 
-    useEffect(() => {
-        let dataTheme = document.querySelector('html');
-        const att = document.createAttribute('data-theme');
-        att.value = theme;
-
-        dataTheme?.setAttributeNode(att);
-    }, [theme]);
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const toggleTheme = () => {
-        if (theme === 'light') {
+    const toggleTheme = (e) => {
+        if (e.target.checked) {
             setTheme('dark');
         } else {
             setTheme('light');
@@ -40,6 +27,19 @@ const Navbar = ({ auth }) => {
             setNavbarFixed(false);
         }
     };
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+        const localTheme = localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme', localTheme);
+    }, [theme]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <nav
@@ -188,16 +188,10 @@ const Navbar = ({ auth }) => {
 
             {/* Lang */}
             <div className="navbar-end pr-4 lg:pr-0">
-                <SwapTheme onClick={toggleTheme} />
-                {/* <div className="hidden md:flex">
-                    <button className="btn btn-sm btn-ghost btn-circle">
-                        ID
-                    </button>
-                    <div className="divider divider-horizontal"></div>
-                    <button className="btn btn-sm btn-ghost btn-circle">
-                        EN
-                    </button>
-                </div> */}
+                <SwapTheme
+                    onClick={toggleTheme}
+                    checked={theme === 'light' ? false : true}
+                />
             </div>
         </nav>
     );

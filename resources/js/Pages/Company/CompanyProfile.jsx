@@ -5,9 +5,9 @@ import Vision from './Section/Vision';
 import { Head } from '@inertiajs/react';
 import Organization from './Section/Organization';
 
-const CompanyProfile = ({ title }) => {
+const CompanyProfile = ({ title, auth }) => {
     return (
-        <Guest>
+        <Guest auth={auth.user}>
             <Head title={title} />
             <AboutUs />
             <History />

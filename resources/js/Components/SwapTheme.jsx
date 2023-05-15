@@ -5,6 +5,7 @@ const SwapTheme = (props) => {
                 <input
                     type="checkbox"
                     className="opacity-0"
+                    {...props}
                     onClick={props.onClick}
                 />
                 <svg
