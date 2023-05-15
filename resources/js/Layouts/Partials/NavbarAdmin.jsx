@@ -38,7 +38,12 @@ const NavbarAdmin = ({ user }) => {
                         </div>
                         <div className="divider m-0 p-0"></div>
                         <li>
-                            <Link className="justify-between">Profile</Link>
+                            <Link
+                                href={route('profile.edit')}
+                                className="justify-between"
+                            >
+                                Profile
+                            </Link>
                         </li>
                         <li>
                             <Link

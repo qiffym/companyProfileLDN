@@ -1,5 +1,5 @@
 import AdminLayout from '@/Layouts/AdminLayout';
-import { Link, router } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { ToastContainer, toast } from 'react-toastify';
 import UsersTable from '@/Components/UsersTable';
 

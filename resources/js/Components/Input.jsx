@@ -5,6 +5,7 @@ const Input = (props) => {
                 <span className="label-text">{props.label}</span>
             </label>
             <input
+                {...props}
                 type={props.type}
                 name={props.name}
                 placeholder={props.placeholder}
