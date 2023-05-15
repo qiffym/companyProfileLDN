@@ -1,5 +1,4 @@
 import companyLogo from '../../../public/assets/img/companyLogo.png';
-import SwapTheme from './SwapTheme';
 
 const Hero = () => {
     return (

@@ -5,7 +5,7 @@ import ChevronBottom from '@/Components/svg/ChevronBottom';
 import { Hamburger } from '@/Components/svg/Hamburger';
 import SwapTheme from '@/Components/SwapTheme';
 
-const Navbar = () => {
+const Navbar = ({ auth }) => {
     const currentLocation = window.location.pathname;
     const [navbarFixed, setNavbarFixed] = useState(false);
     const [theme, setTheme] = useState('light');
@@ -173,6 +173,16 @@ const Navbar = () => {
                     <li>
                         <Link href={route('company.contact-us')}>Kontak</Link>
                     </li>
+                    {auth && (
+                        <li>
+                            <Link
+                                className="text-primary"
+                                href={route('dashboard')}
+                            >
+                                {auth.name}
+                            </Link>
+                        </li>
+                    )}
                 </ul>
             </div>
 

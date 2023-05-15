@@ -3,7 +3,7 @@ import Header from './Partials/Header';
 import Footer from './Partials/Footer';
 import favicon from '../../../public/favicon.ico';
 
-export default function Guest({ children }) {
+export default function Guest({ children, auth }) {
     return (
         <>
             <Head>
@@ -14,7 +14,7 @@ export default function Guest({ children }) {
                     href={favicon}
                 />
             </Head>
-            <Header />
+            <Header auth={auth} />
             <div>{children}</div>
             <Footer />
         </>
