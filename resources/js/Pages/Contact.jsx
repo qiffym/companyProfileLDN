@@ -4,9 +4,9 @@ import { Wave } from '@/Components/svg/Wave';
 import { PhoneSVG } from '@/Components/svg/phoneSVG';
 import { EmailSVG } from '@/Components/svg/EmailSVG';
 
-const Contact = ({ title }) => {
+const Contact = ({ title, auth }) => {
     return (
-        <Guest>
+        <Guest auth={auth.user}>
             <Head title={title} />
             <main className="relative min-h-screen w-full pt-32 bg-base-200">
                 <div className="absolute w-full z-10">

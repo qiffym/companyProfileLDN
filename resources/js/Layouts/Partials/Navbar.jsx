@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import CompanyLogo from '@/Components/CompanyLogo';
 import ChevronBottom from '@/Components/svg/ChevronBottom';
 import { Hamburger } from '@/Components/svg/Hamburger';
 import SwapTheme from '@/Components/SwapTheme';
 
 const Navbar = ({ auth }) => {
-    const currentLocation = window.location.pathname;
+    const { url } = usePage();
     const [navbarFixed, setNavbarFixed] = useState(false);
     const [theme, setTheme] = useState(
         localStorage.getItem('theme') ?? 'light'
@@ -104,7 +104,7 @@ const Navbar = ({ auth }) => {
                             Profil Perusahaan
                             <ChevronBottom />
                         </Link>
-                        {currentLocation !== '/profil' ? (
+                        {url !== '/profil' ? (
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
                                     <Link href="/profil#about-us">
