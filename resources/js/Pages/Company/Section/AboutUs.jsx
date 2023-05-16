@@ -24,7 +24,7 @@ const AboutUs = () => {
                         eaque aut repudiandae et a id nisi.
                     </p>
                     <a href="#history" className="btn btn-primary">
-                        Lanjut bos!
+                        Baca Selengkapnya
                     </a>
                 </div>
             </div>

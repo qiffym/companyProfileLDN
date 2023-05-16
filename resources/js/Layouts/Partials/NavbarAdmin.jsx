@@ -16,7 +16,7 @@ const NavbarAdmin = ({ user }) => {
                 </a>
             </div>
             <div className="flex-none space-x-3">
-                <span className="italic font-medium text-lg">
+                <span className="italic font-medium text-lg hidden md:flex">
                     Halo👋🏼, {user.name}
                 </span>
                 <div className="dropdown dropdown-end">

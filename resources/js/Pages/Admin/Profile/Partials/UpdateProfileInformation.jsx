@@ -27,10 +27,10 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
                 </p>
             </header>
 
-            <div className="flex space-x-5">
-                <div>
+            <div className="flex flex-col md:flex-row space-x-5">
+                <div className="self-center md:self-start">
                     <div className="avatar">
-                        <div className="w-28 mask mask-squircle">
+                        <div className="w-20 lg:w-28 mask mask-squircle">
                             <img src={foto} />
                         </div>
                     </div>
