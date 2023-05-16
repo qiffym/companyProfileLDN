@@ -1,64 +1,48 @@
+import { Link } from '@inertiajs/react';
+import { Map } from './svg/Map';
+import { InfoCircleOutline } from './svg/InfoCircleOutline';
+
 const CompanyInfoMenu = () => {
     return (
         <>
             <li className="menu-title">
-                <span>Company Info</span>
+                <span>Manage Pages</span>
+            </li>
+
+            <li className="hover-bordered">
+                <Link>
+                    <InfoCircleOutline />
+                    Beranda
+                </Link>
+            </li>
+            <li className="hover-bordered">
+                <Link>
+                    <InfoCircleOutline />
+                    Tentang Kami
+                </Link>
             </li>
             <li className="hover-bordered">
                 <a>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
+                    <InfoCircleOutline />
                     Sejarah
                 </a>
             </li>
             <li className="hover-bordered">
                 <a>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
+                    <InfoCircleOutline />
                     Visi & Misi
                 </a>
             </li>
             <li className="hover-bordered">
                 <a>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
+                    <InfoCircleOutline />
                     Struktur Organisasi
+                </a>
+            </li>
+            <li className="hover-bordered">
+                <a>
+                    <Map />
+                    Alamat & Kontak
                 </a>
             </li>
             <div className="divider"></div>

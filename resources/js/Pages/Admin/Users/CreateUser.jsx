@@ -17,7 +17,7 @@ const CreateUser = ({ title, auth }) => {
         <AdminLayout auth={auth.user}>
             <Head title={title} />
             <h1 className="text-4xl mb-4">Create New User</h1>
-            <div className="flex w-full px-5 py-3 rounded-box border shadow bg-base-200">
+            <div className="flex w-full p-6 rounded-box border shadow bg-base-100">
                 <form className="w-full" onSubmit={submit}>
                     <div className="form-control w-full max-w-lg">
                         <Input

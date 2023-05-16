@@ -80,7 +80,7 @@ const UpdatePasswordForm = () => {
                 </div>
                 {/* <div className="divider max-w-lg"></div> */}
 
-                <div className="flex max-w-lg justify-end">
+                <div className="flex max-w-lg">
                     <button
                         className="btn btn-primary btn-wide"
                         disabled={processing}

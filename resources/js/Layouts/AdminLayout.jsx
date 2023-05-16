@@ -9,10 +9,10 @@ const AdminLayout = ({ children, auth }) => {
             <Head title="Dashboard" />
             <NavbarAdmin user={auth} />
             <SidebarAdmin />
-            <div className="p-6 md:ml-64">
+            <main className="p-6 md:ml-64 bg-base-200 min-h-screen">
                 <div className="mt-20">{children}</div>
-                {/* <FooterAdmin /> */}
-            </div>
+                <FooterAdmin />
+            </main>
         </>
     );
 };

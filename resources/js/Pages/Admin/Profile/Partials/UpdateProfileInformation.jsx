@@ -93,7 +93,7 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
 
                         {/* <div className="divider max-w-lg"></div> */}
 
-                        <div className="flex max-w-lg justify-end">
+                        <div className="flex max-w-lg">
                             <button
                                 className="btn btn-primary btn-wide"
                                 disabled={processing}

@@ -10,7 +10,7 @@ const Edit = ({ auth, title, status, mustVerifyEmail, flash }) => {
         <AdminLayout auth={auth.user}>
             {toast.success(flash.success) && <ToastContainer />}
             <Head title={title} />
-            <main className="flex flex-col space-x-4 w-full p-10 rounded-box shadow-lg bg-base-200">
+            <main className="flex flex-col space-x-4 w-full p-10 rounded-box shadow-lg bg-base-100">
                 <UpdateProfileInformation
                     mustVerifyEmail={mustVerifyEmail}
                     status={status}

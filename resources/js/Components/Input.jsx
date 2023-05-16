@@ -9,7 +9,7 @@ const Input = (props) => {
                 type={props.type}
                 name={props.name}
                 placeholder={props.placeholder}
-                className="input input-bordered w-full max-w-lg"
+                className="input input-bordered bg-base-200 w-full max-w-lg"
                 value={props.value}
                 onChange={props.onChange}
             />
