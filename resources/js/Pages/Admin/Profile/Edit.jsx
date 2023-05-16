@@ -3,6 +3,7 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import UpdateProfileInformation from './Partials/UpdateProfileInformation';
 import { ToastContainer, toast } from 'react-toastify';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm';
+import { DeleteUserForm } from './Partials/DeleteUserForm';
 
 const Edit = ({ auth, title, status, mustVerifyEmail, flash }) => {
     return (
@@ -17,6 +18,7 @@ const Edit = ({ auth, title, status, mustVerifyEmail, flash }) => {
                 <div className="divider "></div>
                 <UpdatePasswordForm />
                 <div className="divider "></div>
+                <DeleteUserForm />
             </main>
         </AdminLayout>
     );

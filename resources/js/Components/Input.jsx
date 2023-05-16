@@ -15,7 +15,7 @@ const Input = (props) => {
             />
             <label className="label">
                 <span className="label-text-alt text-red-500">
-                    {props.onError}
+                    {props.iserror}
                 </span>
             </label>
         </>

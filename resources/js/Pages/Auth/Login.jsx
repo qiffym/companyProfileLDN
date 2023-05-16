@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Login({ status, canResetPassword }) {
+export default function Login({ status, canResetPassword, flash }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -31,6 +31,26 @@ export default function Login({ status, canResetPassword }) {
             )}
 
             <div className="flex flex-col w-full max-w-lg px-10 py-5 border rounded-box justify-center items-center bg-base-300 shadow">
+                {flash.success && (
+                    <div className="alert alert-success shadow-lg mb-5">
+                        <div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="stroke-current flex-shrink-0 h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            <span>{flash.success}</span>
+                        </div>
+                    </div>
+                )}
                 <h1 className="text-4xl">Login</h1>
                 <div className="divider"></div>
                 <form onSubmit={submit} className="w-full">

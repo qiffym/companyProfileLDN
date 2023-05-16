@@ -47,7 +47,7 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
                                 onChange={(e) =>
                                     setData('name', e.target.value)
                                 }
-                                onError={errors.name}
+                                iserror={errors.name}
                             />
 
                             <Input
@@ -59,7 +59,7 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
                                 onChange={(e) =>
                                     setData('email', e.target.value)
                                 }
-                                onError={errors.email}
+                                iserror={errors.email}
                             />
 
                             {mustVerifyEmail &&

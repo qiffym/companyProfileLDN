@@ -27,7 +27,7 @@ const EditUser = ({ title, user, auth }) => {
                             placeholder="Enter your name!"
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
-                            onError={errors.name}
+                            iserror={errors.name}
                         />
 
                         <Input
@@ -37,7 +37,7 @@ const EditUser = ({ title, user, auth }) => {
                             placeholder="Enter your email address!"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
-                            onError={errors.email}
+                            iserror={errors.email}
                         />
                     </div>
 
