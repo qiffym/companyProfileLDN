@@ -1,4 +1,6 @@
+import { Link } from '@inertiajs/react';
 import companyLogo from '../../../public/assets/img/companyLogo.png';
+import ArrowRight from './svg/ArrowRight';
 
 const Hero = () => {
     return (
@@ -20,7 +22,14 @@ const Hero = () => {
                         sit amet, consectetur adipisicing elit. Quia, minus!
                         Accusantium repellat quis a dicta dolor nobis nesciunt.
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <Link
+                        as="button"
+                        href={route('company.profile')}
+                        className="btn btn-primary gap-2"
+                    >
+                        Yuk Kenalan
+                        <ArrowRight className="animate-pulse" />
+                    </Link>
                 </div>
             </div>
         </div>

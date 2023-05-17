@@ -4,6 +4,7 @@ import History from './Section/History';
 import Vision from './Section/Vision';
 import { Head } from '@inertiajs/react';
 import Organization from './Section/Organization';
+import OurTeam from './Section/OurTeam';
 
 const CompanyProfile = ({ title, auth }) => {
     return (
@@ -13,6 +14,7 @@ const CompanyProfile = ({ title, auth }) => {
             <History />
             <Vision />
             <Organization />
+            <OurTeam />
         </Guest>
     );
 };

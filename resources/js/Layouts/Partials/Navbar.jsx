@@ -164,7 +164,7 @@ const Navbar = ({ auth }) => {
                         </ul>
                     </li>
                     <li>
-                        <Link>Karir</Link>
+                        <Link href={route('company.career')}>Karir</Link>
                     </li>
                     <li>
                         <Link href={route('company.contact-us')}>Kontak</Link>

@@ -41,6 +41,12 @@ const CompanyInfoMenu = () => {
             </li>
             <li className="hover-bordered">
                 <a>
+                    <InfoCircleOutline />
+                    Karir
+                </a>
+            </li>
+            <li className="hover-bordered">
+                <a>
                     <Map />
                     Alamat & Kontak
                 </a>

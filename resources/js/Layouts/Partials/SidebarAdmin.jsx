@@ -3,6 +3,7 @@ import CompanyInfoMenu from '@/Components/CompanyInfoMenu';
 import { HomeOutline } from '@/Components/svg/HomeOutline';
 import { Dashboard } from '@/Components/svg/Dashboard';
 import UsersIcon from '@/Components/svg/UsersIcon';
+import BriefCase from '@/Components/svg/BriefCase';
 
 const SidebarAdmin = () => {
     const { url, component } = usePage();
@@ -36,6 +37,20 @@ const SidebarAdmin = () => {
                         >
                             <UsersIcon />
                             Manage Users
+                        </Link>
+                    </li>
+
+                    <li className="hover-bordered">
+                        <Link
+                            href={route('careers.index')}
+                            className={
+                                component.startsWith('Admin/Careers')
+                                    ? 'active'
+                                    : ''
+                            }
+                        >
+                            <BriefCase />
+                            Manage Careers
                         </Link>
                     </li>
 
