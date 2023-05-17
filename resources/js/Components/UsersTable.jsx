@@ -1,5 +1,8 @@
 import { Link, router } from '@inertiajs/react';
 import avatar from '../../../public/assets/img/user.png';
+import Eye from './svg/Eye';
+import Edit from './svg/Edit';
+import Trash from './svg/Trash';
 
 const UsersTable = ({ users }) => {
     const handleDelete = (user) => {
@@ -46,20 +49,23 @@ const UsersTable = ({ users }) => {
                             <th className="space-x-2">
                                 <Link
                                     href={route('users.show', user)}
-                                    className="btn btn-ghost btn-xs"
+                                    className="btn btn-ghost btn-sm gap-1"
                                 >
-                                    details
+                                    <Eye className="h-7" />
+                                    show
                                 </Link>
                                 <Link
                                     href={route('users.edit', user)}
-                                    className="btn btn-warning btn-xs"
+                                    className="btn btn-warning btn-sm gap-1"
                                 >
+                                    <Edit className="h-7" />
                                     edit
                                 </Link>
                                 <button
-                                    className="btn btn-error btn-xs"
+                                    className="btn btn-error btn-sm gap-1"
                                     onClick={() => handleDelete(user)}
                                 >
+                                    <Trash className="h-7" />
                                     delete
                                 </button>
                             </th>
