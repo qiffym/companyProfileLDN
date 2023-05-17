@@ -16,7 +16,7 @@ const Contact = ({ title, auth }) => {
                 </div>
                 <div className="h-[95vh] bg-primary text-primary-content mt-24 md:mt-0 ">
                     <Wave className="fill-base-200" />
-                    <div className="flex flex-wrap w-full justify-between px-[8%] 2xl:px-[20%] lg:-mt-10 2xl:-mt-36">
+                    <div className="flex flex-wrap w-full justify-between px-[8%] 2xl:px-[20%] lg:-mt-10 2xl:-mt-36 gap-4">
                         <div className="max-w-lg">
                             <h1 className="text-4xl font-bold mb-3">
                                 PT Lovina Dhea Nusantara
@@ -35,20 +35,20 @@ const Contact = ({ title, auth }) => {
                                 Jl. Bendul Merisi Selatan Airdas No. 2, Surabaya
                             </span>
                             <div className="flex items-center space-x-3 mt-5">
-                                <PhoneSVG className="mask mask-circle bg-secondary p-3 fill-success-content w-14 h-14" />
+                                <PhoneSVG className="mask mask-circle bg-secondary p-3 fill-success-content w-12 h-1w-12 md:w-14 md:h-14" />
                                 <div className="flex flex-col">
                                     <small>Telepon</small>
                                     <span className="font-medium">
-                                        (031) xxxxxxx
+                                        (+62) 823 3173 2068
                                     </span>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-3 mt-5">
-                                <EmailSVG className="mask mask-circle bg-success p-3 fill-success-content w-14 h-14" />
+                                <EmailSVG className="mask mask-circle bg-success p-3 fill-success-content w-12 h-1w-12 md:w-14 md:h-14" />
                                 <div className="flex flex-col">
                                     <small>Email</small>
                                     <span className="font-medium">
-                                        lovina@email.com
+                                        ptlovinadheanusantara22@email.com
                                     </span>
                                 </div>
                             </div>

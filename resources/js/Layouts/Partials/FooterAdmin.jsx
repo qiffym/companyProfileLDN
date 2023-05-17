@@ -3,7 +3,7 @@ const FooterAdmin = () => {
         <footer className="flex justify-center items-center py-14">
             <div className="text-center">
                 <p>
-                    Design with ❤️ by{' '}
+                    Designed with ❤️ by{' '}
                     <a
                         className="link-primary"
                         href="https://qiffym.vercel.app"

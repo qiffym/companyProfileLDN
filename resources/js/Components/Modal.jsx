@@ -19,7 +19,7 @@ export const Modal = ({
         md: 'sm:max-w-md',
         lg: 'sm:max-w-lg',
         xl: 'sm:max-w-xl',
-        '2xl': 'sm:max-w-2xl',
+        '2xl': 'w-full sm:max-w-xl lg:max-w-2xl',
     }[maxWidth];
 
     return (
@@ -52,7 +52,7 @@ export const Modal = ({
                     leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
                     <Dialog.Panel
-                        className={`mb-6 bg-base-300 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto ${maxWidthClass}`}
+                        className={`mb-6 bg-base-100 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto ${maxWidthClass}`}
                     >
                         {children}
                     </Dialog.Panel>
