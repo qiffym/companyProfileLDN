@@ -13,7 +13,7 @@ export const JobPositions = () => {
     return (
         <>
             <div className="flex justify-between items-center">
-                <div className="text-lg lg:text-2xl font-medium">IT Staff</div>
+                <div className="text-lg lg:text-2xl font-medium">Staff IT</div>
                 <div className="">
                     <button
                         onClick={() => setOpenModal(true)}
@@ -27,18 +27,18 @@ export const JobPositions = () => {
 
             <ScrollableModal show={openModal} onClose={closeModal}>
                 <div className="p-6 lg:p-12">
-                    <h1 className="text-5xl text-center font-bold text-primary-focus">
+                    <h1 className="md:text-5xl text-3xl text-center font-bold text-primary-focus">
                         Staff IT
                     </h1>
-                    <h3 className="text-xl text-center opacity-75">
+                    <h3 className="md:text-xl text-lg text-center opacity-75">
                         Departemen IT
                     </h3>
                     <div className="divider"></div>
                     <div id="description" className="space-y-2 mb-4">
-                        <h2 className="text-3xl font-medium text-primary-focus">
+                        <h2 className="md:text-3xl text-xl font-medium text-primary-focus">
                             Deskripsi Pekerjaan
                         </h2>
-                        <ol className="list-decimal ml-10 text-base lg:text-lg">
+                        <ol className="list-decimal ml-10 text-base md:text-lg">
                             <li>
                                 <p>
                                     Melakukan pemasangan dan perawatan perangkat
@@ -54,10 +54,10 @@ export const JobPositions = () => {
                         </ol>
                     </div>
                     <div id="requirement" className="space-y-2 mb-4">
-                        <h2 className="text-3xl font-medium text-primary-focus">
+                        <h2 className="md:text-3xl text-xl font-medium text-primary-focus">
                             Persyaratan
                         </h2>
-                        <ol className="list-decimal ml-10 text-base lg:text-lg">
+                        <ol className="list-decimal ml-10 text-base md:text-lg">
                             <li>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </li>
@@ -73,17 +73,17 @@ export const JobPositions = () => {
                         </ol>
                     </div>
                     <div id="phase" className="space-y-2 mb-4">
-                        <h2 className="text-3xl font-medium text-primary-focus">
+                        <h2 className="md:text-3xl text-xl font-medium text-primary-focus">
                             Tahap Rekrutmen
                         </h2>
-                        <p className="text-lg">
+                        <p className="md:text-lg text-base">
                             Seleksi administrasi, Wawancara, Tes Kesehatan
                         </p>
                     </div>
 
                     <div className="divider"></div>
 
-                    <div className="flex justify-end items-center gap-3">
+                    <div className="flex justify-end items-center gap-2">
                         <button
                             type="button"
                             className="btn btn-ghost rounded-box"
@@ -100,18 +100,6 @@ export const JobPositions = () => {
                     </div>
                 </div>
             </ScrollableModal>
-
-            <div className="flex justify-between items-center">
-                <div className="text-lg lg:text-2xl font-medium">
-                    Teknik Sipil
-                </div>
-                <div className="">
-                    <button className="btn btn-sm lg:btn-md btn-outline btn-secondary rounded-box normal-case">
-                        Lihat Selengkapnya
-                    </button>
-                </div>
-            </div>
-            <div className="divider"></div>
         </>
     );
 };
