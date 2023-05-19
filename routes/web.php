@@ -6,14 +6,16 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CompanyCareerPageController;
 use App\Http\Controllers\CompanyContactPageController;
 use App\Http\Controllers\CompanyProfilePageController;
+use App\Http\Controllers\CompanyServicePageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('profil', CompanyProfilePageController::class)->name('company.profile');
-Route::get('kontak', CompanyContactPageController::class)->name('company.contact-us');
+Route::get('layanan', CompanyServicePageController::class)->name('company.service');
 Route::get('karir', CompanyCareerPageController::class)->name('company.career');
+Route::get('kontak', CompanyContactPageController::class)->name('company.contact-us');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');

@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('department')->nullable();
+            $table->string('position_name', 50)->nullable();
+            $table->string('department', 50)->nullable();
             $table->text('description')->nullable();
             $table->text('requirement')->nullable();
             $table->string('phase')->nullable();
             $table->date('open_date')->nullable();
             $table->date('close_date')->nullable();
-            $table->char('experience', 3)->nullable();
-            $table->string('qualification')->nullable();
+            $table->boolean('show')->default(false);
+            $table->string('experience', 50)->nullable();
+            $table->string('qualification', 20)->nullable();
             $table->decimal('ipk')->nullable();
             $table->timestamps();
         });

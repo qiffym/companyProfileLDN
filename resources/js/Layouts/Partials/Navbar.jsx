@@ -65,21 +65,27 @@ const Navbar = ({ auth }) => {
                             </Link>
                         </li>
                         <li tabIndex={0}>
-                            <a>
-                                Layanan
+                            <Link href={route('company.service')}>
+                                Layanan Kami
                                 <ChevronBottom />
-                            </a>
+                            </Link>
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link>Layanan 1</Link>
+                                    <Link>Jasa Konstruksi</Link>
                                 </li>
                                 <li>
-                                    <Link>Layanan 2</Link>
+                                    <Link>Supplier</Link>
                                 </li>
                                 <li>
-                                    <Link>Layanan 3</Link>
+                                    <Link>Teknologi Informasi</Link>
+                                </li>
+                                <li>
+                                    <Link>Trading</Link>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <Link href={route('company.career')}>Karir</Link>
                         </li>
                         <li>
                             <Link href={route('company.contact-us')}>
@@ -145,21 +151,22 @@ const Navbar = ({ auth }) => {
                         )}
                     </li>
                     <li tabIndex={0}>
-                        <a>
-                            Layanan
+                        <Link href={route('company.service')}>
+                            Layanan Kami
                             <ChevronBottom />
-                        </a>
+                        </Link>
                         <ul className="p-2 bg-base-100 shadow">
                             <li>
-                                <Link href="#sejarah">Layanan 1</Link>
+                                <Link as="button">Jasa Konstruksi</Link>
                             </li>
                             <li>
-                                <Link href="#visi-misi">Layanan 2</Link>
+                                <Link as="button">Supplier</Link>
                             </li>
                             <li>
-                                <Link href="#struktur-organisasi">
-                                    Layanan 3
-                                </Link>
+                                <Link as="button">Teknologi Informasi</Link>
+                            </li>
+                            <li>
+                                <Link as="button">Trading</Link>
                             </li>
                         </ul>
                     </li>
