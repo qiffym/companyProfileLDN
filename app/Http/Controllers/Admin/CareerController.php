@@ -13,7 +13,9 @@ class CareerController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Admin/Careers/IndexCareer', [
+            'title' => 'Manage Careers'
+        ]);
     }
 
     /**

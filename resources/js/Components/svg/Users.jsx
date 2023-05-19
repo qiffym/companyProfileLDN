@@ -1,4 +1,4 @@
-export const Users = (props) => {
+const Users = (props) => {
     return (
         <svg
             {...props}
@@ -20,3 +20,5 @@ export const Users = (props) => {
         </svg>
     );
 };
+
+export default Users;

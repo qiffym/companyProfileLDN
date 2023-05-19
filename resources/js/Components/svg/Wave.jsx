@@ -1,4 +1,4 @@
-export const Wave = (props) => {
+const Wave = (props) => {
     return (
         <svg
             {...props}
@@ -12,3 +12,5 @@ export const Wave = (props) => {
         </svg>
     );
 };
+
+export default Wave;

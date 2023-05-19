@@ -1,8 +1,6 @@
 import { Head } from '@inertiajs/react';
 import Guest from '@/Layouts/GuestLayout';
-import { Wave } from '@/Components/svg/Wave';
-import { PhoneSVG } from '@/Components/svg/phoneSVG';
-import { EmailSVG } from '@/Components/svg/EmailSVG';
+import { Wave, PhoneSVG, EmailSVG } from '@/Components/svg';
 
 const Contact = ({ title, auth }) => {
     return (

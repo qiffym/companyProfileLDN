@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, usePage } from '@inertiajs/react';
+import { Hamburger, ChevronBottom } from '@/Components/svg';
 import CompanyLogo from '@/Components/CompanyLogo';
-import ChevronBottom from '@/Components/svg/ChevronBottom';
-import { Hamburger } from '@/Components/svg/Hamburger';
 import SwapTheme from '@/Components/SwapTheme';
 
 const Navbar = ({ auth }) => {

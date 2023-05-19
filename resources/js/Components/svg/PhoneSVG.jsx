@@ -1,4 +1,4 @@
-export const PhoneSVG = (props) => {
+const PhoneSVG = (props) => {
     return (
         <svg
             {...props}
@@ -30,3 +30,5 @@ export const PhoneSVG = (props) => {
         </svg>
     );
 };
+
+export default PhoneSVG;

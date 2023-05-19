@@ -1,6 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { Map } from './svg/Map';
-import { InfoCircleOutline } from './svg/InfoCircleOutline';
+import { Map, InfoCircleOutline } from './svg';
 
 const CompanyInfoMenu = () => {
     return (

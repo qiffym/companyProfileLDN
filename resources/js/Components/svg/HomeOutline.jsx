@@ -1,4 +1,4 @@
-export const HomeOutline = () => {
+const HomeOutline = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -16,3 +16,5 @@ export const HomeOutline = () => {
         </svg>
     );
 };
+
+export default HomeOutline;

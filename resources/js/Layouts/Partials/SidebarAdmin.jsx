@@ -1,9 +1,11 @@
 import { Link, usePage } from '@inertiajs/react';
 import CompanyInfoMenu from '@/Components/CompanyInfoMenu';
-import { HomeOutline } from '@/Components/svg/HomeOutline';
-import { Dashboard } from '@/Components/svg/Dashboard';
-import UsersIcon from '@/Components/svg/UsersIcon';
-import BriefCase from '@/Components/svg/BriefCase';
+import {
+    Dashboard,
+    HomeOutline,
+    UsersIcon,
+    BriefCase,
+} from '../../Components/svg';
 
 const SidebarAdmin = () => {
     const { url, component } = usePage();

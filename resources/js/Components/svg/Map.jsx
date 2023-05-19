@@ -1,4 +1,4 @@
-export const Map = () => {
+const Map = () => {
     return (
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path
@@ -25,3 +25,5 @@ export const Map = () => {
         </svg>
     );
 };
+
+export default Map;

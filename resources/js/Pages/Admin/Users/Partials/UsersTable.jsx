@@ -1,8 +1,6 @@
 import { Link, router } from '@inertiajs/react';
-import avatar from '../../../public/assets/img/user.png';
-import Eye from './svg/Eye';
-import Edit from './svg/Edit';
-import Trash from './svg/Trash';
+import avatar from '../../../../../../public/assets/img/user.png';
+import { Eye, Edit, Trash } from '../../../../Components/svg';
 
 const UsersTable = ({ users }) => {
     const handleDelete = (user) => {

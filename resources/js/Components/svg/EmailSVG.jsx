@@ -1,4 +1,4 @@
-export const EmailSVG = (props) => {
+const EmailSVG = (props) => {
     return (
         <svg
             {...props}
@@ -12,3 +12,5 @@ export const EmailSVG = (props) => {
         </svg>
     );
 };
+
+export default EmailSVG;
