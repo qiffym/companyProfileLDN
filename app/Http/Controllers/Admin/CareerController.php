@@ -23,7 +23,9 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Admin/Careers/CreateCareer', [
+            'title' => 'Create Career'
+        ]);
     }
 
     /**
@@ -31,7 +33,14 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'position_name' => 'required',
+
+        ]);
+
+        Career::create($validatedData);
+
+        return to_route('careers.index')->with('success', 'New Career Successfully Created.');
     }
 
     /**

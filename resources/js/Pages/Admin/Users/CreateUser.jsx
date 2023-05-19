@@ -1,4 +1,4 @@
-import { Head, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import Input from '@/Components/Input';
 
@@ -43,12 +43,23 @@ const CreateUser = ({ title, auth }) => {
 
                     <div className="divider max-w-lg"></div>
 
-                    <button
-                        className="btn btn-primary btn-wide"
-                        disabled={processing}
-                    >
-                        Submit
-                    </button>
+                    <div className="flex gap-5">
+                        <Link
+                            as="button"
+                            href={route('users.index')}
+                            className="btn btn-ghost"
+                        >
+                            Cancel
+                        </Link>
+
+                        <button
+                            type="button"
+                            disabled={processing}
+                            className="btn btn-primary btn-wide"
+                        >
+                            Submit
+                        </button>
+                    </div>
                 </form>
             </div>
         </AdminLayout>
