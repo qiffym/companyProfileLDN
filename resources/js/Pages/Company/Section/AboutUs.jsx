@@ -4,15 +4,15 @@ const AboutUs = () => {
     return (
         <section
             id="about-us"
-            className="hero min-h-screen bg-base-200 text-base-content"
+            className="hero min-h-screen bg-base-200 text-base-content md:px-14 xl:px-0"
         >
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
                     src={foto}
-                    className="w-full md:max-w-xl rounded-box shadow-2xl"
+                    className="w-full lg:max-w-sm xl:max-w-sm 2xl:max-w-xl rounded-box shadow-2xl"
                 />
-                <div className="mr-10">
-                    <h1 className="text-2xl md:text-5xl font-bold ">
+                <div className="xl:mr-10">
+                    <h1 className="text-2xl md:text-5xl lg:text-4xl font-bold ">
                         Tentang <br />
                         <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                             PT. Lovina Dhea Nusantara

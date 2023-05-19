@@ -6,11 +6,13 @@ const CompanyProfile = ({ title, auth }) => {
     return (
         <Guest auth={auth.user}>
             <Head title={title} />
-            <AboutUs />
-            <History />
-            <Vision />
-            <Organization />
-            <OurTeam />
+            <div className="w-full overflow-hidden">
+                <AboutUs />
+                <History />
+                <Vision />
+                <Organization />
+                <OurTeam />
+            </div>
         </Guest>
     );
 };

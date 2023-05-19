@@ -1,10 +1,13 @@
 const History = () => {
     return (
-        <section id="history" className="hero min-h-screen bg-base-100">
-            <div className="hero-content max-w-4xl">
+        <section
+            id="history"
+            className="hero min-h-screen bg-base-100 md:px-14 lg:px-28 2xl:px-0"
+        >
+            <div className="hero-content">
                 <div>
                     <h1 className="text-2xl lg:text-5xl font-bold">Sejarah</h1>
-                    <div className="text-base lg:text-xl py-6 text-justify space-y-5">
+                    <div className="text-base xl:text-xl py-6 text-justify space-y-5">
                         <p className="">
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit. Rerum, est deleniti maiores vel laborum dolor

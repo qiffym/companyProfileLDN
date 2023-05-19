@@ -2,7 +2,10 @@ import foto from '../../../../../public/assets/img/companyLogo.png';
 
 const Vision = () => {
     return (
-        <section id="vision" className="hero min-h-screen bg-base-200">
+        <section
+            id="vision"
+            className="hero min-h-screen bg-base-200 lg:py-20 xl:py-0"
+        >
             <div className="hero-content flex-col xl:px-28 lg:flex-row lg:mx-24 items-center lg:items-start justify-between lg:border-2 lg:border-primary bg-base-200 lg:bg-base-100 lg:shadow  rounded-box p-10">
                 <div className="shrink">
                     <img
@@ -16,7 +19,7 @@ const Vision = () => {
                         <h3 className="mb-3 text-3xl uppercase font-bold">
                             Visi
                         </h3>
-                        <q className="text-base lg:text-xl text-justify">
+                        <q className="text-base xl:text-xl text-justify">
                             Menjadi Perusahaan Inovatif, Berintegritas & Berdaya
                             Saing Tinggi Untuk Pembangunan Berkelanjutan
                         </q>
@@ -25,7 +28,7 @@ const Vision = () => {
                         <h3 className="mb-3 text-3xl uppercase font-bold text-center">
                             Misi
                         </h3>
-                        <div className="container mx-auto pl-5 text-base lg:text-lg">
+                        <div className="container mx-auto pl-5 text-base xl:text-lg">
                             <ol className="list-decimal">
                                 <li>
                                     Mengembangkan kompetensi dalam bidang

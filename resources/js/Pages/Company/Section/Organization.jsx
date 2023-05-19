@@ -5,9 +5,9 @@ const Organization = () => {
     return (
         <section
             id="struktur-organisasi"
-            className="container mx-auto min-h-screen py-10 lg:py-32 px-4 lg:px-24 bg-base-100 "
+            className="container mx-auto min-h-screen py-10 lg:py-32 px-4 lg:px-24 bg-base-100  md:px-14 xl:px-0"
         >
-            <h1 className="relative text-2xl lg:text-5xl font-bold z-10">
+            <h1 className="relative ml-20 text-2xl lg:text-5xl font-bold z-10 mb-5">
                 Struktur Organisasi
             </h1>
 
