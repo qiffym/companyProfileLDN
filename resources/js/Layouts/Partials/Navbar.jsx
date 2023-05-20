@@ -178,10 +178,10 @@ const Navbar = ({ auth }) => {
                     {auth && (
                         <li>
                             <Link
-                                className="text-primary"
+                                className="text-primary font-semibold"
                                 href={route('dashboard')}
                             >
-                                {auth.name}
+                                Dashboard
                             </Link>
                         </li>
                     )}
@@ -190,10 +190,13 @@ const Navbar = ({ auth }) => {
 
             {/* Lang */}
             <div className="navbar-end pr-4 lg:pr-0">
-                <SwapTheme
-                    onChange={toggleTheme}
-                    checked={theme === 'winter' ? false : true}
-                />
+                <div className="flex justify-center items-end gap-2">
+                    <span className="font-medium">Tema</span>
+                    <SwapTheme
+                        onChange={toggleTheme}
+                        checked={theme === 'winter' ? false : true}
+                    />
+                </div>
             </div>
         </nav>
     );

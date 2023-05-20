@@ -21,9 +21,10 @@ const AboutUs = () => {
                         </span>
                     </h1>
                     <p className="py-6 w-full lg:max-w-2xl text-base lg:text-xl">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                        assumenda excepturi exercitationem quasi. In deleniti
-                        eaque aut repudiandae et a id nisi.
+                        Perusahaan yang berdiri sebagai bentuk respon dari
+                        kebutuhan setiap klien dalam bidang Perencanaan,
+                        Konstruksi, Teknologi Informasi, Supplier, dan Trading
+                        yang semakin terbuka dan berkembang di Indonesia
                     </p>
                     <Link
                         as="button"

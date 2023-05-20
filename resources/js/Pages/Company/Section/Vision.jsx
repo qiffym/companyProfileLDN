@@ -4,62 +4,60 @@ const Vision = () => {
     return (
         <section
             id="vision"
-            className="hero min-h-screen bg-base-200 lg:py-20 xl:py-0"
+            className="bg-base-200 w-full px-6 md:px-[8%] 2xl:px-[20%] py-24"
         >
-            <div className="hero-content flex-col xl:px-28 lg:flex-row lg:mx-24 items-center lg:items-start justify-between lg:border-2 lg:border-primary bg-base-200 lg:bg-base-100 lg:shadow  rounded-box p-10">
-                <div className="shrink">
+            <div className="flex lg:flex-row justify-center items-start flex-col w-full gap-5 lg:gap-0 border border-base-300 p-10 rounded-box bg-base-100 shadow-lg">
+                <div className="flex justify-center">
                     <img
                         src={foto}
-                        alt="Image"
-                        className="w-52 lg:w-64 xl:max-w-sm"
+                        alt="foto"
+                        className="sm:w-1/2 lg:w-[20rem] object-contain"
                     />
                 </div>
-                <div className="flex flex-col space-y-5">
-                    <div className="vision text-center">
-                        <h3 className="mb-3 text-3xl uppercase font-bold">
-                            Visi
-                        </h3>
-                        <q className="text-base xl:text-xl text-justify">
+                <div className="flex flex-col justify-start items-start gap-5">
+                    <div className="flex flex-col text-center mx-auto">
+                        <h2 className="md:text-5xl text-4xl font-semibold text-primary">
+                            VISI
+                        </h2>
+                        <q className="text-lg font-medium max-w-2xl mt-5">
                             Menjadi Perusahaan Inovatif, Berintegritas & Berdaya
                             Saing Tinggi Untuk Pembangunan Berkelanjutan
                         </q>
                     </div>
-                    <div className="mission ">
-                        <h3 className="mb-3 text-3xl uppercase font-bold text-center">
-                            Misi
-                        </h3>
-                        <div className="container mx-auto pl-5 text-base xl:text-lg">
-                            <ol className="list-decimal">
-                                <li>
-                                    Mengembangkan kompetensi dalam bidang
-                                    konstruksi, teknologi informasi, pengadaan
-                                    barang dan/atau jasa alutsista, dan alat
-                                    kesehatan
-                                </li>
-                                <li>
-                                    Menjalankan perusahaan yang berkomitmen pada
-                                    kepuasan pelanggan
-                                </li>
-                                <li>
-                                    Mewujudkan generasi yang unggul,
-                                    berkualitas, professional & amanah
-                                </li>
-                                <li>
-                                    Menghasilkan output produk yang berkualitas,
-                                    ekonomis, efisien & efektif serta menjalin
-                                    kemitraan yang berkesinambungan
-                                </li>
-                                <li>
-                                    Memastikan pemanfaatan aset secara optimal &
-                                    pembangunan infrastruktur pendukung relevan
-                                    dengan investasi yang efektif
-                                </li>
-                                <li>
-                                    Meningkatkan kapabilitas internal sesuai
-                                    dengan nilai inti <strong>pilar</strong>
-                                </li>
-                            </ol>
-                        </div>
+                    <div className="flex flex-col">
+                        <h2 className="md:text-5xl text-4xl text-center font-semibold text-primary">
+                            MISI
+                        </h2>
+                        <ol className="list-decimal text-base ml-6 mt-5 max-w-2xl space-y-2">
+                            <li>
+                                Mengembangkan kompetensi dalam bidang
+                                konstruksi, teknologi informasi, pengadaan
+                                barang dan/atau jasa alutsista, dan alat
+                                kesehatan
+                            </li>
+                            <li>
+                                Menjalankan perusahaan yang berkomitmen pada
+                                kepuasan pelanggan
+                            </li>
+                            <li>
+                                Mewujudkan generasi yang unggul, berkualitas,
+                                professional & amanah
+                            </li>
+                            <li>
+                                Menghasilkan output produk yang berkualitas,
+                                ekonomis, efisien & efektif serta menjalin
+                                kemitraan yang berkesinambungan
+                            </li>
+                            <li>
+                                Memastikan pemanfaatan aset secara optimal &
+                                pembangunan infrastruktur pendukung relevan
+                                dengan investasi yang efektif
+                            </li>
+                            <li>
+                                Meningkatkan kapabilitas internal sesuai dengan
+                                nilai inti <strong>pilar</strong>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>

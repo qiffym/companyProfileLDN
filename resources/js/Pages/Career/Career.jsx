@@ -34,7 +34,7 @@ const Career = ({ auth, title = '' }) => {
                 </section>
 
                 <section id="career-more">
-                    <div className="hero min-h-screen bg-base-100">
+                    <div className="hero py-32 bg-base-100">
                         <div className="hero-content text-center">
                             <div className="max-w-4xl">
                                 <h1 className="text-2xl md:text-5xl text-primary font-bold">

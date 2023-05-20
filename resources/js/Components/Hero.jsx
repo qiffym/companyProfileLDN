@@ -12,15 +12,21 @@ const Hero = () => {
                     alt="CompanyLogo"
                 />
                 <div className="max-w-2xl">
-                    <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
+                    <h1 className="text-2xl md:text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                         PT. Lovina Dhea Nusantara
                     </h1>
+                    <div className="divider -m-1 opacity-25 before:bg-base-content after:bg-base-content" />
+                    <h4 className="md:text-2xl font-medium text-sm bg-gradient-to-l from-secondary to-accent text-transparent bg-clip-text  tracking-wide">
+                        GENERAL CONTRACTOR, SUPPLIER, and TRADING
+                    </h4>
                     <p className="py-6 text-base-content">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                        assumenda excepturi exercitationem quasi. In deleniti
-                        eaque aut repudiandae et a id nisi. Lorem ipsum dolor
-                        sit amet, consectetur adipisicing elit. Quia, minus!
-                        Accusantium repellat quis a dicta dolor nobis nesciunt.
+                        Perusahaan yang berdiri sebagai bentuk respon dari
+                        kebutuhan setiap klien dalam bidang Perencanaan,
+                        Konstruksi, Teknologi Informasi, Supplier, dan Trading
+                        yang semakin terbuka dan berkembang di Indonesia.
+                        Didukung oleh sumber daya manusia Bangsa Indonesia yang
+                        profesional dalam memberikan pelayanan terbaik untuk
+                        menjamin kepuasan <i>client</i> kami.
                     </p>
                     <Link
                         as="button"

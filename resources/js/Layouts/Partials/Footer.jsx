@@ -4,12 +4,12 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <footer className="footer p-10 bg-neutral text-neutral-content flex flex-wrap md:flex-nowrap justify-around xl:px-[15%]">
-            <div className="">
+            <div className="flex flex-col">
                 <CompanyLogo className="w-24" />
                 <p>
                     PT Lovina Dhea Nusantara
                     <br />
-                    Copyright &copy; {year} All right reserved
+                    Copyright &copy; {year} All Right Reserved
                 </p>
             </div>
             <div>
