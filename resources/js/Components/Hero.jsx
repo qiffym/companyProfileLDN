@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="hero min-h-screen">
             <div className="hero-content flex-col text-center">
                 <img
-                    className="mask mask-circle w-72"
+                    className="mask mask-circle 2xl:w-72 xl:w-56 w-52 object-contain "
                     src={companyLogo}
                     alt="CompanyLogo"
                 />
@@ -15,8 +15,8 @@ const Hero = () => {
                     <h1 className="text-2xl md:text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                         PT. Lovina Dhea Nusantara
                     </h1>
-                    <div className="divider -m-1 opacity-25 before:bg-base-content after:bg-base-content" />
-                    <h4 className="md:text-2xl font-medium text-sm bg-gradient-to-l from-secondary to-accent text-transparent bg-clip-text  tracking-wide">
+                    <div className="divider -m-1 xl:px-10 opacity-25 before:bg-base-content after:bg-base-content" />
+                    <h4 className="md:text-2xl font-extralight text-sm bg-gradient-to-l from-secondary to-accent text-transparent bg-clip-text  tracking-wide">
                         GENERAL CONTRACTOR, SUPPLIER, and TRADING
                     </h4>
                     <p className="py-6 text-base-content">
