@@ -33,7 +33,7 @@ const Contact = ({ title, auth }) => {
                                 Jl. Bendul Merisi Selatan Airdas No. 2, Surabaya
                             </span>
                             <div className="flex items-center space-x-3 mt-5">
-                                <PhoneSVG className="mask mask-circle bg-secondary p-3 fill-success-content w-12 h-1w-12 md:w-14 md:h-14" />
+                                <PhoneSVG className="mask mask-circle bg-accent p-3 fill-success-content w-12 h-1w-12 md:w-14 md:h-14" />
                                 <div className="flex flex-col">
                                     <small>Telepon</small>
                                     <span className="font-medium">

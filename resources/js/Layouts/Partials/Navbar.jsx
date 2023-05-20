@@ -8,11 +8,11 @@ const Navbar = ({ auth }) => {
     const { url } = usePage();
     const [navbarFixed, setNavbarFixed] = useState(false);
     const [theme, setTheme] = useState(
-        localStorage.getItem('theme') ?? 'light'
+        localStorage.getItem('theme') ?? 'winter'
     );
 
     const toggleTheme = (e) => {
-        e.target.checked ? setTheme('dark') : setTheme('light');
+        e.target.checked ? setTheme('night') : setTheme('winter');
     };
 
     const handleScroll = () => {
@@ -192,7 +192,7 @@ const Navbar = ({ auth }) => {
             <div className="navbar-end pr-4 lg:pr-0">
                 <SwapTheme
                     onChange={toggleTheme}
-                    checked={theme === 'light' ? false : true}
+                    checked={theme === 'winter' ? false : true}
                 />
             </div>
         </nav>

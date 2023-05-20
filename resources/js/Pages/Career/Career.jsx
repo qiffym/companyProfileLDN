@@ -10,11 +10,9 @@ const Career = ({ auth, title = '' }) => {
             <main>
                 <section className="hero min-h-screen bg-base-200">
                     <div className="hero-content text-center">
-                        <div className="max-w-xl">
-                            <h1 className="text-6xl font-bold text-primary-focus">
-                                Karir
-                            </h1>
-                            <h2 className="text-4xl font-medium bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+                        <div className="max-w-2xl">
+                            <h1 className="text-6xl font-extralight">Karir</h1>
+                            <h2 className="text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                                 PT. Lovina Dhea Nusantara
                             </h2>
                             <p className="py-6">

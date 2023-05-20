@@ -11,9 +11,9 @@ const NavbarAdmin = ({ user }) => {
         <nav className="navbar fixed top-0 left-0 bg-base-200 border-b z-50 px-4">
             <div className="flex-1">
                 <CompanyLogo className="w-14" />
-                <a className="btn btn-ghost normal-case text-xl">
+                <Link className="ml-2 normal-case text-xl font-semibold">
                     PT. Lovina Dhea Nusantara
-                </a>
+                </Link>
             </div>
             <div className="flex-none space-x-3">
                 <span className="italic font-medium text-lg hidden md:flex">

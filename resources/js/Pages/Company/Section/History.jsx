@@ -6,7 +6,7 @@ const History = () => {
         >
             <div className="hero-content">
                 <div>
-                    <h1 className="text-2xl lg:text-5xl font-bold">Sejarah</h1>
+                    <h1 className="text-2xl lg:text-5xl font-bold">Histori</h1>
                     <div className="text-base xl:text-xl py-6 text-justify space-y-5">
                         <p className="">
                             Lorem ipsum dolor sit, amet consectetur adipisicing
