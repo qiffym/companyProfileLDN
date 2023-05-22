@@ -4,32 +4,26 @@ import fotoMobile from '../../../../../public/assets/img/struktur-organisasi-mob
 const Organization = () => {
     return (
         <section
-            id="struktur-organisasi"
-            className="container mx-auto min-h-screen py-10 lg:py-32 px-4 lg:px-24 bg-base-100  md:px-14 xl:px-0"
+            id="contractor"
+            className="bg-base-100 w-full px-6 md:px-[8%] 2xl:px-[20%] md:py-36 py-24"
         >
-            <h1 className="relative ml-20 text-2xl lg:text-5xl font-bold z-10 mb-5">
-                Struktur Organisasi
-            </h1>
-
-            <div className="carousel w-full">
-                <div id="item1" className="carousel-item w-full">
+            <div className="flex flex-col gap-5">
+                <h2 className="md:text-5xl text-4xl font-semibold text-primary uppercase">
+                    Struktur Organisasi
+                </h2>
+                <div className="w-full">
                     <img
                         src={foto}
-                        alt="img"
-                        className="w-full rounded-box hidden md:flex"
+                        alt="foto"
+                        className="hidden md:block object-contain rounded-box shadow-lg"
                     />
                     <img
                         src={fotoMobile}
-                        alt="img"
-                        className="w-full rounded-box md:hidden"
+                        alt="foto"
+                        className="md:hidden object-contain rounded-box shadow-lg"
                     />
                 </div>
             </div>
-            {/* <div class="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" class="btn btn-xs">
-                    1
-                </a>
-            </div> */}
         </section>
     );
 };

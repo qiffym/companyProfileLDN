@@ -19,7 +19,7 @@ const Contact = ({ title, auth }) => {
                             <h1 className="text-4xl font-bold mb-3">
                                 PT Lovina Dhea Nusantara
                             </h1>
-                            <span className="text-base">
+                            <span className="text-lg">
                                 Terima kasih sudah berkunjung! jika Anda
                                 mempunyai pertanyaan seputar PT LDN, silahkan
                                 hubungi kami melalui kontak di laman ini.
@@ -29,11 +29,11 @@ const Contact = ({ title, auth }) => {
                             <h3 className="text-2xl font-bold mb-3">
                                 Alamat Kantor
                             </h3>
-                            <span className="text-base">
+                            <span className="text-lg">
                                 Jl. Bendul Merisi Selatan Airdas No. 2, Surabaya
                             </span>
                             <div className="flex items-center space-x-3 mt-5">
-                                <PhoneSVG className="mask mask-circle bg-secondary p-3 fill-success-content w-12 h-1w-12 md:w-14 md:h-14" />
+                                <PhoneSVG className="mask mask-circle bg-error p-3 fill-error-content w-12 h-1w-12 md:w-14 md:h-14" />
                                 <div className="flex flex-col">
                                     <small>Telepon</small>
                                     <span className="font-medium">

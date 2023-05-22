@@ -5,15 +5,15 @@ import CompanyLogo from '@/Components/CompanyLogo';
 const NavbarAdmin = ({ user }) => {
     const handleLogout = (e) => {
         e.preventDefault();
-        router.post(route('logout'));
+        router.post(route('logout'), user, { replace: true });
     };
     return (
         <nav className="navbar fixed top-0 left-0 bg-base-200 border-b z-50 px-4">
             <div className="flex-1">
                 <CompanyLogo className="w-14" />
-                <a className="btn btn-ghost normal-case text-xl">
+                <Link className="ml-2 normal-case text-xl font-semibold">
                     PT. Lovina Dhea Nusantara
-                </a>
+                </Link>
             </div>
             <div className="flex-none space-x-3">
                 <span className="italic font-medium text-lg hidden md:flex">
@@ -47,6 +47,7 @@ const NavbarAdmin = ({ user }) => {
                         </li>
                         <li>
                             <Link
+                                as="button"
                                 onClick={handleLogout}
                                 className="hover:bg-red-400 hover:font-bold"
                             >

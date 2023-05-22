@@ -1,8 +1,15 @@
 const OurTeam = () => {
     return (
-        <section className="flex flex-col w-full justify-center items-center py-32 bg-base-200">
-            <div className="">
-                <h1 className="text-5xl font-bold">Tim Kami</h1>
+        <section
+            id="tim-kami"
+            className="bg-base-300 w-full px-6 md:px-[8%] 2xl:px-[20%] md:py-36 py-24"
+        >
+            <div className="flex flex-col gap-5">
+                <div className="flex-1 flex flex-col justify-center items-start">
+                    <h2 className="md:text-5xl text-4xl font-semibold text-primary uppercase">
+                        Tim Kami
+                    </h2>
+                </div>
             </div>
         </section>
     );

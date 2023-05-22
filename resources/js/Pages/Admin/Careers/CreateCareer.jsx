@@ -23,7 +23,7 @@ const CreateCareer = ({ auth, title }) => {
         <AdminLayout auth={auth.user}>
             <Head title={title} />
             <h1 className="text-4xl mb-4">Create New Career</h1>
-            <div className="flex w-full p-6 rounded-box border shadow bg-base-100">
+            <div className="flex w-full p-6 rounded-box shadow-lg bg-base-100">
                 <form onSubmit={submit} className="w-full">
                     <div className="flex xl:flex-row flex-col xl:gap-10">
                         <InputCareer

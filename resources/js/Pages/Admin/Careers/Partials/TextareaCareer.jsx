@@ -7,11 +7,14 @@ const TextareaCareer = (props) => {
             <label htmlFor={props.id}>
                 <span className="label-text">{props.label}</span>
             </label>
-            <ReactQuill
-                theme="snow"
-                {...props}
-                className="h-40 mb-10 bg-base-200"
-            />
+            <div className="bg-base-200">
+                <ReactQuill
+                    theme="snow"
+                    placeholder="Write the description here.."
+                    className="h-40 mb-10"
+                    {...props}
+                />
+            </div>
             <label className="label">
                 <span className="label-text-alt text-error">
                     {props.iserror}

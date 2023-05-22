@@ -17,7 +17,9 @@ export default function Login({ status, canResetPassword, flash }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('login'));
+        post(route('login'), {
+            replace: true,
+        });
     };
 
     return (

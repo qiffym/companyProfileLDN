@@ -20,7 +20,23 @@ module.exports = {
 
     plugins: [require('@tailwindcss/forms'), require('daisyui')],
     daisyui: {
-        themes: ['light', 'dark'],
+        themes: [
+            {
+                winter: {
+                    ...require('daisyui/src/colors/themes')[
+                        '[data-theme=winter]'
+                    ],
+                    primary: '#2c75ff',
+                },
+
+                night: {
+                    ...require('daisyui/src/colors/themes')[
+                        '[data-theme=night]'
+                    ],
+                    primary: '#2c75ff',
+                },
+            },
+        ],
         // themes: false,
     },
 };
