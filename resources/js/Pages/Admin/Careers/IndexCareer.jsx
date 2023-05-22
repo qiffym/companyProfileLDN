@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import CareersTable from './Partials/CareersTable';
 import AdminLayout from '@/Layouts/AdminLayout';
 
-const IndexCareer = ({ auth, title, flash }) => {
+const IndexCareer = ({ auth, title, flash, careers }) => {
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
@@ -21,7 +21,7 @@ const IndexCareer = ({ auth, title, flash }) => {
                 </div>
 
                 <div className="overflow-x-auto w-full">
-                    <CareersTable />
+                    <CareersTable careers={careers} />
                 </div>
             </section>
         </AdminLayout>

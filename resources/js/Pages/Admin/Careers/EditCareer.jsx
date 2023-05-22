@@ -1,42 +1,31 @@
 import AdminLayout from '@/Layouts/AdminLayout';
-import { Head, Link, router, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import React from 'react';
 import InputCareer from './Partials/InputCareer';
 import TextareaCareer from './Partials/TextareaCareer';
-import { useState } from 'react';
 
-const CreateCareer = ({ auth, title, errors }) => {
-    const { processing } = useForm();
-
-    const [values, setValues] = useState({
-        position_name: '',
-        department: '',
-        description: '',
-        requirement: '',
-        open_date: '',
-        close_date: '',
-        phase: '',
+const EditCareer = ({ auth, title, career }) => {
+    const { data, setData, patch, processing, errors } = useForm({
+        position_name: career.position_name,
+        department: career.department,
+        description: career.description,
+        requirement: career.requirement,
+        open_date: career.open_date,
+        close_date: career.close_date,
+        phase: career.phase,
     });
 
-    const handleChange = (e) => {
-        const key = e.target.id;
-        const value = e.target.value;
-        setValues((values) => ({
-            ...values,
-            [key]: value,
-        }));
-    };
-
-    const handleSubmit = (e) => {
+    const submit = (e) => {
         e.preventDefault();
-        router.post(route('careers.store'), values);
+        patch(route('careers.update', career));
     };
 
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
-            <h1 className="text-4xl mb-4">Create New Career</h1>
+            <h1 className="text-4xl mb-4">Edit {career.position_name}</h1>
             <div className="flex w-full p-6 rounded-box shadow-lg bg-base-100">
-                <form onSubmit={handleSubmit} className="w-full">
+                <form onSubmit={submit} className="w-full">
                     <div className="flex xl:flex-row flex-col xl:gap-10">
                         <InputCareer
                             label="Position Name"
@@ -44,8 +33,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="position_name"
                             id="position_name"
                             placeholder="Example: Staff IT"
-                            value={values.position_name}
-                            onChange={handleChange}
+                            value={data.position_name}
+                            onChange={(e) =>
+                                setData('position_name', e.target.value)
+                            }
                             iserror={errors.position_name}
                         />
                         <InputCareer
@@ -54,8 +45,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="department"
                             id="department"
                             placeholder="Example: IT"
-                            value={values.department}
-                            onChange={handleChange}
+                            value={data.department}
+                            onChange={(e) =>
+                                setData('department', e.target.value)
+                            }
                             iserror={errors.department}
                         />
                     </div>
@@ -65,8 +58,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             label="Job Description"
                             name="description"
                             id="description"
-                            value={values.description}
-                            onChange={handleChange}
+                            value={data.description}
+                            onChange={(e) =>
+                                setData('description', e.target.value)
+                            }
                             iserror={errors.description}
                         />
 
@@ -74,8 +69,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             label="Requirement"
                             name="requirement"
                             id="requirement"
-                            value={values.requirement}
-                            onChange={handleChange}
+                            value={data.requirement}
+                            onChange={(e) =>
+                                setData('requirement', e.target.value)
+                            }
                             iserror={errors.requirement}
                         />
                     </div>
@@ -87,8 +84,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="open_date"
                             id="open_date"
                             placeholder="Example: IT"
-                            value={values.open_date}
-                            onChange={handleChange}
+                            value={data.open_date}
+                            onChange={(e) =>
+                                setData('open_date', e.target.value)
+                            }
                             iserror={errors.open_date}
                         />
                         <InputCareer
@@ -97,8 +96,10 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="close_date"
                             id="close_date"
                             placeholder="Example: IT"
-                            value={values.close_date}
-                            onChange={handleChange}
+                            value={data.close_date}
+                            onChange={(e) =>
+                                setData('close_date', e.target.value)
+                            }
                             iserror={errors.close_date}
                         />
                     </div>
@@ -110,13 +111,13 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="phase"
                             id="phase"
                             placeholder="Example: Administrasi, Teknikal Tes, Wawancara, Tes Kesehatan"
-                            value={values.phase}
-                            onChange={handleChange}
+                            value={data.phase}
+                            onChange={(e) => setData('phase', e.target.value)}
                             iserror={errors.phase}
                         />
                     </div>
 
-                    <div className="divider 2xl:w-[70%]"></div>
+                    <div className="divider 2xl:w-[70%]" />
 
                     <div className="flex gap-5">
                         <Link
@@ -131,7 +132,7 @@ const CreateCareer = ({ auth, title, errors }) => {
                             disabled={processing}
                             className="btn btn-primary btn-wide"
                         >
-                            Submit
+                            Update
                         </button>
                     </div>
                 </form>
@@ -140,4 +141,4 @@ const CreateCareer = ({ auth, title, errors }) => {
     );
 };
 
-export default CreateCareer;
+export default EditCareer;

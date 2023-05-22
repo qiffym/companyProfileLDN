@@ -3,7 +3,7 @@ import Guest from '@/Layouts/GuestLayout';
 import ArrowDown from '@/Components/svg/ArrowDown';
 import { JobPositions } from './Partials/JobPositions';
 
-const Career = ({ auth, title = '' }) => {
+const Career = ({ auth, title, careers }) => {
     return (
         <Guest auth={auth.user}>
             <Head title={title} />
@@ -45,7 +45,7 @@ const Career = ({ auth, title = '' }) => {
                                     Nusantara. Karena pekerjaan ada untuk
                                     dinikmati, bukan untuk dicari
                                 </p>
-                                <JobPositions />
+                                <JobPositions careers={careers} />
                             </div>
                         </div>
                     </div>

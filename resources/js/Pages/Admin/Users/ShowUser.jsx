@@ -6,7 +6,7 @@ const ShowUser = ({ title, user, auth }) => {
         <AdminLayout auth={auth.user}>
             <Head title={title} />
             <h1 className="text-4xl mb-4">User: {user.name}</h1>
-            <div className="flex w-full border shadow bg-base-200 rounded-box"></div>
+            <div className="flex w-full border shadow bg-base-100 rounded-box"></div>
         </AdminLayout>
     );
 };

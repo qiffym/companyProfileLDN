@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Career;
 use Illuminate\Http\Request;
 
 class CompanyCareerPageController extends Controller
@@ -12,7 +13,8 @@ class CompanyCareerPageController extends Controller
     public function __invoke(Request $request)
     {
         return inertia('Career/Career', [
-            'title' => 'Karir'
+            'title' => 'Karir',
+            'careers' => Career::all(),
         ]);
     }
 }

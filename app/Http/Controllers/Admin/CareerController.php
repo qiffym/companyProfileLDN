@@ -13,8 +13,10 @@ class CareerController extends Controller
      */
     public function index()
     {
+        $careers = Career::all();
         return inertia('Admin/Careers/IndexCareer', [
-            'title' => 'Manage Careers'
+            'title' => 'Manage Careers',
+            'careers' => $careers,
         ]);
     }
 
@@ -34,8 +36,16 @@ class CareerController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'position_name' => 'required',
-
+            'position_name' => 'required|string',
+            'department' => 'nullable|string',
+            'description' => 'nullable',
+            'requirement' => 'nullable',
+            'phase' => 'nullable|string',
+            'open_date' => 'nullable|date',
+            'close_date' => 'nullable|date',
+            'show' => 'boolean',
+            'experience' => 'nullable',
+            'ipk' => 'nullable'
         ]);
 
         Career::create($validatedData);
@@ -48,7 +58,10 @@ class CareerController extends Controller
      */
     public function show(Career $career)
     {
-        //
+        return inertia('Admin/Careers/ShowCareer', [
+            'title' => 'Detail Career',
+            'data' => $career
+        ]);
     }
 
     /**
@@ -56,7 +69,10 @@ class CareerController extends Controller
      */
     public function edit(Career $career)
     {
-        //
+        return inertia('Admin/Careers/EditCareer', [
+            'title' => 'Edit Career',
+            'career' => $career
+        ]);
     }
 
     /**
@@ -64,7 +80,22 @@ class CareerController extends Controller
      */
     public function update(Request $request, Career $career)
     {
-        //
+        $validatedData = $request->validate([
+            'position_name' => 'required|string',
+            'department' => 'nullable|string',
+            'description' => 'nullable',
+            'requirement' => 'nullable',
+            'phase' => 'nullable|string',
+            'open_date' => 'nullable|date',
+            'close_date' => 'nullable|date',
+            'show' => 'boolean',
+            'experience' => 'nullable',
+            'ipk' => 'nullable'
+        ]);
+
+        $career->update($validatedData);
+
+        return to_route('careers.index')->with('success', 'Career Successfully Updated.');
     }
 
     /**
@@ -72,6 +103,7 @@ class CareerController extends Controller
      */
     public function destroy(Career $career)
     {
-        //
+        $career->delete();
+        return back()->with('success', 'Career deleted successfully.');
     }
 }
