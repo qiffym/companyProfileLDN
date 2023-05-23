@@ -1,4 +1,4 @@
-import foto from '../../../../../public/assets/img/companyLogo.png';
+import CompanyLogo from '@/Components/CompanyLogo';
 
 const Vision = () => {
     return (
@@ -6,13 +6,9 @@ const Vision = () => {
             id="vision"
             className="bg-base-200 w-full px-6 md:px-[8%] 2xl:px-[20%] py-24"
         >
-            <div className="flex lg:flex-row justify-center items-start flex-col w-full gap-5 lg:gap-0 border border-base-300 p-10 rounded-box bg-base-100 shadow-lg">
-                <div className="flex justify-center">
-                    <img
-                        src={foto}
-                        alt="foto"
-                        className="sm:w-1/2 lg:w-[20rem] object-contain"
-                    />
+            <div className="flex lg:flex-row justify-around items-start flex-col w-full gap-5 lg:gap-0 border border-base-300 p-10 rounded-box bg-base-100 shadow-lg">
+                <div className="lg:self-start self-center">
+                    <CompanyLogo className="w-full" />
                 </div>
                 <div className="flex flex-col justify-start items-start gap-5">
                     <div className="flex flex-col text-center mx-auto">

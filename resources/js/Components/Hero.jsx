@@ -1,8 +1,7 @@
 import { Link } from '@inertiajs/react';
-import companyLogo from '../../../public/assets/img/companyLogo.png';
 import ArrowRight from './svg/ArrowRight';
 
-const Hero = () => {
+const Hero = ({ companyLogo }) => {
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col text-center">

@@ -1,7 +1,4 @@
-import foto from '../../../../../public/assets/img/struktur-organisasi-pt-ldn.jpg';
-import fotoMobile from '../../../../../public/assets/img/struktur-organisasi-mobile.jpg';
-
-const Organization = () => {
+const Organization = ({ structuralImg, structuralImgMobile }) => {
     return (
         <section
             id="contractor"
@@ -13,14 +10,14 @@ const Organization = () => {
                 </h2>
                 <div className="w-full">
                     <img
-                        src={foto}
-                        alt="foto"
-                        className="hidden md:block object-contain rounded-box shadow-lg"
+                        src={structuralImg}
+                        alt="Struktur Organisasi"
+                        className="hidden md:block object-contain rounded-box shadow-md shadow-base-content"
                     />
                     <img
-                        src={fotoMobile}
-                        alt="foto"
-                        className="md:hidden object-contain rounded-box shadow-lg"
+                        src={structuralImgMobile}
+                        alt="Struktur Organisasi"
+                        className="md:hidden object-contain rounded-box shadow-md shadow-base-content"
                     />
                 </div>
             </div>

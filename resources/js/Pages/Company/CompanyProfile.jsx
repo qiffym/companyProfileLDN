@@ -2,7 +2,7 @@ import { Head } from '@inertiajs/react';
 import Guest from '@/Layouts/GuestLayout';
 import { AboutUs, History, Vision, Organization, OurTeam } from './Section';
 
-const CompanyProfile = ({ title, auth }) => {
+const CompanyProfile = ({ title, auth, structural, structuralRotate }) => {
     return (
         <Guest auth={auth.user}>
             <Head title={title} />
@@ -10,7 +10,10 @@ const CompanyProfile = ({ title, auth }) => {
                 <AboutUs />
                 <History />
                 <Vision />
-                <Organization />
+                <Organization
+                    structuralImg={structural}
+                    structuralImgMobile={structuralRotate}
+                />
                 <OurTeam />
             </div>
         </Guest>

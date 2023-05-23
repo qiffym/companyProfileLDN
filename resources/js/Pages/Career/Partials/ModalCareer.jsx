@@ -1,9 +1,9 @@
-import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { EmailSVG } from '@/Components/svg';
 import DOMPurify from 'dompurify';
+import { Dialog, Transition } from '@headlessui/react';
+import { EmailSVG } from '@/Components/svg';
 
-const ScrollableModalCareer = ({
+const ModalCareer = ({
     show = false,
     closeable = true,
     data,
@@ -13,10 +13,6 @@ const ScrollableModalCareer = ({
         if (closeable) {
             onClose();
         }
-    };
-
-    const listStyle = {
-        listStyleType: 'decimal',
     };
 
     let description = DOMPurify.sanitize(data.description);
@@ -171,4 +167,4 @@ const ScrollableModalCareer = ({
     );
 };
 
-export default ScrollableModalCareer;
+export default ModalCareer;
