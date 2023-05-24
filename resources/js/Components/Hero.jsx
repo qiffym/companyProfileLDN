@@ -1,15 +1,17 @@
 import { Link } from '@inertiajs/react';
 import ArrowRight from './svg/ArrowRight';
+import CompanyLogo from './CompanyLogo';
 
 const Hero = ({ companyLogo }) => {
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col text-center">
-                <img
+                <CompanyLogo className="2xl:w-72 xl:w-56 w-52 object-contain" />
+                {/* <img
                     className="mask mask-circle 2xl:w-72 xl:w-56 w-52 object-contain "
                     src={companyLogo}
                     alt="CompanyLogo"
-                />
+                /> */}
                 <div className="max-w-2xl">
                     <h1 className="text-2xl md:text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                         PT. Lovina Dhea Nusantara

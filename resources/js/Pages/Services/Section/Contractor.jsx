@@ -33,7 +33,7 @@ const Contractor = ({
                         perusahaan, atau juga negara dalam masa waktu tertentu.
                     </p>
                 </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-5 2xl:max-w-7xl max-w-2xl">
+                <div className="flex flex-wrap justify-center md:justify-start gap-5 max-w-2xl">
                     <div className="flex flex-col justify-center items-center gap-3">
                         <img
                             src={contractorLandscape}
@@ -44,25 +44,25 @@ const Contractor = ({
                     </div>
                     <div className="flex flex-col justify-center items-center gap-3">
                         <img
-                            src={contractorSeaport}
-                            alt="Seaport"
-                            className="w-52 h-52 rounded-box object-cover shadow-md shadow-black"
-                        />
-                        <h4 className="text-xl font-semibold">Dermaga</h4>
-                    </div>
-                    <div className="flex flex-col justify-center items-center gap-3">
-                        <img
                             src={contractorHospital}
                             alt="Rumah sakit"
-                            className="w-52 h-52 rounded-box object-cover shadow-md shadow-black"
+                            className="w-52 h-52 rounded-box object-fill shadow-md shadow-black"
                         />
                         <h4 className="text-xl font-semibold">Rumah Sakit</h4>
                     </div>
                     <div className="flex flex-col justify-center items-center gap-3">
                         <img
+                            src={contractorSeaport}
+                            alt="Seaport"
+                            className="w-52 h-52 rounded-box object-fill shadow-md shadow-black"
+                        />
+                        <h4 className="text-xl font-semibold">Dermaga</h4>
+                    </div>
+                    <div className="flex flex-col justify-center items-center gap-3">
+                        <img
                             src={contractorRestArea}
                             alt="Rest Area"
-                            className="w-52 h-52 rounded-box object-cover shadow-md shadow-black"
+                            className="w-52 h-52 rounded-box object-fill shadow-md shadow-black"
                         />
                         <h4 className="text-xl font-semibold">Rest Area</h4>
                     </div>

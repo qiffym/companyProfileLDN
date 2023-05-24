@@ -1,8 +1,8 @@
 import { ArrowDown } from '@/Components/svg';
-import foto from '../../../../../public/assets/img/ptldnmockup.jpg';
+// import foto from '../../../../../public/assets/img/ptldnmockup.jpg';
 import { Link } from '@inertiajs/react';
 
-const AboutUs = () => {
+const AboutUs = ({ aboutImg }) => {
     return (
         <section
             id="about-us"
@@ -10,8 +10,8 @@ const AboutUs = () => {
         >
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
-                    src={foto}
-                    className="w-full lg:max-w-sm xl:max-w-sm 2xl:max-w-xl rounded-box shadow-2xl"
+                    src={aboutImg}
+                    className="w-full hover:scale-125 hover:skew-y-6 transition-transform lg:max-w-sm xl:max-w-sm 2xl:max-w-xl rounded-box shadow-2xl"
                 />
                 <div className="xl:mr-10">
                     <h1 className="text-2xl md:text-5xl lg:text-4xl 2xl:text-5xl font-extrabold ">

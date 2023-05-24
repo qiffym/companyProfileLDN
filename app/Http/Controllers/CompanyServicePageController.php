@@ -31,6 +31,17 @@ class CompanyServicePageController extends Controller
 
             // Tech image
             'bgTech' => Storage::url('/img/tech.jpg'),
+            'techHardware' => Storage::url('/img/techHardware.jpg'),
+            'techSoftware' => Storage::url('/img/techSoftware.jpg'),
+            'techCyber' => Storage::url('/img/techCyber.jpg'),
+            'techPerbankan' => Storage::url('/img/techBanking.jpg'),
+
+            // trading image
+            'tradingImg' => Storage::url('/img/trading.jpg'),
+            'tradMedical' => Storage::url('/img/tradMedical.jpg'),
+            'tradBlanket' => Storage::url('/img/tradBlanket.jpg'),
+            'tradTowel' => Storage::url('/img/tradTowel.jpg'),
+            'tradShoes' => Storage::url('/img/tradShoes.jpg'),
 
         ]);
     }

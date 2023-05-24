@@ -20,6 +20,15 @@ const Services = ({ auth, title }) => {
         supplierMaterials,
         supplierElectrical,
         bgTech,
+        techHardware,
+        techSoftware,
+        techPerbankan,
+        techCyber,
+        tradingImg,
+        tradMedical,
+        tradBlanket,
+        tradTowel,
+        tradShoes,
     } = usePage().props;
     return (
         <Guest auth={auth.user}>
@@ -41,8 +50,20 @@ const Services = ({ auth, title }) => {
                     electrical={supplierElectrical}
                 />
 
-                <InformationTechnology bgTech={bgTech} />
-                <Trading />
+                <InformationTechnology
+                    bgTech={bgTech}
+                    hardware={techHardware}
+                    software={techSoftware}
+                    perbankan={techPerbankan}
+                    cyber={techCyber}
+                />
+                <Trading
+                    tradingImg={tradingImg}
+                    towel={tradTowel}
+                    shoes={tradShoes}
+                    medical={tradMedical}
+                    blanket={tradBlanket}
+                />
             </main>
         </Guest>
     );
