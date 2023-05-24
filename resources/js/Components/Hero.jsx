@@ -4,7 +4,7 @@ import CompanyLogo from './CompanyLogo';
 
 const Hero = ({ companyLogo }) => {
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col text-center">
                 <CompanyLogo className="2xl:w-72 xl:w-56 w-52 object-contain" />
                 {/* <img

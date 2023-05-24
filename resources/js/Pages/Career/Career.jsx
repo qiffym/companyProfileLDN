@@ -15,18 +15,23 @@ const Career = ({ auth, title, careers }) => {
                             <h2 className="text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                                 PT. Lovina Dhea Nusantara
                             </h2>
-                            <p className="py-6">
-                                Provident cupiditate voluptatem et in. Quaerat
-                                fugiat ut assumenda excepturi exercitationem
-                                quasi. In deleniti eaque aut repudiandae et a id
-                                nisi.
+                            <p className="py-6 max-w-xl">
+                                Terus bertumbuhnya PT Lovina Dhea Nusantara
+                                membawa konsekuensi pada Perseroan untuk
+                                menerapkan pengelolaan sumber daya manusia (SDM)
+                                sebagai <i>asset</i> perusahaan (
+                                <i>human capital</i>). Penerapan manajemen{' '}
+                                <i>human capital</i> akan mendukung pencapaian
+                                Visi Perseroan menjadi perusahaan terbaik di
+                                bidang{' '}
+                                <i>General Contractor, Supplier, and Trading</i>
                             </p>
                             <Link
                                 as="button"
                                 href="#career-more"
                                 className="btn btn-primary gap-2"
                             >
-                                Pelajari Selengkapnya
+                                Lihat Lowongan
                                 <ArrowDown className="animate-bounce" />
                             </Link>
                         </div>
