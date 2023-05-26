@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CompanyCareerPageController;
@@ -30,6 +31,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 Route::middleware('auth')->prefix('admin/resources')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('careers', CareerController::class);
+    Route::resource('news', NewsController::class);
 });
 
 

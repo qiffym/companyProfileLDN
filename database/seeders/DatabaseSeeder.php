@@ -15,9 +15,20 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'Lovina',
-            'email' => 'lovina@ldn.com',
+            'name' => 'Admin LDN',
+            'email' => 'admin@ldn.com',
             'password' => bcrypt('123123123'),
         ]);
+
+        \App\Models\Career::create(
+            ['position_name' => 'Staff IT', 'department' => 'IT'],
+            ['position_name' => 'Staff Teknik Sipil', 'department' => 'Kontruksi'],
+            ['position_name' => 'Staff Arsitek', 'department' => 'Kontruksi'],
+            ['position_name' => 'Staff Legal', 'department' => 'Umum'],
+        );
+
+        \App\Models\NewsCategory::create(
+            ['name' => 'Umum', 'slug' => 'umum'],
+        );
     }
 }

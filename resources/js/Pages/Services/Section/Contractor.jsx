@@ -22,7 +22,7 @@ const Contractor = ({
             <div className="flex flex-col gap-5">
                 <div className="flex flex-col justify-center items-start">
                     <h2 className="md:text-5xl text-4xl font-semibold text-primary">
-                        Jasa Konstruksi
+                        Jasa Kontruksi
                     </h2>
                     <p className="text-base font-normal max-w-2xl mt-5">
                         Kontraktor adalah istilah yang berasal dari kata

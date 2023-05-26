@@ -16,6 +16,8 @@ import UserPlus from './UserPlus.jsx';
 import Users from './Users.jsx';
 import UsersIcon from './UsersIcon.jsx';
 import Wave from './Wave.jsx';
+import NewsOutline from './News.jsx';
+import WarningTriangle from './WarningTriangle.jsx';
 
 export {
     ArrowDown,
@@ -36,4 +38,6 @@ export {
     Users,
     UsersIcon,
     Wave,
+    NewsOutline,
+    WarningTriangle,
 };

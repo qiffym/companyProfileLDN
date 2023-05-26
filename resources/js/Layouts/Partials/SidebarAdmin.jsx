@@ -5,7 +5,8 @@ import {
     HomeOutline,
     UsersIcon,
     BriefCase,
-} from '../../Components/svg';
+    NewsOutline,
+} from '@/Components/svg';
 
 const SidebarAdmin = () => {
     const { url, component } = usePage();
@@ -39,6 +40,20 @@ const SidebarAdmin = () => {
                         >
                             <UsersIcon />
                             Manage Users
+                        </Link>
+                    </li>
+
+                    <li className="hover-bordered">
+                        <Link
+                            href={route('news.index')}
+                            className={
+                                component.startsWith('Admin/News')
+                                    ? 'active'
+                                    : ''
+                            }
+                        >
+                            <NewsOutline className="w-6 h-6" />
+                            Manage News
                         </Link>
                     </li>
 
