@@ -26,7 +26,9 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Admin/News/CreateNews', [
+            'title' => 'Create News',
+        ]);
     }
 
     /**

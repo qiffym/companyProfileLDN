@@ -1,8 +1,8 @@
-import AdminLayout from '@/Layouts/AdminLayout';
+import { useState } from 'react';
 import { Head, Link, router, useForm } from '@inertiajs/react';
+import AdminLayout from '@/Layouts/AdminLayout';
 import InputCareer from './Partials/InputCareer';
 import TextareaCareer from './Partials/TextareaCareer';
-import { useState } from 'react';
 
 const CreateCareer = ({ auth, title, errors }) => {
     const { processing } = useForm();

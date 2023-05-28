@@ -1,18 +1,14 @@
-const Input = (props) => {
+const InputFile = (props) => {
     return (
         <>
-            <label className="label">
+            <label htmlFor={props.id} className="label">
                 <span className="label-text">{props.label}</span>
             </label>
             <input
-                {...props}
-                type={props.type}
-                name={props.name}
-                placeholder={props.placeholder}
-                className="input input-bordered bg-base-200 w-full max-w-lg"
-                value={props.value}
+                type="file"
+                id={props.id}
+                className="file-input file-input-primary bg-base-200 w-full max-w-lg"
                 onChange={props.onChange}
-                disabled={props.disabled}
             />
             <label className="label">
                 <span className="label-text-alt text-red-500">
@@ -23,4 +19,4 @@ const Input = (props) => {
     );
 };
 
-export default Input;
+export default InputFile;
