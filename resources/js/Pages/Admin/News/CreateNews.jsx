@@ -1,24 +1,23 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import Input from '@/Components/Input';
+import Select from '@/Components/Select';
 import InputFile from '@/Components/InputFile';
 import slugify from 'slugify';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const CreateNews = ({ auth, title }) => {
+const CreateNews = ({ auth, title, categories }) => {
     const { data, setData, post, processing, progress, errors } = useForm({
         title: '',
-        news_category_id: null,
-        slug: null,
-        excerpt: null,
-        content: null,
-        img: null,
-        author: auth.user.name,
-        publish_at: null,
+        news_category_id: '',
+        slug: '',
+        excerpt: '',
+        content: '',
+        img: '',
+        author: auth.user.id,
+        publish_at: '',
     });
-
-    console.log(data.img);
 
     const submit = (e) => {
         e.preventDefault();
@@ -31,6 +30,16 @@ const CreateNews = ({ auth, title }) => {
             <h1 className="text-4xl mb-4">Create New News</h1>
             <div className="flex w-full p-6 rounded-box shadow-lg bg-base-100">
                 <form onSubmit={submit} className="w-full">
+                    <Select
+                        label={'News Category'}
+                        items={categories}
+                        id={'news_category'}
+                        value={data.news_category_id}
+                        onChange={(e) =>
+                            setData('news_category_id', e.target.value)
+                        }
+                        errors={errors.news_category_id}
+                    />
                     <Input
                         label={'Title'}
                         type={'text'}
@@ -43,12 +52,14 @@ const CreateNews = ({ auth, title }) => {
                         label={'Slug'}
                         type={'text'}
                         id={'slug'}
-                        value={slugify(data.title, { lower: true })}
+                        value={
+                            (data.slug = slugify(data.title, { lower: true }))
+                        }
                         onChange={(e) => setData('slug', e.target.value)}
-                        disabled={true}
+                        readOnly={true}
                         errors={errors.slug}
                     />
-                    <div className="form-control mb-5">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Content</span>
                         </label>
@@ -58,6 +69,11 @@ const CreateNews = ({ auth, title }) => {
                             placeholder="Type content here..."
                             className="bg-base-200 max-w-2xl"
                         />
+                        <label className="label">
+                            <span className="label-text-alt text-red-500">
+                                {errors.content}
+                            </span>
+                        </label>
                     </div>
                     <div className="form-control">
                         <InputFile
@@ -68,7 +84,7 @@ const CreateNews = ({ auth, title }) => {
                         />
                         {progress && (
                             <progress
-                                className="progress progress-primary w-56"
+                                className="progress progress-primary w-full max-w-lg"
                                 id={'img'}
                                 value={progress.percentage}
                                 max="100"
@@ -81,14 +97,15 @@ const CreateNews = ({ auth, title }) => {
                         label={'Author'}
                         type={'text'}
                         id={'author'}
-                        value={data.author}
-                        disabled={true}
+                        value={auth.user.name}
+                        readOnly={true}
                         errors={errors.author}
                     />
                     <Input
                         label={'Publish At'}
                         type={'datetime-local'}
                         value={data.publish_at}
+                        onChange={(e) => setData('publish_at', e.target.value)}
                         errors={errors.publish_at}
                     />
 

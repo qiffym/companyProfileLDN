@@ -9,14 +9,16 @@ const Input = (props) => {
                 type={props.type}
                 name={props.name}
                 placeholder={props.placeholder}
-                className="input input-bordered bg-base-200 w-full max-w-lg"
+                className="input input-bordered bg-base-200 w-full max-w-2xl"
                 value={props.value}
+                defaultValue={props.defaultValue}
                 onChange={props.onChange}
                 disabled={props.disabled}
+                readOnly={props.readOnly}
             />
             <label className="label">
                 <span className="label-text-alt text-red-500">
-                    {props.iserror}
+                    {props.errors}
                 </span>
             </label>
         </>

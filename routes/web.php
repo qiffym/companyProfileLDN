@@ -10,6 +10,7 @@ use App\Http\Controllers\CompanyProfilePageController;
 use App\Http\Controllers\CompanyServicePageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

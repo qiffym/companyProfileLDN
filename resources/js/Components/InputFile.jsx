@@ -7,7 +7,7 @@ const InputFile = (props) => {
             <input
                 type="file"
                 id={props.id}
-                className="file-input file-input-primary bg-base-200 w-full max-w-lg"
+                className="file-input file-input-bordered bg-base-200 w-full max-w-2xl"
                 onChange={props.onChange}
             />
             <label className="label">

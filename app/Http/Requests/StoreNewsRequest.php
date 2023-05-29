@@ -11,7 +11,7 @@ class StoreNewsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|unique:news,title',
+            'news_category_id' => 'required|exists:news_categories,id',
+            'slug' => 'required|unique:news,slug',
+            'excerpt' => 'nullable',
+            'content' => 'required',
+            'img' => 'nullable|image',
+            'author' => 'required|exists:users,id',
+            'hidden' => 'nullable|boolean',
+            'publish_at' => 'nullable|date'
         ];
     }
 }

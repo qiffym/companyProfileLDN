@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { WarningTriangle } from '@/Components/svg';
 
+const storageURL = window.location.origin + '/storage';
+
 const NewsTable = ({ news }) => {
     const [openModal, setOpenModal] = useState(false);
     const handleDelete = (news) => {
@@ -28,11 +30,18 @@ const NewsTable = ({ news }) => {
                         news.map((item, index) => (
                             <tr key={item.id}>
                                 <th>{index + 1}</th>
+                                <td>
+                                    <img
+                                        src={`${storageURL}/${item.img}`}
+                                        alt={item.name}
+                                        width={200}
+                                        height={200}
+                                    />
+                                </td>
                                 <td>{item.title}</td>
                                 <td>{item.slug}</td>
                                 <td>{item.excerpt}</td>
-                                <td>{item.img}</td>
-                                <td>{item.author}</td>
+                                <td>{item.author.name}</td>
                                 <td>{item.publish_at}</td>
                                 <td>
                                     <div className="flex justify-center items-center space-x-2">
@@ -50,7 +59,10 @@ const NewsTable = ({ news }) => {
                                         >
                                             Edit
                                         </Link>
-                                        <button className="btn btn-sm btn-error">
+                                        <button
+                                            onClick={() => handleDelete(item)}
+                                            className="btn btn-sm btn-error"
+                                        >
                                             Delete
                                         </button>
                                     </div>
