@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Models\News;
@@ -29,7 +30,7 @@ class NewsController extends Controller
     public function create()
     {
         return inertia('Admin/News/CreateNews', [
-            'title' => 'Create News',
+            'title' => 'Edit News',
             'categories' => NewsCategory::select('id', 'name')->get(),
         ]);
     }
@@ -47,7 +48,7 @@ class NewsController extends Controller
 
         $validated = $request->validated();
 
-        $validated['excerpt'] = str(strip_tags($request->content))->words(20);
+        $validated['excerpt'] = str(strip_tags($request->content))->words(15);
         $validated['img'] = $path;
 
         News::create($validated);
@@ -71,7 +72,11 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return inertia('Admin/News/EditNews', [
+            'title' => 'Create News',
+            'news' => $news,
+            'categories' => NewsCategory::select('id', 'name')->get(),
+        ]);
     }
 
     /**
@@ -79,7 +84,29 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, News $news)
     {
-        //
+        $validated = $request->validated();
+        $validated['excerpt'] = str(strip_tags($request->content))->words(10);
+
+        $news->update($validated);
+
+        return to_route('news.show', $news)->with('success', 'News successfully updated');
+    }
+
+    public function updateImage(Request $request, News $news)
+    {
+        $request->validate([
+            'img' => 'required|image'
+        ]);
+
+        $file = $request->file('img');
+        $filename =  $news->slug . '-updated.' . $file->getClientOriginalExtension();
+        $path = $file->storeAs('news/images', $filename, 'public');
+        Storage::delete($news->img);
+
+        $news->img = $path;
+        $news->save();
+
+        return back()->with('success', 'The image is updated');
     }
 
     /**

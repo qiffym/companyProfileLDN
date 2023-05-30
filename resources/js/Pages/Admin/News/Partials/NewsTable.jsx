@@ -16,7 +16,7 @@ const NewsTable = ({ news }) => {
             <table className="table table-compact w-full">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th className="w-10">#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>
@@ -76,7 +76,7 @@ const NewsTable = ({ news }) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>#</th>
+                        <th className="w-10">#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>

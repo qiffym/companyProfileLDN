@@ -3,11 +3,13 @@ import { ArrowRight, Edit } from '@/Components/svg';
 import AdminLayout from '@/Layouts/AdminLayout';
 import parse from 'html-react-parser';
 import moment from 'moment';
+import { ToastContainer, toast } from 'react-toastify';
 
-const ShowNews = ({ auth, title, news }) => {
+const ShowNews = ({ auth, title, news, flash }) => {
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
+            {toast.success(flash.success) && <ToastContainer />}
             <div className="flex justify-between items-center mb-4">
                 <div>
                     <Link
@@ -19,7 +21,7 @@ const ShowNews = ({ auth, title, news }) => {
                         Back
                     </Link>
                 </div>
-                <div className="flex-1 ml-5">
+                <div className="flex-1">
                     <span className="text-4xl mb-4">News Details</span>
                 </div>
                 <div>
@@ -49,7 +51,9 @@ const ShowNews = ({ auth, title, news }) => {
                     </div>
                     <div className="news-content">
                         <span className="text-primary-focus">Content</span>
-                        <div className="text-base">{parse(news.content)}</div>
+                        <div className="text-base text-justify space-y-4">
+                            {parse(news.content)}
+                        </div>
                     </div>
                 </div>
 
@@ -70,19 +74,25 @@ const ShowNews = ({ auth, title, news }) => {
                     </div>
                     <div className="news-publish">
                         <span className="text-primary-focus">Publish At</span>
-                        <div className="text-lg">
+                        <p className="text-lg">
                             {moment(news.publish_at).format(
-                                `dddd, D MMMM YYYY : hh.mm`
+                                `dddd, D MMMM YYYY H:mm`
                             )}
-                        </div>
+                        </p>
                     </div>
                     <div className="news-updated">
                         <span className="text-primary-focus">Updated At</span>
-                        <div className="text-lg">
+                        <p className="text-lg">
                             {moment(news.updated_at).format(
-                                `dddd, D MMMM YYYY : hh.mm`
+                                `dddd, D MMMM YYYY H:mm`
                             )}
-                        </div>
+                        </p>
+                    </div>
+                    <div className="news-updated">
+                        <span className="text-primary-focus">Hidden</span>
+                        <p className="font-bold">
+                            {news.hidden === 0 ? 'OFF' : 'ON'}
+                        </p>
                     </div>
                 </div>
             </div>

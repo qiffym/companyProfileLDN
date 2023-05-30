@@ -1,5 +1,4 @@
 import { Link, router } from '@inertiajs/react';
-import { Eye, Edit, Trash } from '../../../../Components/svg';
 
 const CareersTable = ({ careers }) => {
     const handleDelete = (career) => {
@@ -11,7 +10,7 @@ const CareersTable = ({ careers }) => {
                 {/* head */}
                 <thead>
                     <tr>
-                        <th></th>
+                        <th className="w-10">#</th>
                         <th>Position Name</th>
                         <th>Department</th>
                         <th>Open Date</th>
@@ -34,23 +33,20 @@ const CareersTable = ({ careers }) => {
                             <td className="space-x-2">
                                 <Link
                                     href={route('careers.show', career)}
-                                    className="btn btn-info btn-sm gap-1"
+                                    className="btn btn-info btn-sm"
                                 >
-                                    <Eye className="h-7" />
                                     show
                                 </Link>
                                 <Link
                                     href={route('careers.edit', career)}
-                                    className="btn btn-warning btn-sm gap-1"
+                                    className="btn btn-warning btn-sm"
                                 >
-                                    <Edit className="h-7" />
                                     edit
                                 </Link>
                                 <button
-                                    className="btn btn-error btn-sm gap-1"
+                                    className="btn btn-error btn-sm"
                                     onClick={() => handleDelete(career)}
                                 >
-                                    <Trash className="h-7" />
                                     delete
                                 </button>
                             </td>

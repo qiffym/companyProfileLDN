@@ -10,11 +10,13 @@ const InputFile = (props) => {
                 className="file-input file-input-bordered bg-base-200 w-full max-w-2xl"
                 onChange={props.onChange}
             />
-            <label className="label">
-                <span className="label-text-alt text-red-500">
-                    {props.iserror}
-                </span>
-            </label>
+            {props.errors && (
+                <label className="label">
+                    <span className="label-text-alt text-red-500">
+                        {props.errors}
+                    </span>
+                </label>
+            )}
         </>
     );
 };

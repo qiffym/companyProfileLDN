@@ -1,6 +1,5 @@
 import { Link, router } from '@inertiajs/react';
 import avatar from '../../../../../../public/assets/img/user.png';
-import { Eye, Edit, Trash } from '../../../../Components/svg';
 
 const UsersTable = ({ users }) => {
     const handleDelete = (user) => {
@@ -11,10 +10,10 @@ const UsersTable = ({ users }) => {
             <table className="table w-full">
                 <thead>
                     <tr>
-                        <th>
+                        <th className="w-10">
                             <label>No.</label>
                         </th>
-                        <th>Name</th>
+                        <th>Name/Email</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -47,23 +46,20 @@ const UsersTable = ({ users }) => {
                             <th className="space-x-2">
                                 <Link
                                     href={route('users.show', user)}
-                                    className="btn btn-ghost btn-sm gap-1"
+                                    className="btn btn-info btn-sm"
                                 >
-                                    <Eye className="h-7" />
-                                    show
+                                    details
                                 </Link>
                                 <Link
                                     href={route('users.edit', user)}
-                                    className="btn btn-warning btn-sm gap-1"
+                                    className="btn btn-warning btn-sm"
                                 >
-                                    <Edit className="h-7" />
                                     edit
                                 </Link>
                                 <button
-                                    className="btn btn-error btn-sm gap-1"
+                                    className="btn btn-error btn-sm"
                                     onClick={() => handleDelete(user)}
                                 >
-                                    <Trash className="h-7" />
                                     delete
                                 </button>
                             </th>

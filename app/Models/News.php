@@ -13,11 +13,7 @@ class News extends Model
     protected $guarded = ['id'];
     protected $with = ['author', 'news_category'];
 
-    /**
-     * Get the author that owns the News
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author');

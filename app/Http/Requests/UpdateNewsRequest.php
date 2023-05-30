@@ -11,7 +11,7 @@ class UpdateNewsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class UpdateNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|unique:news,title,' . $this->news->id,
+            'slug' => 'required|unique:news,slug,' . $this->news->id,
+            'news_category_id' => 'required|exists:news_categories,id',
+            'excerpt' => 'nullable',
+            'content' => 'required',
+            'author' => 'required|exists:users,id',
+            'hidden' => 'nullable|boolean',
+            'publish_at' => 'nullable|date'
         ];
     }
 }

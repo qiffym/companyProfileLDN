@@ -1,7 +1,8 @@
 const NewsOutline = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        stroke="#000"
+        stroke="currentColor"
+        fill="currentColor"
         className="icon"
         viewBox="-102.4 -102.4 1228.8 1228.8"
         {...props}

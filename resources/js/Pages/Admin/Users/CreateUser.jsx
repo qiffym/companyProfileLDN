@@ -27,7 +27,7 @@ const CreateUser = ({ title, auth }) => {
                             placeholder="Enter your name!"
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
-                            iserror={errors.name}
+                            errors={errors.name}
                         />
 
                         <Input
@@ -37,7 +37,7 @@ const CreateUser = ({ title, auth }) => {
                             placeholder="Enter your email address!"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
-                            iserror={errors.email}
+                            errors={errors.email}
                         />
                     </div>
 
@@ -53,7 +53,7 @@ const CreateUser = ({ title, auth }) => {
                         </Link>
 
                         <button
-                            type="button"
+                            type="submit"
                             disabled={processing}
                             className="btn btn-primary btn-wide"
                         >
