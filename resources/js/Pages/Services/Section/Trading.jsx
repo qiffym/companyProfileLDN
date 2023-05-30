@@ -2,14 +2,14 @@ const Trading = ({ tradingImg, medical, shoes, towel, blanket }) => {
     return (
         <section
             id="supplier"
-            className="bg-base-300 w-full px-6 md:px-[8%] 2xl:px-[20%] py-24"
+            className="bg-base-300 w-full px-6 md:px-[8%] 2xl:px-[15%] py-24"
         >
             <div className="flex justify-around lg:flex-row flex-col w-full xl:gap-28 gap-5">
                 <div>
                     <img
                         src={tradingImg}
                         alt="foto"
-                        className="2xl:w-full max-w-sm lg:object-cover object-contain rounded-box shadow-lg shadow-neutral-focus"
+                        className="2xl:w-full max-w-[350px] lg:object-cover object-contain rounded-box shadow-lg shadow-neutral-focus"
                     />
                 </div>
                 <div className="flex flex-col justify-start items-start ">

@@ -38,7 +38,7 @@ const Navbar = ({ auth }) => {
 
     return (
         <nav
-            className={`navbar bg-transparent fixed left-0 md:px-[8%] 2xl:px-[20%] z-50 ${
+            className={`navbar bg-transparent fixed left-0 md:px-[8%] 2xl:px-[15%] z-50 ${
                 navbarFixed && 'navbar-fixed'
             }`}
         >
@@ -168,6 +168,9 @@ const Navbar = ({ auth }) => {
                                 <Link as="button">Trading</Link>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <Link href={'#'}>Berita</Link>
                     </li>
                     <li>
                         <Link href={route('company.career')}>Karir</Link>

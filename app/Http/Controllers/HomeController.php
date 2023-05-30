@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Home', [
+        return Inertia::render('Home/Home', [
             'title' => 'Home',
             'companyLogo' => Storage::url('/img/companyLogo.png'),
         ]);
