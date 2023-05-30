@@ -11,6 +11,7 @@ class News extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $with = ['author', 'news_category'];
 
     /**
      * Get the author that owns the News

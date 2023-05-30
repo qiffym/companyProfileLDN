@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { WarningTriangle } from '@/Components/svg';
+import moment from 'moment';
 
 const storageURL = window.location.origin + '/storage';
 
@@ -15,11 +16,10 @@ const NewsTable = ({ news }) => {
             <table className="table table-compact w-full">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th>#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>
-                        <th>Image</th>
                         <th>Author</th>
                         <th>Publish At</th>
                         <th>Action</th>
@@ -30,27 +30,19 @@ const NewsTable = ({ news }) => {
                         news.map((item, index) => (
                             <tr key={item.id}>
                                 <th>{index + 1}</th>
-                                <td>
-                                    <img
-                                        src={`${storageURL}/${item.img}`}
-                                        alt={item.name}
-                                        width={200}
-                                        height={200}
-                                    />
-                                </td>
                                 <td>{item.title}</td>
                                 <td>{item.slug}</td>
                                 <td>{item.excerpt}</td>
                                 <td>{item.author.name}</td>
-                                <td>{item.publish_at}</td>
+                                <td>{moment(item.publish_at).calendar()}</td>
                                 <td>
-                                    <div className="flex justify-center items-center space-x-2">
+                                    <div className="flex items-center space-x-2">
                                         <Link
                                             as="button"
                                             href={route('news.show', item)}
                                             className="btn btn-sm btn-info"
                                         >
-                                            Show
+                                            Details
                                         </Link>
                                         <Link
                                             as="button"
@@ -84,11 +76,10 @@ const NewsTable = ({ news }) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th></th>
+                        <th>#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>
-                        <th>Image</th>
                         <th>Author</th>
                         <th>Publish At</th>
                         <th>Action</th>

@@ -1,9 +1,9 @@
 import Navbar from './Navbar';
 
-const Header = ({ Children, auth }) => {
+const Header = ({ children, auth }) => {
     return (
         <header className="container mx-auto">
-            <Navbar auth={auth}>{Children}</Navbar>
+            <Navbar auth={auth}>{children}</Navbar>
         </header>
     );
 };

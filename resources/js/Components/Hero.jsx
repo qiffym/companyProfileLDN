@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react';
 import ArrowRight from './svg/ArrowRight';
 import CompanyLogo from './CompanyLogo';
 
-const Hero = ({ companyLogo }) => {
+const Hero = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col text-center">

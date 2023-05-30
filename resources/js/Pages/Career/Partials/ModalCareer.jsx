@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import DOMPurify from 'dompurify';
 import { Dialog, Transition } from '@headlessui/react';
 import { EmailSVG } from '@/Components/svg';
+import DOMPurify from 'dompurify';
 
 const ModalCareer = ({
     show = false,

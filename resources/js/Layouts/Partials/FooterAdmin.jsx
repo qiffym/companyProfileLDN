@@ -2,7 +2,7 @@ const FooterAdmin = () => {
     return (
         <footer className="flex justify-center items-center py-14">
             <div className="text-center">
-                {/* <p>
+                <p>
                     Designed with ❤️ by{' '}
                     <a
                         className="link-primary"
@@ -12,7 +12,7 @@ const FooterAdmin = () => {
                     >
                         Qiff Ya Muhammad
                     </a>
-                </p> */}
+                </p>
                 <p>
                     &copy; 2023 PT Lovina Dhea Nusantara. All Rights Reserved.
                 </p>
