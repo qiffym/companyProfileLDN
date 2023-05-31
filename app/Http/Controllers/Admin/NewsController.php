@@ -48,7 +48,7 @@ class NewsController extends Controller
 
         $validated = $request->validated();
 
-        $validated['excerpt'] = str(strip_tags($request->content))->words(15);
+        $validated['excerpt'] = str(strip_tags($request->content))->words(25);
         $validated['img'] = $path;
 
         News::create($validated);
@@ -85,7 +85,7 @@ class NewsController extends Controller
     public function update(UpdateNewsRequest $request, News $news)
     {
         $validated = $request->validated();
-        $validated['excerpt'] = str(strip_tags($request->content))->words(10);
+        $validated['excerpt'] = str(strip_tags($request->content))->words(25);
 
         $news->update($validated);
 

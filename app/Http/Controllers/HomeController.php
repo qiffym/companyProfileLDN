@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -14,6 +14,7 @@ class HomeController extends Controller
         return Inertia::render('Home/Home', [
             'title' => 'Home',
             'companyLogo' => Storage::url('/img/companyLogo.png'),
+            'news' => News::where('hidden', false)->get(),
         ]);
     }
 }

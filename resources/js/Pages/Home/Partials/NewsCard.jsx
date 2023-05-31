@@ -1,17 +1,32 @@
-const NewsCard = () => {
+import { Link } from '@inertiajs/react';
+import moment from 'moment-with-locales-es6';
+
+moment.locale('id');
+
+const NewsCard = ({ news }) => {
     return (
-        <div className="card lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-xl image-full">
+        <article className="card 2k:w-[25rem] 2xl:w-[20rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow shadow-base-content image-full">
             <figure>
-                <img src={`/storage/img/ptldnmockup.jpg`} alt="Shoes" />
+                <img src={`/storage/${news.img}`} alt={news.slug} />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">Heboh!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <time className="text-xs">
+                    {moment(news.publish_at).format('dddd, D MMMM YYYY')}
+                </time>
+                <h3 className="card-title lg:line-clamp-2 line-clamp-3 capitalize">
+                    {news.title}
+                </h3>
+                <p className="">{news.excerpt}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">SELENGKAPNYA</button>
+                    <Link
+                        href={route('media.news.read', news)}
+                        className="btn btn-primary"
+                    >
+                        SELENGKAPNYA
+                    </Link>
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 

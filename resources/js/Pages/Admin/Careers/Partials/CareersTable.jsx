@@ -35,7 +35,7 @@ const CareersTable = ({ careers }) => {
                                     href={route('careers.show', career)}
                                     className="btn btn-info btn-sm"
                                 >
-                                    show
+                                    details
                                 </Link>
                                 <Link
                                     href={route('careers.edit', career)}

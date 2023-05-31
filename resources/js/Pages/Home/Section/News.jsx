@@ -6,15 +6,18 @@ const News = ({ news }) => {
             id="news"
             className="relative bg-base-100 w-full px-6 md:px-[8%] 2xl:px-[15%] md:py-10 py-10 z-20"
         >
-            <h2 className="text-4xl font-semibold text-center mb-5">
+            <h2 className="xl:text-5xl text-4xl font-bold text-center mb-5 uppercase">
                 Berita <span className="text-primary">Kegiatan</span>
             </h2>
-            <div className="flex flex-wrap xl:gap-9 gap-5 justify-center">
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
+            <div className="divider before:bg-secondary after:bg-accent text-xl ">
+                <span className="tracking-widest">TERKINI</span>
+            </div>
+            <div className="container mx-auto">
+                <div className="flex flex-wrap xl:gap-8 gap-5 justify-center">
+                    {news.map((item) => (
+                        <NewsCard key={item.id} news={item} />
+                    ))}
+                </div>
             </div>
         </section>
     );

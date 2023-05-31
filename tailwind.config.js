@@ -15,6 +15,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            screens: {
+                '2k': '1980px',
+            },
         },
     },
 

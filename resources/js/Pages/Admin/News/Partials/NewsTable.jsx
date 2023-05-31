@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { WarningTriangle } from '@/Components/svg';
-import moment from 'moment';
-
-const storageURL = window.location.origin + '/storage';
+import moment from 'moment-with-locales-es6';
 
 const NewsTable = ({ news }) => {
     const [openModal, setOpenModal] = useState(false);
@@ -28,13 +26,21 @@ const NewsTable = ({ news }) => {
                 <tbody>
                     {news.length !== 0 ? (
                         news.map((item, index) => (
-                            <tr key={item.id}>
+                            <tr key={item.id} className="hover">
                                 <th>{index + 1}</th>
                                 <td>{item.title}</td>
                                 <td>{item.slug}</td>
-                                <td>{item.excerpt}</td>
+                                <td className="max-w-lg">
+                                    <p className="line-clamp-1">
+                                        {item.excerpt}
+                                    </p>
+                                </td>
                                 <td>{item.author.name}</td>
-                                <td>{moment(item.publish_at).calendar()}</td>
+                                <td>
+                                    {moment(item.publish_at).format(
+                                        'dddd, D MMMM YYYY'
+                                    )}
+                                </td>
                                 <td>
                                     <div className="flex items-center space-x-2">
                                         <Link

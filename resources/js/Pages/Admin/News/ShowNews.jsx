@@ -2,7 +2,7 @@ import { Head, Link } from '@inertiajs/react';
 import { ArrowRight, Edit } from '@/Components/svg';
 import AdminLayout from '@/Layouts/AdminLayout';
 import parse from 'html-react-parser';
-import moment from 'moment';
+import moment from 'moment-with-locales-es6';
 import { ToastContainer, toast } from 'react-toastify';
 
 const ShowNews = ({ auth, title, news, flash }) => {

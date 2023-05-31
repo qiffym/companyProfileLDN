@@ -64,13 +64,15 @@ const Navbar = ({ auth }) => {
                             </Link>
                         </li>
                         <li tabIndex={0}>
-                            <Link href={route('company.service')}>
+                            <a>
                                 Layanan Kami
                                 <ChevronBottom />
-                            </Link>
+                            </a>
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link>Jasa Konstruksi</Link>
+                                    <Link href={route('company.service')}>
+                                        Jasa Konstruksi
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link>Supplier</Link>
@@ -80,6 +82,27 @@ const Navbar = ({ auth }) => {
                                 </li>
                                 <li>
                                     <Link>Trading</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li tabIndex={0}>
+                            <a>
+                                Media & Informasi
+                                <ChevronBottom />
+                            </a>
+                            <ul className="p-2 bg-base-100 shadow">
+                                <li>
+                                    <Link
+                                        as="button"
+                                        href={route('media.news.index')}
+                                    >
+                                        Berita
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link as="button" href="#!">
+                                        Vidio Terkait
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
@@ -169,9 +192,28 @@ const Navbar = ({ auth }) => {
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <Link href={'#'}>Berita</Link>
+                    <li tabIndex={0}>
+                        <Link as="button">
+                            Media & Informasi
+                            <ChevronBottom />
+                        </Link>
+                        <ul className="p-2 bg-base-100 shadow">
+                            <li>
+                                <Link
+                                    as="button"
+                                    href={route('media.news.index')}
+                                >
+                                    Berita
+                                </Link>
+                            </li>
+                            <li>
+                                <Link as="button" href="#!">
+                                    Vidio Terkait
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
+
                     <li>
                         <Link href={route('company.career')}>Karir</Link>
                     </li>
