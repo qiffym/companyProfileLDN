@@ -28,7 +28,7 @@ export const JobPositions = ({ careers }) => {
                         <div className="">
                             <button
                                 onClick={() => handleShow(career)}
-                                className="btn btn-sm btn-outline btn-secondary normal-case"
+                                className="btn btn-sm btn-outline btn-primary normal-case"
                             >
                                 Lihat Persyaratan
                             </button>

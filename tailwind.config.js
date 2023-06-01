@@ -26,14 +26,14 @@ module.exports = {
         themes: [
             {
                 winter: {
-                    ...require('daisyui/src/colors/themes')[
+                    ...require('daisyui/src/theming/themes')[
                         '[data-theme=winter]'
                     ],
                     primary: '#2c75ff',
                 },
 
                 night: {
-                    ...require('daisyui/src/colors/themes')[
+                    ...require('daisyui/src/theming/themes')[
                         '[data-theme=night]'
                     ],
                     primary: '#2c75ff',

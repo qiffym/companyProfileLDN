@@ -20,7 +20,7 @@ const NewsCard = ({ news }) => {
                 <div className="card-actions justify-end">
                     <Link
                         href={route('media.news.read', news)}
-                        className="btn btn-primary"
+                        className="btn btn-primary btn-sm"
                     >
                         SELENGKAPNYA
                     </Link>

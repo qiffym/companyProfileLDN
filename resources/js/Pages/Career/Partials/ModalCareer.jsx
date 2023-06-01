@@ -2,6 +2,9 @@ import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { EmailSVG } from '@/Components/svg';
 import DOMPurify from 'dompurify';
+import moment from 'moment-with-locales-es6';
+
+moment.locale('id');
 
 const ModalCareer = ({
     show = false,
@@ -65,21 +68,6 @@ const ModalCareer = ({
                                                 __html: description,
                                             }}
                                         />
-                                        {/* <ol className="list-decimal ml-10 text-base">
-                                                <li>
-                                                    <p>
-                                                        Melakukan pemasangan dan perawatan
-                                                        perangkat jaringan dalam area unit
-                                                        kerja
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        Melakukan pengecekan dan perawatan
-                                                        access point dalam area unit kerja
-                                                    </p>
-                                                </li>
-                                            </ol> */}
                                     </div>
                                     <div
                                         id="requirement"
@@ -94,39 +82,39 @@ const ModalCareer = ({
                                                 __html: requirement,
                                             }}
                                         />
-                                        {/* <ol className="list-decimal ml-10 text-base">
-                                                <li>
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                </li>
-                                                <li>
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                </li>
-                                                <li>
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                </li>
-                                                <li>
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                </li>
-                                            </ol> */}
                                     </div>
 
                                     <div id="career-date" className="mb-4">
                                         <h2 className="text-xl font-semibold text-primary-focus">
                                             Timeline
                                         </h2>
-                                        <div className="flex flex-col justify-start items-start ml-8">
-                                            <p className="">
-                                                <span className="mr-2 text-teal-600 -indent-4">
-                                                    open date:
-                                                </span>
-                                                {data.open_date}
-                                            </p>
-                                            <p className="">
-                                                <span className="mr-2 text-red-600 -indent-4">
-                                                    close date:
-                                                </span>
-                                                {data.close_date}
-                                            </p>
+                                        <div className="flex justify-start items-start gap-3 ml-8">
+                                            <div className="flex flex-col">
+                                                <p className="text-success text-base font-medium">
+                                                    Open Date
+                                                </p>
+                                                <p className="text-error text-base font-medium">
+                                                    Close Date
+                                                </p>
+                                            </div>
+                                            <div className="flex flex-col">
+                                                <p>
+                                                    :{' '}
+                                                    {moment(
+                                                        data.open_date
+                                                    ).format(
+                                                        'dddd, D MMMM YYYY'
+                                                    )}
+                                                </p>
+                                                <p>
+                                                    :{' '}
+                                                    {moment(
+                                                        data.close_date
+                                                    ).format(
+                                                        'dddd, D MMMM YYYY'
+                                                    )}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
 

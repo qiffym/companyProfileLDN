@@ -13,7 +13,7 @@ const InputCareer = (props) => {
             />
             <label className="label">
                 <span className="label-text-alt text-error">
-                    {props.iserror}
+                    {props.errors}
                 </span>
             </label>
         </div>

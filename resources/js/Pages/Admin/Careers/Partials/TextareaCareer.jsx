@@ -1,24 +1,25 @@
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
 const TextareaCareer = (props) => {
     return (
         <div className="form-control xl:w-1/2 2xl:w-1/3 w-full">
-            <label htmlFor={props.id}>
+            <label className="label">
                 <span className="label-text">{props.label}</span>
             </label>
-            <textarea
-                name={props.name}
-                id={props.id}
+            <ReactQuill
                 value={props.value}
                 onChange={props.onChange}
-                placeholder="Type here.."
-                className="textarea textarea-bordered bg-base-200"
-                cols="30"
-                rows="10"
-            ></textarea>
-            <label className="label">
-                <span className="label-text-alt text-error">
-                    {props.iserror}
-                </span>
-            </label>
+                placeholder="Type content here..."
+                className="bg-base-200"
+            />
+            {props.errors && (
+                <label className="label">
+                    <span className="label-text-alt text-red-500">
+                        {props.errors}
+                    </span>
+                </label>
+            )}
         </div>
     );
 };

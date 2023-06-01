@@ -117,7 +117,7 @@ const Navbar = ({ auth }) => {
                     </ul>
                 </div>
                 <Link href="/">
-                    <CompanyLogo className="w-16" />
+                    <CompanyLogo className="w-14 object-contain -m-1" />
                 </Link>
             </div>
 
@@ -128,90 +128,97 @@ const Navbar = ({ auth }) => {
                         <Link href={route('home')}>Beranda</Link>
                     </li>
                     <li tabIndex={0}>
-                        <Link href={route('company.profile')}>
-                            Profil Perusahaan
-                            <ChevronBottom />
-                        </Link>
-                        {url !== '/profil' ? (
+                        <details>
+                            <summary>Profil Perusahaan</summary>
+                            {url !== '/profil' ? (
+                                <ul className="p-2 bg-base-100 shadow">
+                                    <li>
+                                        <Link href="/profil#about-us">
+                                            Tentang Perusahaan
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#history">
+                                            Sejarah
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#vision">
+                                            Visi dan Misi
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#struktur-organisasi">
+                                            Struktur Organisasi
+                                        </Link>
+                                    </li>
+                                </ul>
+                            ) : (
+                                <ul className="p-2 bg-base-100 shadow">
+                                    <li>
+                                        <a href="#about-us">
+                                            Tentang Perusahaan
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#history">Sejarah</a>
+                                    </li>
+                                    <li>
+                                        <a href="#vision">Visi dan Misi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#struktur-organisasi">
+                                            Struktur Organisasi
+                                        </a>
+                                    </li>
+                                </ul>
+                            )}
+                        </details>
+                    </li>
+                    <li tabIndex={0}>
+                        <details>
+                            <summary>Layanan Kami</summary>
+
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link href="/profil#about-us">
-                                        Tentang Perusahaan
+                                    <Link
+                                        as="button"
+                                        href={route('company.service')}
+                                    >
+                                        Jasa Konstruksi
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/profil#history">Sejarah</Link>
+                                    <Link as="button">Supplier</Link>
                                 </li>
                                 <li>
-                                    <Link href="/profil#vision">
-                                        Visi dan Misi
+                                    <Link as="button">Teknologi Informasi</Link>
+                                </li>
+                                <li>
+                                    <Link as="button">Trading</Link>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li tabIndex={0}>
+                        <details>
+                            <summary>Media & Informasi</summary>
+                            <ul className="p-2 bg-base-100 shadow">
+                                <li>
+                                    <Link
+                                        as="button"
+                                        href={route('media.news.index')}
+                                    >
+                                        Berita
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/profil#struktur-organisasi">
-                                        Struktur Organisasi
+                                    <Link as="button" href="#!">
+                                        Vidio Terkait
                                     </Link>
                                 </li>
                             </ul>
-                        ) : (
-                            <ul className="p-2 bg-base-100 shadow">
-                                <li>
-                                    <a href="#about-us">Tentang Perusahaan</a>
-                                </li>
-                                <li>
-                                    <a href="#history">Sejarah</a>
-                                </li>
-                                <li>
-                                    <a href="#vision">Visi dan Misi</a>
-                                </li>
-                                <li>
-                                    <a href="#struktur-organisasi">
-                                        Struktur Organisasi
-                                    </a>
-                                </li>
-                            </ul>
-                        )}
-                    </li>
-                    <li tabIndex={0}>
-                        <Link href={route('company.service')}>
-                            Layanan Kami
-                            <ChevronBottom />
-                        </Link>
-                        <ul className="p-2 bg-base-100 shadow">
-                            <li>
-                                <Link as="button">Jasa Konstruksi</Link>
-                            </li>
-                            <li>
-                                <Link as="button">Supplier</Link>
-                            </li>
-                            <li>
-                                <Link as="button">Teknologi Informasi</Link>
-                            </li>
-                            <li>
-                                <Link as="button">Trading</Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li tabIndex={0}>
-                        <Link as="button">
-                            Media & Informasi
-                            <ChevronBottom />
-                        </Link>
-                        <ul className="p-2 bg-base-100 shadow">
-                            <li>
-                                <Link
-                                    as="button"
-                                    href={route('media.news.index')}
-                                >
-                                    Berita
-                                </Link>
-                            </li>
-                            <li>
-                                <Link as="button" href="#!">
-                                    Vidio Terkait
-                                </Link>
-                            </li>
-                        </ul>
+                        </details>
                     </li>
 
                     <li>

@@ -37,7 +37,7 @@ const EditCareer = ({ auth, title, career }) => {
                             onChange={(e) =>
                                 setData('position_name', e.target.value)
                             }
-                            iserror={errors.position_name}
+                            errors={errors.position_name}
                         />
                         <InputCareer
                             label="Department Name"
@@ -49,35 +49,27 @@ const EditCareer = ({ auth, title, career }) => {
                             onChange={(e) =>
                                 setData('department', e.target.value)
                             }
-                            iserror={errors.department}
+                            errors={errors.department}
                         />
                     </div>
 
                     <div className="flex xl:flex-row flex-col xl:gap-10">
                         <TextareaCareer
                             label="Job Description"
-                            name="description"
-                            id="description"
                             value={data.description}
-                            onChange={(e) =>
-                                setData('description', e.target.value)
-                            }
-                            iserror={errors.description}
+                            onChange={(value) => setData('description', value)}
+                            errors={errors.description}
                         />
 
                         <TextareaCareer
                             label="Requirement"
-                            name="requirement"
-                            id="requirement"
                             value={data.requirement}
-                            onChange={(e) =>
-                                setData('requirement', e.target.value)
-                            }
-                            iserror={errors.requirement}
+                            onChange={(value) => setData('requirement', value)}
+                            errors={errors.requirement}
                         />
                     </div>
 
-                    <div className="flex xl:flex-row flex-col xl:gap-10">
+                    <div className="flex xl:flex-row flex-col xl:gap-10 mt-16">
                         <InputCareer
                             label="Open Date"
                             type="date"
@@ -88,7 +80,7 @@ const EditCareer = ({ auth, title, career }) => {
                             onChange={(e) =>
                                 setData('open_date', e.target.value)
                             }
-                            iserror={errors.open_date}
+                            errors={errors.open_date}
                         />
                         <InputCareer
                             label="Close Date"
@@ -100,7 +92,7 @@ const EditCareer = ({ auth, title, career }) => {
                             onChange={(e) =>
                                 setData('close_date', e.target.value)
                             }
-                            iserror={errors.close_date}
+                            errors={errors.close_date}
                         />
                     </div>
 
@@ -113,11 +105,11 @@ const EditCareer = ({ auth, title, career }) => {
                             placeholder="Example: Administrasi, Teknikal Tes, Wawancara, Tes Kesehatan"
                             value={data.phase}
                             onChange={(e) => setData('phase', e.target.value)}
-                            iserror={errors.phase}
+                            errors={errors.phase}
                         />
                     </div>
 
-                    <div className="divider 2xl:w-[70%]" />
+                    <div className="divider 2xl:w-[70%]"></div>
 
                     <div className="flex gap-5">
                         <Link

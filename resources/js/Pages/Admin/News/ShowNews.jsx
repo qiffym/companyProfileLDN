@@ -1,9 +1,9 @@
 import { Head, Link } from '@inertiajs/react';
-import { ArrowRight, Edit } from '@/Components/svg';
 import AdminLayout from '@/Layouts/AdminLayout';
 import parse from 'html-react-parser';
 import moment from 'moment-with-locales-es6';
 import { ToastContainer, toast } from 'react-toastify';
+import { ArrowLeftIcon, EditIcon } from '@iconicicons/react';
 
 const ShowNews = ({ auth, title, news, flash }) => {
     return (
@@ -11,25 +11,23 @@ const ShowNews = ({ auth, title, news, flash }) => {
             <Head title={title} />
             {toast.success(flash.success) && <ToastContainer />}
             <div className="flex justify-between items-center mb-4">
-                <div>
+                <div className="space-x-5">
                     <Link
                         as="button"
                         href={route('news.index')}
-                        className="btn btn-ghost gap-2"
+                        className="btn btn-outline btn-accent"
                     >
-                        <ArrowRight className="rotate-180" />
-                        Back
+                        <ArrowLeftIcon />
+                        Kembali
                     </Link>
-                </div>
-                <div className="flex-1">
                     <span className="text-4xl mb-4">News Details</span>
                 </div>
                 <div>
                     <Link
                         href={route('news.edit', news)}
-                        className="btn btn-wide btn-warning gap-2"
+                        className="btn btn-warning px-16"
                     >
-                        <Edit />
+                        <EditIcon />
                         Edit
                     </Link>
                 </div>

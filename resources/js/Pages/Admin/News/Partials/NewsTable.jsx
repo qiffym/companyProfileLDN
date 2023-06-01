@@ -3,6 +3,8 @@ import { Link, router } from '@inertiajs/react';
 import { WarningTriangle } from '@/Components/svg';
 import moment from 'moment-with-locales-es6';
 
+moment.locale('id');
+
 const NewsTable = ({ news }) => {
     const [openModal, setOpenModal] = useState(false);
     const handleDelete = (news) => {
@@ -11,10 +13,10 @@ const NewsTable = ({ news }) => {
 
     return (
         <div className="overflow-x-auto">
-            <table className="table table-compact w-full">
+            <table className="table table-compact">
                 <thead>
                     <tr>
-                        <th className="w-10">#</th>
+                        <th>#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>
@@ -30,11 +32,7 @@ const NewsTable = ({ news }) => {
                                 <th>{index + 1}</th>
                                 <td>{item.title}</td>
                                 <td>{item.slug}</td>
-                                <td className="max-w-lg">
-                                    <p className="line-clamp-1">
-                                        {item.excerpt}
-                                    </p>
-                                </td>
+                                <td>{item.excerpt}</td>
                                 <td>{item.author.name}</td>
                                 <td>
                                     {moment(item.publish_at).format(
@@ -46,7 +44,7 @@ const NewsTable = ({ news }) => {
                                         <Link
                                             as="button"
                                             href={route('news.show', item)}
-                                            className="btn btn-sm btn-info"
+                                            className="btn btn-sm btn-success"
                                         >
                                             Details
                                         </Link>
@@ -82,7 +80,7 @@ const NewsTable = ({ news }) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th className="w-10">#</th>
+                        <th>#</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Excerpt</th>

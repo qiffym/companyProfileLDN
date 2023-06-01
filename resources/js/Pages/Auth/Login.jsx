@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
 import CompanyLogo from '@/Components/CompanyLogo';
-import { ArrowDown, ArrowRight } from '@/Components/svg';
+import { ArrowDown } from '@/Components/svg';
+import { ArrowLeftIcon, ChevronLeftIcon } from '@iconicicons/react';
+import FooterAdmin from '@/Layouts/Partials/FooterAdmin';
 
 export default function Login({ status, canResetPassword, flash }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -9,6 +11,8 @@ export default function Login({ status, canResetPassword, flash }) {
         password: '',
         remember: false,
     });
+
+    console.log(errors);
 
     useEffect(() => {
         return () => {
@@ -25,7 +29,7 @@ export default function Login({ status, canResetPassword, flash }) {
     };
 
     return (
-        <div className="flex bg-slate-300 justify-center items-center min-h-screen">
+        <div className="flex flex-col bg-base-300 justify-center items-center min-h-screen">
             <Head title="Log in" />
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
@@ -39,13 +43,13 @@ export default function Login({ status, canResetPassword, flash }) {
                     </div>
                 </div>
                 <div className="w-full flex flex-col p-10 bg-primary rounded-r-xl border-2 border-l-0 border-primary drop-shadow-2xl">
-                    <div className="pl-8">
+                    <div className="ml-8">
                         <Link
                             as="button"
                             href={route('home')}
                             className="btn btn-xs btn-ghost normal-case text-primary-content mb-10 hover:scale-110"
                         >
-                            <ArrowDown className="rotate-90 scale-75" />
+                            <ArrowLeftIcon className="scale-75" />
                             Back to website
                         </Link>
                         <h1 className="text-3xl text-primary-content font-light">
@@ -75,7 +79,7 @@ export default function Login({ status, canResetPassword, flash }) {
                                 />
                                 {errors.email && (
                                     <label className="label">
-                                        <span className="label-text-alt text-red-500">
+                                        <span className="label-text-alt text-red-300">
                                             {errors.email}
                                         </span>
                                     </label>
@@ -102,7 +106,7 @@ export default function Login({ status, canResetPassword, flash }) {
                                 />
                                 {errors.password && (
                                     <label className="label">
-                                        <span className="label-text-alt text-red-500">
+                                        <span className="label-text-alt text-red-300">
                                             {errors.password}
                                         </span>
                                     </label>
@@ -110,13 +114,13 @@ export default function Login({ status, canResetPassword, flash }) {
                             </div>
 
                             <div className="form-control w-full max-w-lg">
-                                <label className="label cursor-pointer">
-                                    <span className="label-text text-primary-content">
+                                <label className="label cursor-pointer group">
+                                    <span className="label-text text-primary-content group-hover:text-accent-content group-hover:scale-105">
                                         Remember me
                                     </span>
                                     <input
                                         type="checkbox"
-                                        className="checkbox checkbox-accent"
+                                        className="checkbox checkbox-accent group-hover:scale-105"
                                         checked={data.remember}
                                         onChange={(e) =>
                                             setData(
@@ -149,6 +153,9 @@ export default function Login({ status, canResetPassword, flash }) {
                         </form>
                     </div>
                 </div>
+            </div>
+            <div className="ml-8">
+                <FooterAdmin />
             </div>
         </div>
     );

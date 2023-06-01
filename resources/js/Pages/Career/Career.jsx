@@ -42,8 +42,11 @@ const Career = ({ auth, title, careers }) => {
                     <div className="hero py-32 bg-base-100">
                         <div className="hero-content text-center">
                             <div className="max-w-4xl">
-                                <h1 className="text-2xl md:text-5xl text-primary font-bold">
-                                    Raih Kesempatanmu
+                                <h1 className="text-2xl md:text-5xl font-bold uppercase">
+                                    Raih{' '}
+                                    <span className="text-primary">
+                                        Kesempatanmu
+                                    </span>
                                 </h1>
                                 <p className="py-6 text-base">
                                     Mari gabung bersama PT. Lovina Dhea

@@ -4,10 +4,8 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import InputCareer from './Partials/InputCareer';
 import TextareaCareer from './Partials/TextareaCareer';
 
-const CreateCareer = ({ auth, title, errors }) => {
-    const { processing } = useForm();
-
-    const [values, setValues] = useState({
+const CreateCareer = ({ auth, title }) => {
+    const { data, setData, post, errors, processing } = useForm({
         position_name: '',
         department: '',
         description: '',
@@ -17,18 +15,11 @@ const CreateCareer = ({ auth, title, errors }) => {
         phase: '',
     });
 
-    const handleChange = (e) => {
-        const key = e.target.id;
-        const value = e.target.value;
-        setValues((values) => ({
-            ...values,
-            [key]: value,
-        }));
-    };
+    console.log(data.description);
 
-    const handleSubmit = (e) => {
+    const submit = (e) => {
         e.preventDefault();
-        router.post(route('careers.store'), values);
+        post(route('careers.store'));
     };
 
     return (
@@ -36,7 +27,7 @@ const CreateCareer = ({ auth, title, errors }) => {
             <Head title={title} />
             <h1 className="text-4xl mb-4">Create New Career</h1>
             <div className="flex w-full p-6 rounded-box shadow-lg bg-base-100">
-                <form onSubmit={handleSubmit} className="w-full">
+                <form onSubmit={submit} className="w-full">
                     <div className="flex xl:flex-row flex-col xl:gap-10">
                         <InputCareer
                             label="Position Name"
@@ -44,9 +35,11 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="position_name"
                             id="position_name"
                             placeholder="Example: Staff IT"
-                            value={values.position_name}
-                            onChange={handleChange}
-                            iserror={errors.position_name}
+                            value={data.position_name}
+                            onChange={(e) =>
+                                setData('position_name', e.target.value)
+                            }
+                            errors={errors.position_name}
                         />
                         <InputCareer
                             label="Department Name"
@@ -54,42 +47,42 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="department"
                             id="department"
                             placeholder="Example: IT"
-                            value={values.department}
-                            onChange={handleChange}
-                            iserror={errors.department}
+                            value={data.department}
+                            onChange={(e) =>
+                                setData('department', e.target.value)
+                            }
+                            errors={errors.department}
                         />
                     </div>
 
                     <div className="flex xl:flex-row flex-col xl:gap-10">
                         <TextareaCareer
                             label="Job Description"
-                            name="description"
-                            id="description"
-                            value={values.description}
-                            onChange={handleChange}
-                            iserror={errors.description}
+                            value={data.description}
+                            onChange={(value) => setData('description', value)}
+                            errors={errors.description}
                         />
 
                         <TextareaCareer
                             label="Requirement"
-                            name="requirement"
-                            id="requirement"
-                            value={values.requirement}
-                            onChange={handleChange}
-                            iserror={errors.requirement}
+                            value={data.requirement}
+                            onChange={(value) => setData('requirement', value)}
+                            errors={errors.requirement}
                         />
                     </div>
 
-                    <div className="flex xl:flex-row flex-col xl:gap-10">
+                    <div className="flex xl:flex-row flex-col xl:gap-10 mt-16">
                         <InputCareer
                             label="Open Date"
                             type="date"
                             name="open_date"
                             id="open_date"
                             placeholder="Example: IT"
-                            value={values.open_date}
-                            onChange={handleChange}
-                            iserror={errors.open_date}
+                            value={data.open_date}
+                            onChange={(e) =>
+                                setData('open_date', e.target.value)
+                            }
+                            errors={errors.open_date}
                         />
                         <InputCareer
                             label="Close Date"
@@ -97,9 +90,11 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="close_date"
                             id="close_date"
                             placeholder="Example: IT"
-                            value={values.close_date}
-                            onChange={handleChange}
-                            iserror={errors.close_date}
+                            value={data.close_date}
+                            onChange={(e) =>
+                                setData('close_date', e.target.value)
+                            }
+                            errors={errors.close_date}
                         />
                     </div>
 
@@ -110,9 +105,9 @@ const CreateCareer = ({ auth, title, errors }) => {
                             name="phase"
                             id="phase"
                             placeholder="Example: Administrasi, Teknikal Tes, Wawancara, Tes Kesehatan"
-                            value={values.phase}
-                            onChange={handleChange}
-                            iserror={errors.phase}
+                            value={data.phase}
+                            onChange={(e) => setData('phase', e.target.value)}
+                            errors={errors.phase}
                         />
                     </div>
 

@@ -1,12 +1,12 @@
 import { Link, usePage } from '@inertiajs/react';
 import CompanyInfoMenu from '@/Components/CompanyInfoMenu';
 import {
-    Dashboard,
-    HomeOutline,
+    BriefcaseIcon,
+    BroadcastIcon,
+    DashboardIcon,
+    HomeIcon,
     UsersIcon,
-    BriefCase,
-    NewsOutline,
-} from '@/Components/svg';
+} from '@iconicicons/react';
 
 const SidebarAdmin = () => {
     const { url, component } = usePage();
@@ -16,18 +16,26 @@ const SidebarAdmin = () => {
             aria-label="Sidebar"
         >
             <div className="h-full px-3 pb-4 overflow-y-auto">
-                <ul className="menu bg-base-100 text-base-content w-full">
-                    <li className="hover-bordered">
-                        <Link
-                            href={route('dashboard')}
-                            className={url === '/dashboard' ? 'active' : ''}
-                        >
-                            <Dashboard />
-                            Dashboard
-                        </Link>
+                <ul className="menu bg-base-100 text-base-content w-56 rounded-box">
+                    <li>
+                        <h2 className="menu-title">CORE</h2>
+                        <ul>
+                            <li className="hover-bordered">
+                                <Link href={route('dashboard')}>
+                                    <DashboardIcon />
+                                    Dashboard
+                                </Link>
+                            </li>
+                            <li className="hover-bordered">
+                                <Link href={route('home')}>
+                                    <HomeIcon />
+                                    Public Area
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
 
-                    <CompanyInfoMenu />
+                    <div className="divider opacity-70" />
 
                     <li className="hover-bordered">
                         <Link
@@ -52,7 +60,7 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <NewsOutline className="w-6 h-6" />
+                            <BroadcastIcon />
                             Manage News
                         </Link>
                     </li>
@@ -66,17 +74,12 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <BriefCase />
+                            <BriefcaseIcon />
                             Manage Careers
                         </Link>
                     </li>
 
-                    <li className="hover-bordered">
-                        <Link href="/">
-                            <HomeOutline />
-                            Public Area
-                        </Link>
-                    </li>
+                    <CompanyInfoMenu />
                 </ul>
             </div>
         </aside>
