@@ -16,7 +16,9 @@ const NewsCard = ({ news }) => {
                 <h3 className="card-title lg:line-clamp-2 line-clamp-3 capitalize">
                     {news.title}
                 </h3>
-                <p className="">{news.excerpt}</p>
+                <p>
+                    <span className="line-clamp-3">{news.excerpt}</span>
+                </p>
                 <div className="card-actions justify-end">
                     <Link
                         href={route('media.news.read', news)}
