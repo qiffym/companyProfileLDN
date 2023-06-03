@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import NewsCard from '../Partials/NewsCard';
 
 const News = ({ news }) => {
@@ -12,11 +13,20 @@ const News = ({ news }) => {
             <div className="divider before:bg-secondary after:bg-accent text-xl ">
                 <span className="tracking-widest">TERKINI</span>
             </div>
-            <div className="container mx-auto">
-                <div className="flex flex-wrap xl:gap-8 gap-5 justify-center">
+            <div className="flex flex-col justify-center items-center space-y-10">
+                <div className="flex flex-wrap xl:gap-8 gap-5 justify-between">
                     {news.map((item) => (
                         <NewsCard key={item.id} news={item} />
                     ))}
+                </div>
+                <div>
+                    <Link
+                        as="button"
+                        href={route('media.news.index')}
+                        className="btn btn-outline btn-primary text-center btn-wide"
+                    >
+                        Lihat Semua
+                    </Link>
                 </div>
             </div>
         </section>

@@ -3,11 +3,15 @@ import moment from 'moment-with-locales-es6';
 
 moment.locale('id');
 
-const NewsCard = ({ news }) => {
+const NewsCompactCard = ({ news }) => {
     return (
-        <article className="card 2k:w-[26rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow shadow-base-content image-full">
+        <div className="card card-compact 2k:w-[25rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-md shadow-base-content">
             <figure>
-                <img src={`/storage/${news.img}`} alt={news.slug} />
+                <img
+                    src={`/storage/${news.img}`}
+                    alt={news.slug}
+                    className="w-full h-full object-cover"
+                />
             </figure>
             <div className="card-body">
                 <time className="text-xs">
@@ -28,8 +32,8 @@ const NewsCard = ({ news }) => {
                     </Link>
                 </div>
             </div>
-        </article>
+        </div>
     );
 };
 
-export default NewsCard;
+export default NewsCompactCard;

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Head, Link, router, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import InputCareer from './Partials/InputCareer';
 import TextareaCareer from './Partials/TextareaCareer';
