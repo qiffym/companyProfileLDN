@@ -3,9 +3,9 @@ import { SearchIcon } from '@iconicicons/react';
 import { Head } from '@inertiajs/react';
 import NewsCompactCard from './Partials/NewsCompactCard';
 
-const News = ({ news }) => {
+const News = ({ news, auth }) => {
     return (
-        <Guest>
+        <Guest auth={auth.user}>
             <Head title="Berita" />
             <div className="flex flex-col w-full md:px-[8%] 2xl:px-[15%] py-36 bg-base-200">
                 <div className="flex w-full justify-between items-center uppercase">

@@ -1,3 +1,4 @@
+import { CalendarIcon } from '@iconicicons/react';
 import { Link } from '@inertiajs/react';
 import moment from 'moment-with-locales-es6';
 
@@ -5,23 +6,26 @@ moment.locale('id');
 
 const NewsCompactCard = ({ news }) => {
     return (
-        <div className="card card-compact 2k:w-[25rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-md shadow-base-content">
+        <article className="card card-compact 2k:w-[25rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-md shadow-base-content">
             <figure>
                 <img
                     src={`/storage/${news.img}`}
                     alt={news.slug}
-                    className="w-full h-full object-cover"
+                    className="w-full h-64 object-fill"
                 />
             </figure>
             <div className="card-body">
-                <time className="text-xs">
+                <time className="text-sm flex items-end gap-1">
+                    <CalendarIcon />
                     {moment(news.publish_at).format('dddd, D MMMM YYYY')}
                 </time>
                 <h3 className="card-title lg:line-clamp-2 line-clamp-3 capitalize">
                     {news.title}
                 </h3>
                 <p>
-                    <span className="line-clamp-3">{news.excerpt}</span>
+                    <span className="text-base line-clamp-3">
+                        {news.excerpt}
+                    </span>
                 </p>
                 <div className="card-actions justify-end">
                     <Link
@@ -32,7 +36,7 @@ const NewsCompactCard = ({ news }) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 

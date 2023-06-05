@@ -50,25 +50,60 @@ const Navbar = ({ auth }) => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                        className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li>
                             <Link href={route('home')}>Beranda</Link>
                         </li>
                         <li>
-                            <Link
-                                href={route('company.profile')}
-                                className="justify-between"
-                            >
-                                Profil Perusahaan
-                            </Link>
+                            <a>Profil Perusahaan</a>
+                            {url !== '/profil' ? (
+                                <ul className="p-2">
+                                    <li>
+                                        <Link href="/profil#about-us">
+                                            Tentang Perusahaan
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#history">
+                                            Sejarah
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#vision">
+                                            Visi dan Misi
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/profil#struktur-organisasi">
+                                            Struktur Organisasi
+                                        </Link>
+                                    </li>
+                                </ul>
+                            ) : (
+                                <ul className="p-2">
+                                    <li>
+                                        <a href="#about-us">
+                                            Tentang Perusahaan
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#history">Sejarah</a>
+                                    </li>
+                                    <li>
+                                        <a href="#vision">Visi dan Misi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#struktur-organisasi">
+                                            Struktur Organisasi
+                                        </a>
+                                    </li>
+                                </ul>
+                            )}
                         </li>
                         <li tabIndex={0}>
-                            <a>
-                                Layanan Kami
-                                <ChevronBottom />
-                            </a>
-                            <ul className="p-2 bg-base-100 shadow">
+                            <a>Layanan Kami</a>
+                            <ul className="p-2 ">
                                 <li>
                                     <Link href={route('company.service')}>
                                         Jasa Konstruksi
@@ -86,23 +121,15 @@ const Navbar = ({ auth }) => {
                             </ul>
                         </li>
                         <li tabIndex={0}>
-                            <a>
-                                Media & Informasi
-                                <ChevronBottom />
-                            </a>
-                            <ul className="p-2 bg-base-100 shadow">
+                            <a>Media & Informasi</a>
+                            <ul className="p-2">
                                 <li>
-                                    <Link
-                                        as="button"
-                                        href={route('media.news.index')}
-                                    >
+                                    <Link href={route('media.news.index')}>
                                         Berita
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link as="button" href="#!">
-                                        Vidio Terkait
-                                    </Link>
+                                    <Link href="#!">Vidio Terkait</Link>
                                 </li>
                             </ul>
                         </li>

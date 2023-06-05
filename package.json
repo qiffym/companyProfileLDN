@@ -27,7 +27,7 @@
         "html-react-parser": "^3.0.16",
         "moment": "^2.29.4",
         "moment-with-locales-es6": "^1.0.1",
-        "react-quill": "^0.0.2",
+        "react-quill": "^2.0.0",
         "react-toastify": "^9.1.2",
         "slugify": "^1.6.6"
     }

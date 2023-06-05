@@ -18,6 +18,10 @@ import UsersIcon from './UsersIcon.jsx';
 import Wave from './Wave.jsx';
 import NewsOutline from './News.jsx';
 import WarningTriangle from './WarningTriangle.jsx';
+import WhatsUpIcon from './WhatsUpIcon.jsx';
+import LinkedInIcon from './LinkedInIcon.jsx';
+import InstagramIcon from './InstagramIcon.jsx';
+import FacebookIcon from './FacebookIcon.jsx';
 
 export {
     ArrowDown,
@@ -40,4 +44,8 @@ export {
     Wave,
     NewsOutline,
     WarningTriangle,
+    WhatsUpIcon,
+    LinkedInIcon,
+    InstagramIcon,
+    FacebookIcon,
 };

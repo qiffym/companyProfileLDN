@@ -18,15 +18,17 @@ class CompanyMediaPageController extends Controller
     {
         return Inertia::render('Media/News/News', [
             'title' => 'Berita',
-            'news' => News::where('hidden', false)->get(),
+            'news' => News::where('hidden', false)->latest()->get(),
         ]);
     }
 
     public function newsRead(News $news)
     {
+        $recommends = News::where('hidden', false)->latest()->limit(3)->get();
         return Inertia::render('Media/News/ReadNews', [
             'title' => $news->title,
-            'news' => $news
+            'news' => $news,
+            'recommends' => $recommends
         ]);
     }
 }

@@ -14,7 +14,7 @@ class HomeController extends Controller
         return Inertia::render('Home/Home', [
             'title' => 'Home',
             'companyLogo' => Storage::url('/img/companyLogo.png'),
-            'news' => News::where('hidden', false)->get(),
+            'news' => News::where('hidden', false)->latest()->limit(3)->get(),
         ]);
     }
 }

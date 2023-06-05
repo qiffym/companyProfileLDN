@@ -1,5 +1,7 @@
 import CompanyLogo from '@/Components/CompanyLogo';
 import { Wave } from '@/Components/svg';
+import { ArrowRightIcon } from '@iconicicons/react';
+import { Link } from '@inertiajs/react';
 
 const Hero = () => {
     return (
@@ -28,14 +30,14 @@ const Hero = () => {
                         profesional dalam memberikan pelayanan terbaik untuk
                         menjamin kepuasan <i>client</i> kami.
                     </p> */}
-                    {/* <Link
+                    <Link
                         as="button"
                         href={route('company.profile')}
-                        className="btn btn-primary gap-2"
+                        className="btn btn-primary px-16 mt-10 gap-2"
                     >
-                        Yuk Kenalan
-                        <ArrowRight className="animate-pulse" />
-                    </Link> */}
+                        Kenalan
+                        <ArrowRightIcon className="animate-pulse" />
+                    </Link>
                 </div>
             </div>
             <Wave className="absolute -bottom-5 md:-bottom-14 xl:-bottom-24 z-10 fill-base-100 rotate-180" />
