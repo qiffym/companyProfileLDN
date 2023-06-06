@@ -26,7 +26,7 @@ const NewsCard = ({ news, maxWidth = 'lg' }) => {
                     {news.title}
                 </h3>
                 <p>
-                    <span className="text-base line-clamp-3">
+                    <span className="text-base font-serif line-clamp-3">
                         {news.excerpt}
                     </span>
                 </p>

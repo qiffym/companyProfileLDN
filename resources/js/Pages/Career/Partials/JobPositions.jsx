@@ -17,26 +17,20 @@ export const JobPositions = ({ careers }) => {
     return (
         <div>
             {careers.map((career) => (
-                <>
-                    <div
-                        key={career.id}
-                        className="flex justify-between items-center"
-                    >
+                <div key={career.id}>
+                    <div className="flex justify-between items-center">
                         <h4 className="text-xl font-bold">
                             {career.position_name}
                         </h4>
-                        <div className="">
-                            <button
-                                onClick={() => handleShow(career)}
-                                className="btn btn-sm btn-outline btn-primary normal-case"
-                            >
-                                Lihat Persyaratan
-                            </button>
-                        </div>
+                        <button
+                            onClick={() => handleShow(career)}
+                            className="btn btn-sm btn-outline btn-primary normal-case"
+                        >
+                            Lihat Persyaratan
+                        </button>
                     </div>
-
                     <div className="divider" />
-                </>
+                </div>
             ))}
 
             {openModal === true && data !== null && (

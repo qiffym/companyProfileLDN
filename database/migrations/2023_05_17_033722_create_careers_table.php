@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phase')->nullable();
             $table->date('open_date')->nullable();
             $table->date('close_date')->nullable();
-            $table->boolean('show')->default(true);
+            $table->boolean('hidden')->default(false);
             $table->string('experience', 50)->nullable();
             $table->string('qualification', 20)->nullable();
             $table->decimal('ipk')->nullable();

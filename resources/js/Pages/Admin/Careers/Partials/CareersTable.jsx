@@ -26,7 +26,7 @@ const CareersTable = ({ careers }) => {
                         <td>{career.department}</td>
                         <td>{career.open_date}</td>
                         <td>{career.close_date}</td>
-                        <td>{career.show === 1 ? 'Active' : 'Non-active'}</td>
+                        <td>{career.hidden === 0 ? 'Active' : 'Non-active'}</td>
                         <td className="space-x-2">
                             <Link
                                 href={route('careers.show', career)}

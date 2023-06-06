@@ -14,6 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                serif: ['PT Sans', ...defaultTheme.fontFamily.serif],
             },
             screens: {
                 '2k': '1980px',

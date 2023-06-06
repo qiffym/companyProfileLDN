@@ -20,12 +20,20 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123123123'),
         ]);
 
-        \App\Models\Career::create(
+        \App\Models\Role::insert([
+            ['name' => 'superadmin', 'guard_name' => 'web'],
+            ['name' => 'admin', 'guard_name' => 'web'],
+            ['name' => 'staff', 'guard_name' => 'web'],
+        ]);
+
+        \App\Models\User::first()->assignRole('superadmin');
+
+        \App\Models\Career::insert([
             ['position_name' => 'Staff IT', 'department' => 'IT'],
             ['position_name' => 'Staff Teknik Sipil', 'department' => 'Kontruksi'],
             ['position_name' => 'Staff Arsitek', 'department' => 'Kontruksi'],
             ['position_name' => 'Staff Legal', 'department' => 'Umum'],
-        );
+        ]);
 
         \App\Models\NewsCategory::create(
             ['name' => 'Umum', 'slug' => 'umum'],

@@ -5,6 +5,8 @@ const UsersTable = ({ users }) => {
     const handleDelete = (user) => {
         router.delete(route('users.destroy', user));
     };
+
+    console.log(users);
     return (
         <table className="table w-full">
             <thead>

@@ -100,19 +100,21 @@ const ModalCareer = ({
                                             <div className="flex flex-col">
                                                 <p>
                                                     :{' '}
-                                                    {moment(
-                                                        data.open_date
-                                                    ).format(
-                                                        'dddd, D MMMM YYYY'
-                                                    )}
+                                                    {data.open_date &&
+                                                        moment(
+                                                            data.open_date
+                                                        ).format(
+                                                            'dddd, D MMMM YYYY'
+                                                        )}
                                                 </p>
                                                 <p>
                                                     :{' '}
-                                                    {moment(
-                                                        data.close_date
-                                                    ).format(
-                                                        'dddd, D MMMM YYYY'
-                                                    )}
+                                                    {data.close_date &&
+                                                        moment(
+                                                            data.close_date
+                                                        ).format(
+                                                            'dddd, D MMMM YYYY'
+                                                        )}
                                                 </p>
                                             </div>
                                         </div>

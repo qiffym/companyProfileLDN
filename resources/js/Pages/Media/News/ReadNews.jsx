@@ -1,12 +1,10 @@
 import { Head } from '@inertiajs/react';
 import Guest from '@/Layouts/GuestLayout';
-import parse from 'html-react-parser';
-import { CalendarIcon, LinkIcon } from '@iconicicons/react';
-import moment from 'moment-with-locales-es6';
 import Recommendation from './Partials/Recommendation';
-import { LinkedInIcon, WhatsUpIcon } from '@/Components/svg';
-import FacebookIcon from '@/Components/svg/FacebookIcon';
 import ShareNews from './Partials/ShareNews';
+import { CalendarIcon } from '@iconicicons/react';
+import moment from 'moment-with-locales-es6';
+import parse from 'html-react-parser';
 
 moment.locale('id');
 
@@ -27,7 +25,7 @@ const ReadNews = ({ auth, title, news, recommends }) => {
                                     'dddd, D MMMM YYYY'
                                 )}
                             </time>
-                            <ShareNews />
+                            <ShareNews title={title} />
                         </div>
                         <figure>
                             <img
@@ -36,7 +34,7 @@ const ReadNews = ({ auth, title, news, recommends }) => {
                                 className="w-full h-full rounded-box object-contain shadow-lg"
                             />
                         </figure>
-                        <div className="text-lg/7 font-light space-y-5">
+                        <div className="text-lg/7 font-serif space-y-5">
                             {parse(news.content)}
                         </div>
                     </div>
