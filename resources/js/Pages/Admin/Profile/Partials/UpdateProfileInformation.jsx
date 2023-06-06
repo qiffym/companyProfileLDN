@@ -1,6 +1,5 @@
 import { useForm, usePage } from '@inertiajs/react';
 import Input from '@/Components/Input';
-import foto from '../../../../../../public/assets/img/user.png';
 
 const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
     const user = usePage().props.auth.user;
@@ -31,7 +30,11 @@ const UpdateProfileInformation = ({ mustVerifyEmail, status }) => {
                 <div className="self-center md:self-start">
                     <div className="avatar">
                         <div className="w-20 lg:w-28 mask mask-squircle">
-                            <img src={foto} />
+                            {user.photo === null ? (
+                                <img src={`/storage/img/defaultAvatar.png`} />
+                            ) : (
+                                <img src={`/storage/img/user/${user.photo}`} />
+                            )}
                         </div>
                     </div>
                 </div>

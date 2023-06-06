@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
 import CompanyLogo from '@/Components/CompanyLogo';
-import { ArrowDown } from '@/Components/svg';
-import { ArrowLeftIcon, ChevronLeftIcon } from '@iconicicons/react';
 import FooterAdmin from '@/Layouts/Partials/FooterAdmin';
+import { ArrowLeftIcon } from '@iconicicons/react';
 
 export default function Login({ status, canResetPassword, flash }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -11,8 +10,6 @@ export default function Login({ status, canResetPassword, flash }) {
         password: '',
         remember: false,
     });
-
-    console.log(errors);
 
     useEffect(() => {
         return () => {
@@ -31,6 +28,25 @@ export default function Login({ status, canResetPassword, flash }) {
     return (
         <div className="flex flex-col bg-base-300 justify-center items-center min-h-screen">
             <Head title="Log in" />
+            {flash.success && (
+                <div className="alert alert-info absolute top-0 rounded-none">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="stroke-current shrink-0 w-6 h-6"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                    <span>{flash.success}</span>
+                </div>
+            )}
+
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
                     {status}

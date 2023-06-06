@@ -15,9 +15,9 @@ const Edit = ({ auth, title, status, mustVerifyEmail, flash }) => {
                     mustVerifyEmail={mustVerifyEmail}
                     status={status}
                 />
-                <div className="divider "></div>
+                <div className="divider" />
                 <UpdatePasswordForm />
-                <div className="divider "></div>
+                <div className="divider" />
                 <DeleteUserForm />
             </main>
         </AdminLayout>

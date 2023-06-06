@@ -55,7 +55,7 @@ const UpdatePasswordForm = () => {
                         onChange={(e) =>
                             setData('current_password', e.target.value)
                         }
-                        iserror={errors.current_password}
+                        errors={errors.current_password}
                     />
 
                     <Input
@@ -64,7 +64,7 @@ const UpdatePasswordForm = () => {
                         name="password"
                         value={data.password}
                         onChange={(e) => setData('password', e.target.value)}
-                        iserror={errors.password}
+                        errors={errors.password}
                     />
 
                     <Input
@@ -75,7 +75,7 @@ const UpdatePasswordForm = () => {
                         onChange={(e) =>
                             setData('password_confirmation', e.target.value)
                         }
-                        iserror={errors.password_confirmation}
+                        errors={errors.password_confirmation}
                     />
                 </div>
                 {/* <div className="divider max-w-lg"></div> */}

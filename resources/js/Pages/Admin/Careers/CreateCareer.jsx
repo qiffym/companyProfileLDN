@@ -14,8 +14,6 @@ const CreateCareer = ({ auth, title }) => {
         phase: '',
     });
 
-    console.log(data.description);
-
     const submit = (e) => {
         e.preventDefault();
         post(route('careers.store'));
