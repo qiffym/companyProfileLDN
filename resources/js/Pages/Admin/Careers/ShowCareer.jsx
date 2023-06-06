@@ -48,7 +48,7 @@ const ShowCareer = ({ auth, title, data, flash }) => {
                         Deskripsi Pekerjaan
                     </h2>
                     <div className="text-base listModalCareer">
-                        {parse(data.description)}
+                        {data.description && parse(data.description)}
                     </div>
                 </div>
                 <div id="requirement" className="space-y-2 mb-4">
@@ -56,7 +56,7 @@ const ShowCareer = ({ auth, title, data, flash }) => {
                         Persyaratan
                     </h2>
                     <div className="text-base listModalCareer">
-                        {parse(data.description)}
+                        {data.requirement && parse(data.requirement)}
                     </div>
                 </div>
 
@@ -76,15 +76,17 @@ const ShowCareer = ({ auth, title, data, flash }) => {
                         <div className="flex flex-col">
                             <p>
                                 :{' '}
-                                {moment(data.open_date).format(
-                                    'dddd, D MMMM YYYY'
-                                )}
+                                {data.open_date &&
+                                    moment(data.open_date).format(
+                                        'dddd, D MMMM YYYY'
+                                    )}
                             </p>
                             <p>
                                 :{' '}
-                                {moment(data.close_date).format(
-                                    'dddd, D MMMM YYYY'
-                                )}
+                                {data.close_date &&
+                                    moment(data.close_date).format(
+                                        'dddd, D MMMM YYYY'
+                                    )}
                             </p>
                         </div>
                     </div>

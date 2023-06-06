@@ -18,3 +18,7 @@ html {
 .listModalCareer > ol {
     @apply list-decimal ml-10;
 }
+
+time {
+    @apply font-serif;
+}

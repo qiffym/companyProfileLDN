@@ -11,8 +11,6 @@ const CareersTable = ({ careers }) => {
                     <th className="w-10">#</th>
                     <th>Position Name</th>
                     <th>Department</th>
-                    <th>Open Date</th>
-                    <th>Close Date</th>
                     <th>Show</th>
                     <th>Action</th>
                 </tr>
@@ -24,8 +22,6 @@ const CareersTable = ({ careers }) => {
                         <th>{index + 1}</th>
                         <td>{career.position_name}</td>
                         <td>{career.department}</td>
-                        <td>{career.open_date}</td>
-                        <td>{career.close_date}</td>
                         <td>{career.hidden === 0 ? 'Active' : 'Non-active'}</td>
                         <td className="space-x-2">
                             <Link

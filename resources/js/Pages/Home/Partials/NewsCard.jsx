@@ -12,7 +12,7 @@ const NewsCard = ({ news, maxWidth = 'lg' }) => {
 
     return (
         <article
-            className={`card ${maxWidthClass} w-full bg-base-100 shadow shadow-base-content image-full`}
+            className={`card ${maxWidthClass} w-full bg-base-100 shadow-lg image-full`}
         >
             <figure>
                 <img src={`/storage/${news.img}`} alt={news.slug} />

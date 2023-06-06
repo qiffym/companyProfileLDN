@@ -1,18 +1,18 @@
 import { Link, router } from '@inertiajs/react';
 import avatar from '/public/storage/img/defaultAvatar.png';
 
-const UsersTable = ({ users }) => {
+const UsersTable = ({ users, authRole }) => {
     const handleDelete = (user) => {
         router.delete(route('users.destroy', user));
     };
 
-    console.log(users);
     return (
         <table className="table w-full">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>#</th>
                     <th>Name/Email</th>
+                    <th>Role</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -40,6 +40,11 @@ const UsersTable = ({ users }) => {
                                 </div>
                             </div>
                         </td>
+                        <td>
+                            <label className="capitalize">
+                                {user.roles[0]?.name}
+                            </label>
+                        </td>
                         <th className="space-x-2">
                             <Link
                                 href={route('users.show', user)}
@@ -47,18 +52,22 @@ const UsersTable = ({ users }) => {
                             >
                                 details
                             </Link>
-                            <Link
-                                href={route('users.edit', user)}
-                                className="btn btn-warning btn-sm"
-                            >
-                                edit
-                            </Link>
-                            <button
-                                className="btn btn-error btn-sm"
-                                onClick={() => handleDelete(user)}
-                            >
-                                delete
-                            </button>
+                            {authRole !== 1 ? null : (
+                                <>
+                                    <Link
+                                        href={route('users.edit', user)}
+                                        className="btn btn-warning btn-sm"
+                                    >
+                                        edit
+                                    </Link>
+                                    <button
+                                        className="btn btn-error btn-sm"
+                                        onClick={() => handleDelete(user)}
+                                    >
+                                        delete
+                                    </button>
+                                </>
+                            )}
                         </th>
                     </tr>
                 ))}

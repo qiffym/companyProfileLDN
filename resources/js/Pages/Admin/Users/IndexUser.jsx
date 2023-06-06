@@ -30,7 +30,10 @@ const IndexUser = ({ title, users, flash, auth }) => {
 
             <section className="bg-base-100 p-6 rounded-box min-h-screen drop-shadow-md">
                 <div className="overflow-x-auto w-full">
-                    <UsersTable users={users} />
+                    <UsersTable
+                        authRole={auth.user.roles[0].id}
+                        users={users}
+                    />
                 </div>
             </section>
         </AdminLayout>

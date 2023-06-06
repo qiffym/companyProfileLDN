@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         return Inertia::render('Admin/Users/IndexUser', [
             'title' => 'Manage Users',
-            'users' => User::all(),
+            'users' => User::where('active', true)->get(),
         ]);
     }
 
@@ -40,11 +40,12 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt('password')
         ]);
+        $user->assignRole('staff');
 
         return to_route('users.index')->with('success', 'New user created successfully');
     }
