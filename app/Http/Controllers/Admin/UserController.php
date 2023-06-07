@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -16,7 +18,7 @@ class UserController extends Controller
     {
         return Inertia::render('Admin/Users/IndexUser', [
             'title' => 'Manage Users',
-            'users' => User::where('active', true)->get(),
+            'users' => User::where('active', true)->where('id', '!=', Auth::user()->id)->where('id', '!=', 1)->get(),
         ]);
     }
 
@@ -95,6 +97,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $user->photo && Storage::delete($user->photo);
+
         $user->delete();
         return back()->with('success', "$user->name deleted successfully");
     }

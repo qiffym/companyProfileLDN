@@ -43,15 +43,7 @@ const CreateUser = ({ title, auth }) => {
 
                     <div className="divider max-w-lg"></div>
 
-                    <div className="flex gap-5">
-                        <Link
-                            as="button"
-                            href={route('users.index')}
-                            className="btn btn-ghost"
-                        >
-                            Cancel
-                        </Link>
-
+                    <div className="flex justify-end flex-row-reverse gap-5">
                         <button
                             type="submit"
                             disabled={processing}
@@ -59,6 +51,13 @@ const CreateUser = ({ title, auth }) => {
                         >
                             Submit
                         </button>
+                        <Link
+                            as="button"
+                            href={route('users.index')}
+                            className="btn btn-ghost"
+                        >
+                            Cancel
+                        </Link>
                     </div>
                 </form>
             </div>

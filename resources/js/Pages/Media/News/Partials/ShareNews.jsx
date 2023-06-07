@@ -14,7 +14,7 @@ const ShareNews = ({ title }) => {
 
     return (
         <div className="flex justify-center items-center space-x-3 text-sm">
-            <span className="badge badge-secondary">Share:</span>
+            <span className="badge badge-secondary cursor-default">Share:</span>
             <a
                 href={shareToWA}
                 target="_blank"

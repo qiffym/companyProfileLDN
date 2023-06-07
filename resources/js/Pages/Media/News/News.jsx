@@ -7,7 +7,7 @@ const News = ({ news, auth }) => {
     return (
         <Guest auth={auth.user}>
             <Head title="Berita" />
-            <div className="flex flex-col w-full md:px-[8%] 2xl:px-[15%] py-36 bg-base-200">
+            <div className="flex flex-col w-full md:px-[8%] 2xl:px-[15%] 2k:px-[20%] py-36 bg-base-200">
                 <div className="flex w-full justify-between items-center uppercase">
                     <div className="flex-1">
                         <h1 className="text-5xl font-bold">Berita</h1>

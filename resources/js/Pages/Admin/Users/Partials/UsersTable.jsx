@@ -52,7 +52,7 @@ const UsersTable = ({ users, authRole }) => {
                             >
                                 details
                             </Link>
-                            {authRole !== 1 ? null : (
+                            {authRole > 2 ? null : (
                                 <>
                                     <Link
                                         href={route('users.edit', user)}

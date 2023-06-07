@@ -6,7 +6,7 @@ moment.locale('id');
 
 const NewsCompactCard = ({ news }) => {
     return (
-        <article className="card card-compact 2k:w-[25rem] lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-lg">
+        <article className="card card-compact lg:w-[31%] md:w-[45%] w-full bg-base-100 shadow-lg">
             <figure>
                 <img
                     src={`/storage/${news.img}`}

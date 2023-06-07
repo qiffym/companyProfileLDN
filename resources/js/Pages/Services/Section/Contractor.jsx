@@ -16,7 +16,7 @@ const Contractor = ({
     return (
         <section
             id="contractor"
-            className="min-h-screen bg-cover bg-left lg:bg-top w-full px-6 md:px-[8%] 2xl:px-[15%] md:py-36 py-24"
+            className="min-h-screen bg-cover bg-left lg:bg-top w-full px-6 md:px-[8%] 2xl:px-[15%] 2k:px-[20%] md:py-36 py-24"
             style={bgStyle}
         >
             <div className="flex flex-col gap-5">

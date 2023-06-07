@@ -2,7 +2,7 @@ const Supplier = ({ supplierImg, plumbing, materials, electrical }) => {
     return (
         <section
             id="supplier"
-            className="bg-base-300 w-full px-6 md:px-[8%] 2xl:px-[15%] py-24"
+            className="bg-base-300 w-full px-6 md:px-[8%] 2xl:px-[15%] 2k:px-[20%] py-24"
         >
             <div className="flex justify-around lg:flex-row flex-col w-full xl:gap-28 gap-5">
                 <div>
