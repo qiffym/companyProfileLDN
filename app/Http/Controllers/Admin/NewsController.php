@@ -101,7 +101,7 @@ class NewsController extends Controller
         $file = $request->file('img');
         $filename =  $news->slug . '-updated.' . $file->getClientOriginalExtension();
         $path = $file->storeAs('news/images', $filename, 'public');
-        Storage::delete($news->img);
+        Storage::disk('public')->delete($news->img);
 
         $news->img = $path;
         $news->save();
@@ -114,7 +114,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        $news->img && Storage::delete($news->img);
+        $news->img && Storage::disk('public')->delete($news->img);
 
         $news->delete();
         return to_route('news.index')->with('success', 'News successfully deleted');

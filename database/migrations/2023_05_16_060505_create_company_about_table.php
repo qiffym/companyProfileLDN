@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('company_about', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->tinyText('body')->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,13 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'Admin LDN',
+            'name' => 'Super Admin',
+            'email' => 'superadmin@ldn.com',
+            'password' => bcrypt('123123123'),
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
             'email' => 'admin@ldn.com',
             'password' => bcrypt('123123123'),
         ]);
@@ -27,6 +33,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::first()->assignRole('superadmin');
+        \App\Models\User::find(2)->assignRole('admin');
 
         \App\Models\Career::insert([
             ['position_name' => 'Staff IT', 'department' => 'IT'],

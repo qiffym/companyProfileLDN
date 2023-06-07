@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { WarningTriangle } from '@/Components/svg';
 import moment from 'moment-with-locales-es6';
+import { WarningTriangleIcon } from '@iconicicons/react';
 
 moment.locale('id');
 
@@ -67,12 +68,10 @@ const NewsTable = ({ news }) => {
                         ))
                     ) : (
                         <tr>
-                            <th colSpan={8}>
-                                <div className="alert alert-warning">
-                                    <p className="text-lg">
-                                        <WarningTriangle />
-                                        Data belum tersedia
-                                    </p>
+                            <th colSpan={7}>
+                                <div className="alert alert-warning text-base">
+                                    <WarningTriangleIcon />
+                                    <span>You don't have any news</span>
                                 </div>
                             </th>
                         </tr>

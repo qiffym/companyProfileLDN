@@ -2,10 +2,10 @@ import { Head, Link, router, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import Input from '@/Components/Input';
 import Select from '@/Components/Select';
-// import InputFile from '@/Components/InputFile';
 import slugify from 'slugify';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import ChangeNewsImage from './Partials/ChangeNewsImage';
 
 const EditNews = ({ auth, title, news, categories }) => {
     const { data, setData, patch, processing, errors } = useForm({
@@ -26,8 +26,8 @@ const EditNews = ({ auth, title, news, categories }) => {
         <AdminLayout auth={auth.user}>
             <Head title={title} />
             <h1 className="text-4xl mb-4">Edit News</h1>
-            <div className="flex w-full p-6 rounded-box shadow-lg bg-base-100">
-                <form onSubmit={submit} className="w-full">
+            <div className="flex gap-16 w-full p-6 rounded-box shadow-lg bg-base-100">
+                <form onSubmit={submit} className="1/2">
                     <Select
                         items={categories}
                         label={'News Category'}
@@ -73,29 +73,6 @@ const EditNews = ({ auth, title, news, categories }) => {
                             </span>
                         </label>
                     </div>
-                    {/* <div className="form-control">
-                        <InputFile
-                            label={'Image'}
-                            id={'img'}
-                            onChange={(e) => setData('img', e.target.files[0])}
-                            errors={errors.img}
-                        />
-                        <label className="label">
-                            <span className="label-text-alt text-yellow-500">
-                                *keep it empty if not gonna change the image
-                            </span>
-                        </label>
-                        {progress && (
-                            <progress
-                                className="progress progress-primary w-full max-w-lg"
-                                id={'img'}
-                                value={progress.percentage}
-                                max="100"
-                            >
-                                {progress.percentage}%
-                            </progress>
-                        )}
-                    </div> */}
                     <Input
                         label={'Author'}
                         type={'text'}
@@ -131,6 +108,7 @@ const EditNews = ({ auth, title, news, categories }) => {
                         </button>
                     </div>
                 </form>
+                <ChangeNewsImage newsImage={news.img} />
             </div>
         </AdminLayout>
     );

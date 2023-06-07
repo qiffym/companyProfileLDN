@@ -34,7 +34,7 @@ const ReadNews = ({ auth, title, news, recommends }) => {
                                 className="w-full h-full rounded-box object-contain shadow-lg"
                             />
                         </figure>
-                        <div className="text-lg/7 font-serif space-y-5">
+                        <div className="xl:text-lg font-serif text-base/7 text-justify font-normal space-y-4 pl-4">
                             {parse(news.content)}
                         </div>
                     </div>

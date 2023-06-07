@@ -19,9 +19,11 @@ return new class extends Migration
             $table->text('excerpt')->nullable();
             $table->text('content')->nullable();
             $table->string('img')->nullable();
+            $table->string('img_mobile')->nullable();
             $table->foreignId('author')->constrained(table: 'users', column: 'id');
+            $table->integer('read')->default(0);
             $table->boolean('hidden')->default(false);
-            $table->timestamp('publish_at')->nullable();
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
