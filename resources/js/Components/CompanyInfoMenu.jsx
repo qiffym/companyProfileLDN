@@ -1,55 +1,55 @@
 import { Link } from '@inertiajs/react';
-import { GlobeIcon, InformationIcon, PhoneCallIcon } from '@iconicicons/react';
+// import { GlobeIcon, InformationIcon, PhoneCallIcon } from '@iconicicons/react';
 
 const CompanyInfoMenu = () => {
     return (
         <li>
             <details open>
                 <summary>
-                    <GlobeIcon />
+                    {/* <GlobeIcon /> */}
                     Manage Pages
                 </summary>
 
                 <ul>
                     <li className="hover-bordered">
                         <Link>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Beranda
                         </Link>
                     </li>
                     <li className="hover-bordered">
                         <Link>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Tentang Kami
                         </Link>
                     </li>
                     <li className="hover-bordered">
                         <a>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Sejarah
                         </a>
                     </li>
                     <li className="hover-bordered">
                         <a>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Visi & Misi
                         </a>
                     </li>
                     <li className="hover-bordered">
                         <a>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Struktur Organisasi
                         </a>
                     </li>
                     <li className="hover-bordered">
                         <a>
-                            <InformationIcon />
+                            {/* <InformationIcon /> */}
                             Karir
                         </a>
                     </li>
                     <li className="hover-bordered">
                         <a>
-                            <PhoneCallIcon />
+                            {/* <PhoneCallIcon /> */}
                             Alamat & Kontak
                         </a>
                     </li>

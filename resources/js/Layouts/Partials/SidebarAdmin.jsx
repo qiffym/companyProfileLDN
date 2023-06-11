@@ -1,15 +1,15 @@
 import { Link, usePage } from '@inertiajs/react';
 import CompanyInfoMenu from '@/Components/CompanyInfoMenu';
 import {
-    BriefcaseIcon,
-    BroadcastIcon,
     DashboardIcon,
     HomeIcon,
-    UsersIcon,
+    // BriefcaseIcon,
+    // BroadcastIcon,
+    // UsersIcon,
 } from '@iconicicons/react';
 
 const SidebarAdmin = () => {
-    const { url, component } = usePage();
+    const { component } = usePage();
     return (
         <aside
             className="hidden md:flex fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-base-100 text-base-content border-r"
@@ -46,7 +46,7 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <UsersIcon />
+                            {/* <UsersIcon /> */}
                             Manage Users
                         </Link>
                     </li>
@@ -60,7 +60,7 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <BroadcastIcon />
+                            {/* <BroadcastIcon /> */}
                             Manage News
                         </Link>
                     </li>
@@ -74,7 +74,7 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <BroadcastIcon />
+                            {/* <BroadcastIcon /> */}
                             Manage News Categories
                         </Link>
                     </li>
@@ -88,8 +88,21 @@ const SidebarAdmin = () => {
                                     : ''
                             }
                         >
-                            <BriefcaseIcon />
+                            {/* <BriefcaseIcon /> */}
                             Manage Careers
+                        </Link>
+                    </li>
+
+                    <li className="hover-bordered">
+                        <Link
+                            href={route('faqs.index')}
+                            className={
+                                component.startsWith('Admin/FAQs')
+                                    ? 'active'
+                                    : ''
+                            }
+                        >
+                            Manage FAQs
                         </Link>
                     </li>
 
