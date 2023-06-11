@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
@@ -13,7 +14,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', HomeController::class)->name('home');
 Route::get('profil', CompanyProfilePageController::class)->name('company.profile');
 Route::get('layanan', CompanyServicePageController::class)->name('company.service');
 Route::get('karir', CompanyCareerPageController::class)->name('company.career');
@@ -41,6 +42,7 @@ Route::middleware('auth')->prefix('admin/resources')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('careers', CareerController::class);
     Route::resource('news', NewsController::class);
+    Route::resource('news-categories', NewsCategoryController::class);
 });
 
 

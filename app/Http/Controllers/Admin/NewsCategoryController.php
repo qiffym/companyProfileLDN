@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\NewsCategory;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class NewsCategoryController extends Controller
 {
@@ -13,7 +14,10 @@ class NewsCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Admin/NewsCategories/Index', [
+            'title' => 'News Categories',
+            'items' => NewsCategory::all(),
+        ]);
     }
 
     /**
@@ -21,7 +25,9 @@ class NewsCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Admin/NewsCategories/Create', [
+            'title' => 'Create News Category'
+        ]);
     }
 
     /**
@@ -29,7 +35,14 @@ class NewsCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:news_categories,slug',
+        ]);
+
+        NewsCategory::create($validated);
+
+        return to_route('news-categories.index')->with('success', 'New News Categories Created Successfully');
     }
 
     /**
@@ -37,7 +50,10 @@ class NewsCategoryController extends Controller
      */
     public function show(NewsCategory $newsCategory)
     {
-        //
+        return Inertia::render('Admin/NewsCategories/Show', [
+            'title' => 'News Category Details',
+            'data' => $newsCategory,
+        ]);
     }
 
     /**
@@ -45,7 +61,10 @@ class NewsCategoryController extends Controller
      */
     public function edit(NewsCategory $newsCategory)
     {
-        //
+        return Inertia::render('Admin/NewsCategories/Edit', [
+            'title' => 'Edit News Category',
+            'item' => $newsCategory,
+        ]);
     }
 
     /**
@@ -53,7 +72,14 @@ class NewsCategoryController extends Controller
      */
     public function update(Request $request, NewsCategory $newsCategory)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:news_categories,slug,' . $newsCategory->id,
+        ]);
+
+        $newsCategory->update($validated);
+
+        return to_route('news-categories.show', $newsCategory)->with('success', 'Categories Updated Successfully');
     }
 
     /**
@@ -61,6 +87,7 @@ class NewsCategoryController extends Controller
      */
     public function destroy(NewsCategory $newsCategory)
     {
-        //
+        $newsCategory->delete();
+        return back()->with('success', 'The category deleted successfully');
     }
 }

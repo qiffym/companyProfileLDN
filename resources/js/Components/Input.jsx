@@ -1,15 +1,16 @@
 const Input = (props) => {
     return (
-        <>
-            <label className="label">
+        <div className="form-control">
+            <label htmlFor={props.id} className="label">
                 <span className="label-text">{props.label}</span>
             </label>
             <input
                 {...props}
                 type={props.type}
                 name={props.name}
+                id={props.id}
                 placeholder={props.placeholder}
-                className="input input-bordered bg-base-200 w-full max-w-2xl"
+                className={`input input-bordered bg-base-200 w-full max-w-2xl`}
                 value={props.value}
                 defaultValue={props.defaultValue}
                 onChange={props.onChange}
@@ -21,7 +22,7 @@ const Input = (props) => {
                     {props.errors}
                 </span>
             </label>
-        </>
+        </div>
     );
 };
 

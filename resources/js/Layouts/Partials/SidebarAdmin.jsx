@@ -55,13 +55,27 @@ const SidebarAdmin = () => {
                         <Link
                             href={route('news.index')}
                             className={
-                                component.startsWith('Admin/News')
+                                component.startsWith('Admin/News/')
                                     ? 'active'
                                     : ''
                             }
                         >
                             <BroadcastIcon />
                             Manage News
+                        </Link>
+                    </li>
+
+                    <li className="hover-bordered">
+                        <Link
+                            href={route('news-categories.index')}
+                            className={
+                                component.startsWith('Admin/NewsCategories/')
+                                    ? 'active'
+                                    : ''
+                            }
+                        >
+                            <BroadcastIcon />
+                            Manage News Categories
                         </Link>
                     </li>
 

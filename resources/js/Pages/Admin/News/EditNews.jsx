@@ -91,14 +91,7 @@ const EditNews = ({ auth, title, news, categories }) => {
 
                     <div className="divider" />
 
-                    <div className="flex justify-end items-center gap-4">
-                        <Link
-                            as="button"
-                            href={route('news.index')}
-                            className="btn btn-ghost"
-                        >
-                            Cancel
-                        </Link>
+                    <div className="flex flex-wrap-reverse justify-end items-center gap-4">
                         <button
                             type="submit"
                             disabled={processing}
@@ -106,6 +99,13 @@ const EditNews = ({ auth, title, news, categories }) => {
                         >
                             Update
                         </button>
+                        <Link
+                            as="button"
+                            href={route('news.index')}
+                            className="btn btn-ghost"
+                        >
+                            Cancel
+                        </Link>
                     </div>
                 </form>
                 <ChangeNewsImage newsImage={news.img} />

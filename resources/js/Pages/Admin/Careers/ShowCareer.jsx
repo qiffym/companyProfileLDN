@@ -16,13 +16,13 @@ const ShowCareer = ({ auth, title, data, flash }) => {
                 <div className="space-x-5">
                     <Link
                         as="button"
-                        href={route('news.index')}
+                        href={route('careers.index')}
                         className="btn btn-outline btn-accent"
                     >
                         <ArrowLeftIcon />
                         Kembali
                     </Link>
-                    <span className="text-4xl">Career Details</span>
+                    <span className="text-3xl">Career ID: {data.id}</span>
                 </div>
 
                 <div>

@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
-import { WarningTriangle } from '@/Components/svg';
 import moment from 'moment-with-locales-es6';
 import { WarningTriangleIcon } from '@iconicicons/react';
 
 moment.locale('id');
 
 const NewsTable = ({ news }) => {
-    const [openModal, setOpenModal] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const handleDelete = (news) => {
         router.delete(route('news.destroy', news));
     };
@@ -43,14 +42,12 @@ const NewsTable = ({ news }) => {
                                 <td>
                                     <div className="flex items-center space-x-2">
                                         <Link
-                                            as="button"
                                             href={route('news.show', item)}
                                             className="btn btn-sm btn-success"
                                         >
                                             Details
                                         </Link>
                                         <Link
-                                            as="button"
                                             href={route('news.edit', item)}
                                             className="btn btn-sm btn-warning"
                                         >

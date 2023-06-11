@@ -30,7 +30,7 @@ class NewsController extends Controller
     public function create()
     {
         return inertia('Admin/News/CreateNews', [
-            'title' => 'Edit News',
+            'title' => 'Create News',
             'categories' => NewsCategory::select('id', 'name')->get(),
         ]);
     }

@@ -20,7 +20,7 @@ const ShowNews = ({ auth, title, news, flash }) => {
                         <ArrowLeftIcon />
                         Kembali
                     </Link>
-                    <span className="text-4xl mb-4">News Details</span>
+                    <span className="text-3xl mb-4">News ID: {news.id}</span>
                 </div>
                 <div>
                     <Link
@@ -33,7 +33,7 @@ const ShowNews = ({ auth, title, news, flash }) => {
                 </div>
             </div>
 
-            <div className="flex w-full h-full border shadow-lg bg-base-100 rounded-lg p-6">
+            <div className="flex w-full h-full border shadow-lg bg-base-100 rounded-box p-6">
                 <div className="flex flex-col w-1/2 gap-5">
                     <div className="news-img">
                         <span className="text-primary-focus">Image</span>
