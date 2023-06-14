@@ -52,7 +52,7 @@ class FAQController extends Controller
     {
         return Inertia::render('Admin/FAQs/Show', [
             'title' => 'FAQ Details',
-            'faq' => $faq
+            'data' => $faq
         ]);
     }
 
@@ -88,6 +88,6 @@ class FAQController extends Controller
     public function destroy(FAQ $faq)
     {
         $faq->delete();
-        return to_route('faqs.index')->with('success', "$faq->name Deleted Successfully");
+        return back()->with('info', "FAQ ID:$faq->id Deleted Successfully");
     }
 }

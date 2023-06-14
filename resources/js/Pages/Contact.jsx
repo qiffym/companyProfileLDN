@@ -1,18 +1,63 @@
+import { useState } from 'react';
 import { Head } from '@inertiajs/react';
 import Guest from '@/Layouts/GuestLayout';
 import { Wave, PhoneSVG, EmailSVG } from '@/Components/svg';
+import { InformationIcon } from '@iconicicons/react';
+import parse from 'html-react-parser';
 
-const Contact = ({ title, auth }) => {
+const Contact = ({ title, auth, faqs }) => {
+    const [check, setCheck] = useState('');
+
+    const handleChange = (e) => {
+        setCheck(e.target.value);
+    };
+
     return (
         <Guest auth={auth.user}>
             <Head title={title} />
             <main className="relative min-h-screen w-full pt-32 bg-base-200">
-                <div className="absolute w-full z-10">
-                    <h1 className="text-5xl xl:text-6xl font-bold text-center">
-                        Ada yang bisa kami bantu?
-                    </h1>
+                <div className="flex w-full justify-center items-center lg:pb-32">
+                    <div className="flex flex-col w-full 2k:max-w-7xl max-w-4xl px-5 lg:px-0 gap-4">
+                        <h1 className="text-3xl lg:text-5xl font-bold text-center">
+                            Frequently Asked Questions
+                        </h1>
+                        {faqs.length === 0 ? (
+                            <div className="alert bg-base-100 shadow-md">
+                                <InformationIcon />
+                                <span>FAQ belum tersedia</span>
+                            </div>
+                        ) : (
+                            faqs.map((faq, i) => (
+                                <div
+                                    key={faq.id}
+                                    className="collapse collapse-plus bg-base-100 shadow-md"
+                                >
+                                    <input
+                                        type="radio"
+                                        value={`faq-${i}`}
+                                        id={`faq-${i}`}
+                                        name={`faq-${i}`}
+                                        onChange={handleChange}
+                                        checked={check === `faq-${i}`}
+                                    />
+                                    <div className="relative collapse-title text-xl font-medium">
+                                        <label
+                                            htmlFor={`faq-${i}`}
+                                            className="block top-0 w-full cursor-pointer"
+                                        >
+                                            {faq.question}
+                                        </label>
+                                    </div>
+                                    <div className="collapse-content">
+                                        {parse(faq.answer)}
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </div>
                 </div>
-                <div className="h-[95vh] bg-primary text-primary-content mt-24 md:mt-0 ">
+
+                <div className="h-[95vh] bg-primary text-primary-content mt-24 md:mt-0 relative">
                     <Wave className="fill-base-200" />
                     <div className="flex flex-wrap w-full justify-between px-[8%] 2xl:px-[20%] lg:-mt-10 2xl:-mt-36 gap-4 lg:gap-0">
                         <div className="max-w-lg">
