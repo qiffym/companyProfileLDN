@@ -43,8 +43,13 @@ Route::middleware('auth')->prefix('admin/resources')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('careers', CareerController::class);
     Route::resource('news', NewsController::class);
+    Route::patch('news/{news}/update-image', [NewsController::class, 'updateImage'])->name('news.update-image');
     Route::resource('news-categories', NewsCategoryController::class);
     Route::resource('faqs', FAQController::class);
+});
+
+Route::middleware('auth')->prefix('admin/pages')->group(function () {
+    //
 });
 
 

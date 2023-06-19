@@ -40,10 +40,10 @@ const Contact = ({ title, auth, faqs }) => {
                                         onChange={handleChange}
                                         checked={check === `faq-${i}`}
                                     />
-                                    <div className="relative collapse-title text-xl font-medium">
+                                    <div className="collapse-title text-xl font-medium">
                                         <label
                                             htmlFor={`faq-${i}`}
-                                            className="block top-0 w-full cursor-pointer"
+                                            className="block w-full cursor-pointer"
                                         >
                                             {faq.question}
                                         </label>
