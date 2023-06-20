@@ -14,11 +14,11 @@ const Hero = () => {
                     alt="CompanyLogo"
                 /> */}
                 <div className="max-w-2xl">
-                    <h1 className="text-2xl md:text-5xl font-extrabold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
+                    <h1 className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-accent text-transparent bg-clip-text">
                         PT. Lovina Dhea Nusantara
                     </h1>
                     <div className="divider -m-1 opacity-25 before:bg-base-content after:bg-base-content" />
-                    <h4 className="md:text-2xl font-extralight text-sm bg-gradient-to-l from-secondary to-accent text-transparent bg-clip-text  tracking-wide">
+                    <h4 className="md:text-2xl text-sm font-light bg-gradient-to-l from-secondary to-accent text-transparent bg-clip-text tracking-wider">
                         GENERAL CONTRACTOR, SUPPLIER, and TRADING
                     </h4>
                     {/* <p className="py-6 text-base-content">

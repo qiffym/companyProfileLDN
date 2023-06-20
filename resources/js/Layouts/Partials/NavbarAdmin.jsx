@@ -47,7 +47,6 @@ const NavbarAdmin = ({ user }) => {
                         </li>
                         <li>
                             <Link
-                                as="button"
                                 onClick={handleLogout}
                                 className="hover:bg-red-400 hover:font-bold"
                             >

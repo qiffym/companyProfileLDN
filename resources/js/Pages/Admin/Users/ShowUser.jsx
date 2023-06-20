@@ -1,7 +1,9 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
+import { ToastContainer, toast } from 'react-toastify';
+import { ArrowLeftIcon, EditIcon } from '@iconicicons/react';
 
-const ShowUser = ({ title, user, auth }) => {
+const ShowUser = ({ title, user, auth, flash }) => {
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
@@ -29,7 +31,7 @@ const ShowUser = ({ title, user, auth }) => {
                     </Link>
                 </div>
             </div>
-            <div className="flex w-full border shadow bg-base-100 rounded-box">
+            <div className="flex w-full border shadow bg-base-100 rounded-box p-6">
                 <div className="flex flex-col w-1/2">
                     <div className="form-control">
                         <span>Name</span>

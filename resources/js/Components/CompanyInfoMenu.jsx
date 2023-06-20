@@ -12,16 +12,16 @@ const CompanyInfoMenu = () => {
 
                 <ul>
                     <li className="hover-bordered">
-                        <Link>
+                        <a>
                             {/* <InformationIcon /> */}
                             Beranda
-                        </Link>
+                        </a>
                     </li>
                     <li className="hover-bordered">
-                        <Link>
+                        <a>
                             {/* <InformationIcon /> */}
                             Tentang Kami
-                        </Link>
+                        </a>
                     </li>
                     <li className="hover-bordered">
                         <a>

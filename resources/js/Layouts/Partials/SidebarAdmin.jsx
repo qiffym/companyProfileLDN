@@ -42,7 +42,7 @@ const SidebarAdmin = () => {
                             href={route('users.index')}
                             className={
                                 component.startsWith('Admin/Users')
-                                    ? 'active'
+                                    ? 'active  text-white'
                                     : ''
                             }
                         >
@@ -56,7 +56,7 @@ const SidebarAdmin = () => {
                             href={route('news.index')}
                             className={
                                 component.startsWith('Admin/News/')
-                                    ? 'active'
+                                    ? 'active  text-white'
                                     : ''
                             }
                         >
@@ -70,7 +70,7 @@ const SidebarAdmin = () => {
                             href={route('news-categories.index')}
                             className={
                                 component.startsWith('Admin/NewsCategories/')
-                                    ? 'active'
+                                    ? 'active text-white'
                                     : ''
                             }
                         >
@@ -84,7 +84,7 @@ const SidebarAdmin = () => {
                             href={route('careers.index')}
                             className={
                                 component.startsWith('Admin/Careers')
-                                    ? 'active'
+                                    ? 'active  text-white'
                                     : ''
                             }
                         >
@@ -98,7 +98,7 @@ const SidebarAdmin = () => {
                             href={route('faqs.index')}
                             className={
                                 component.startsWith('Admin/FAQs')
-                                    ? 'active'
+                                    ? 'active  text-white'
                                     : ''
                             }
                         >
