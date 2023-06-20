@@ -208,21 +208,18 @@ const Navbar = ({ auth }) => {
 
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link
-                                        as="button"
-                                        href={route('company.service')}
-                                    >
+                                    <Link href={route('company.service')}>
                                         Jasa Konstruksi
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link as="button">Supplier</Link>
+                                    <Link>Supplier</Link>
                                 </li>
                                 <li>
-                                    <Link as="button">Teknologi Informasi</Link>
+                                    <Link>Teknologi Informasi</Link>
                                 </li>
                                 <li>
-                                    <Link as="button">Trading</Link>
+                                    <Link>Trading</Link>
                                 </li>
                             </ul>
                         </details>
@@ -232,18 +229,13 @@ const Navbar = ({ auth }) => {
                             <summary>Media & Informasi</summary>
                             <ul className="p-2 bg-base-100 shadow">
                                 <li>
-                                    <Link
-                                        as="button"
-                                        href={route('media.news.index')}
-                                    >
+                                    <Link href={route('media.news.index')}>
                                         Berita
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link as="button" href="#!">
-                                        Vidio Terkait
-                                    </Link>
-                                </li>
+                                {/* <li>
+                                    <Link href="#!">Vidio Terkait</Link>
+                                </li> */}
                             </ul>
                         </details>
                     </li>

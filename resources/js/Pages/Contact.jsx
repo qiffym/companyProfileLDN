@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
 import Guest from '@/Layouts/GuestLayout';
+import { Head } from '@inertiajs/react';
 import { Wave, PhoneSVG, EmailSVG } from '@/Components/svg';
 import { InformationIcon } from '@iconicicons/react';
 import parse from 'html-react-parser';

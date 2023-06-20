@@ -98,10 +98,11 @@ class NewsController extends Controller
             'img' => 'required|image'
         ]);
 
+        $news->img && Storage::disk('public')->delete($news->img);
+
         $file = $request->file('img');
-        $filename =  $news->slug . '-updated.' . $file->getClientOriginalExtension();
+        $filename =  $news->slug . '.' . $file->getClientOriginalExtension();
         $path = $file->storeAs('news/images', $filename, 'public');
-        Storage::disk('public')->delete($news->img);
 
         $news->img = $path;
         $news->save();

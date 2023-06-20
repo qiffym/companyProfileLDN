@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/react';
 const CompanyInfoMenu = () => {
     return (
         <li>
-            <details open>
+            <details>
                 <summary>
                     {/* <GlobeIcon /> */}
                     Manage Pages

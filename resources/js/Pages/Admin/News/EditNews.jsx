@@ -1,11 +1,11 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
+import ChangeNewsImage from './Partials/ChangeNewsImage';
 import Input from '@/Components/Input';
 import Select from '@/Components/Select';
 import slugify from 'slugify';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import ChangeNewsImage from './Partials/ChangeNewsImage';
 
 const EditNews = ({ auth, title, news, categories }) => {
     const { data, setData, patch, processing, errors } = useForm({
@@ -108,7 +108,7 @@ const EditNews = ({ auth, title, news, categories }) => {
                         </Link>
                     </div>
                 </form>
-                <ChangeNewsImage newsImage={news.img} />
+                <ChangeNewsImage news={news} />
             </div>
         </AdminLayout>
     );
