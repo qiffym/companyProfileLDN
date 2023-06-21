@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import { Hamburger, ChevronBottom } from '@/Components/svg';
+import { Hamburger } from '@/Components/svg';
 import CompanyLogo from '@/Components/CompanyLogo';
 import SwapTheme from '@/Components/SwapTheme';
 
