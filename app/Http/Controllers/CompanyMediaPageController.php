@@ -18,7 +18,7 @@ class CompanyMediaPageController extends Controller
     {
         return Inertia::render('Media/News/News', [
             'title' => 'Berita',
-            'news' => News::where('hidden', false)->latest()->filter(request(['search']))->get(),
+            'news' => News::where('hidden', false)->latest()->filter(request(['search']))->paginate(9),
         ]);
     }
 

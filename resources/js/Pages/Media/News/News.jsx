@@ -1,7 +1,8 @@
 import Guest from '@/Layouts/GuestLayout';
 import { SearchIcon } from '@iconicicons/react';
-import { Head, router, useForm } from '@inertiajs/react';
+import { Head, useForm } from '@inertiajs/react';
 import NewsCompactCard from './Partials/NewsCompactCard';
+import Pagination from './Partials/Pagination';
 
 const News = ({ news, auth }) => {
     const { data, setData, get, processing } = useForm({ search: '' });
@@ -9,11 +10,12 @@ const News = ({ news, auth }) => {
     const handleSearch = (e) => {
         e.preventDefault();
         get(route('media.news.index'), {
-            s: data.search,
+            search: data.search,
             preserveScroll: true,
             preserveState: true,
         });
     };
+
     return (
         <Guest auth={auth.user}>
             <Head title="Berita" />
@@ -46,10 +48,12 @@ const News = ({ news, auth }) => {
                 <div className="divider">SEMUA</div>
 
                 <div className="flex flex-wrap xl:gap-8 gap-5 justify-between">
-                    {news.map((item) => (
+                    {news.data.map((item) => (
                         <NewsCompactCard key={item.id} news={item} />
                     ))}
                 </div>
+
+                <Pagination links={news.links} />
             </div>
         </Guest>
     );
