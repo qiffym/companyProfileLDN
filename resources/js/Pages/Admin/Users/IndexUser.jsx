@@ -1,10 +1,22 @@
 import AdminLayout from '@/Layouts/AdminLayout';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import { ToastContainer, toast } from 'react-toastify';
 import UsersTable from '@/Pages/Admin/Users/Partials/UsersTable';
-import { SearchIcon, UserPlusIcon } from '@iconicicons/react';
+import { UserPlusIcon } from '@iconicicons/react';
+import InputSearch from '@/Components/InputSearch';
 
 const IndexUser = ({ title, users, flash, auth }) => {
+    const { data, setData, get, processing } = useForm({ search: '' });
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        get(route('users.index'), {
+            search: data.search,
+            preserveScroll: true,
+            preserveState: true,
+        });
+    };
+
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
@@ -12,16 +24,13 @@ const IndexUser = ({ title, users, flash, auth }) => {
 
             <h1 className="text-3xl mb-4">Users</h1>
             <div className="flex justify-between items-center mb-4">
-                <div className="join">
-                    <button className="btn btn-warning join-item rounded-l-full shadow">
-                        <SearchIcon />
-                    </button>
-                    <input
-                        type="search"
-                        placeholder="Search..."
-                        className="input focus:outline-none w-72 join-item rounded-r-full shadow-lg"
+                <form onSubmit={handleSearch}>
+                    <InputSearch
+                        disabled={processing}
+                        value={data.search}
+                        onChange={(e) => setData('search', e.target.value)}
                     />
-                </div>
+                </form>
                 <Link href={route('users.create')} className="btn btn-primary">
                     <UserPlusIcon className="mr-1" />
                     Create New User
@@ -32,7 +41,7 @@ const IndexUser = ({ title, users, flash, auth }) => {
                 <div className="overflow-x-auto w-full">
                     <UsersTable
                         authRole={auth.user.roles[0].id}
-                        users={users}
+                        users={users.data}
                     />
                 </div>
             </section>

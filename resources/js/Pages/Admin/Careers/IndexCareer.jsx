@@ -1,10 +1,22 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import { ToastContainer, toast } from 'react-toastify';
 import CareersTable from './Partials/CareersTable';
 import AdminLayout from '@/Layouts/AdminLayout';
-import { SearchIcon, UserPlusIcon } from '@iconicicons/react';
+import { UserPlusIcon } from '@iconicicons/react';
+import InputSearch from '@/Components/InputSearch';
 
 const IndexCareer = ({ auth, title, flash, careers }) => {
+    const { data, setData, get, processing } = useForm({ search: '' });
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        get(route('careers.index'), {
+            search: data.search,
+            preserveScroll: true,
+            preserveState: true,
+        });
+    };
+
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
@@ -12,16 +24,13 @@ const IndexCareer = ({ auth, title, flash, careers }) => {
 
             <h1 className="text-3xl mb-4">Careers</h1>
             <div className="flex justify-between items-center mb-4">
-                <div className="join">
-                    <button className="btn btn-warning join-item rounded-l-full shadow">
-                        <SearchIcon />
-                    </button>
-                    <input
-                        type="search"
-                        placeholder="Search..."
-                        className="input focus:outline-none w-72 join-item rounded-r-full shadow-lg"
+                <form onSubmit={handleSearch}>
+                    <InputSearch
+                        disabled={processing}
+                        value={data.search}
+                        onChange={(e) => setData('search', e.target.value)}
                     />
-                </div>
+                </form>
                 <Link
                     href={route('careers.create')}
                     className="btn btn-primary"
@@ -33,7 +42,7 @@ const IndexCareer = ({ auth, title, flash, careers }) => {
 
             <section className="bg-base-100 p-6 rounded-box min-h-screen">
                 <div className="overflow-x-auto w-full">
-                    <CareersTable careers={careers} />
+                    <CareersTable careers={careers.data} />
                 </div>
             </section>
         </AdminLayout>

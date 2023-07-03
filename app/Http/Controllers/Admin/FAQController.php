@@ -16,7 +16,7 @@ class FAQController extends Controller
     {
         return Inertia::render('Admin/FAQs/Index', [
             'title' => 'Frequently Asked Questions',
-            'faqs' => FAQ::all(),
+            'faqs' => FAQ::filter(request(['search']))->get(),
         ]);
     }
 

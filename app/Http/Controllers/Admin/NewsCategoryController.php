@@ -16,7 +16,7 @@ class NewsCategoryController extends Controller
     {
         return Inertia::render('Admin/NewsCategories/Index', [
             'title' => 'News Categories',
-            'items' => NewsCategory::all(),
+            'items' => NewsCategory::latest()->filter(request(['search']))->get(),
         ]);
     }
 

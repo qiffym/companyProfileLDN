@@ -1,10 +1,21 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import NewsTable from './Partials/NewsTable';
 import { ToastContainer, toast } from 'react-toastify';
-import { SearchIcon } from '@iconicicons/react';
+import InputSearch from '@/Components/InputSearch';
 
 const IndexNews = ({ title, items, flash, auth }) => {
+    const { data, setData, get, processing } = useForm({ search: '' });
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        get(route('news.index'), {
+            search: data.search,
+            preserveScroll: true,
+            preserveState: true,
+        });
+    };
+
     return (
         <AdminLayout auth={auth.user}>
             <Head title={title} />
@@ -12,16 +23,13 @@ const IndexNews = ({ title, items, flash, auth }) => {
 
             <h1 className="text-3xl mb-4">News</h1>
             <div className="flex justify-between items-center mb-4">
-                <div className="join">
-                    <button className="btn btn-warning join-item rounded-l-full shadow">
-                        <SearchIcon />
-                    </button>
-                    <input
-                        type="search"
-                        placeholder="Search..."
-                        className="input focus:outline-none w-72 join-item rounded-r-full shadow-lg"
+                <form onSubmit={handleSearch}>
+                    <InputSearch
+                        disabled={processing}
+                        value={data.search}
+                        onChange={(e) => setData('search', e.target.value)}
                     />
-                </div>
+                </form>
                 <Link href={route('news.create')} className="btn btn-primary">
                     Create New News
                 </Link>
@@ -29,7 +37,7 @@ const IndexNews = ({ title, items, flash, auth }) => {
 
             <section className="bg-base-100 p-6 rounded-box min-h-screen">
                 <div className="overflow-x-auto w-full">
-                    <NewsTable news={items} />
+                    <NewsTable news={items.data} />
                 </div>
             </section>
         </AdminLayout>

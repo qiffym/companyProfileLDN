@@ -17,7 +17,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::latest()->get();
+        $news = News::latest()->filter(request(['search']))->paginate(15);
         return inertia('Admin/News/IndexNews', [
             'title' => 'News',
             'items' => $news,

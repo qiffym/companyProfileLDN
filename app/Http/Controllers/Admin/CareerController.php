@@ -13,7 +13,7 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::all();
+        $careers = Career::latest()->filter(request(['search']))->paginate(15);
         return inertia('Admin/Careers/IndexCareer', [
             'title' => 'Manage Careers',
             'careers' => $careers,

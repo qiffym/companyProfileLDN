@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         return Inertia::render('Admin/Users/IndexUser', [
             'title' => 'Manage Users',
-            'users' => User::where('active', true)->where('id', '!=', Auth::user()->id)->where('id', '!=', 1)->get(),
+            'users' => User::where('active', true)->where('id', '!=', Auth::user()->id)->where('id', '!=', 1)->latest()->filter(request(['search']))->paginate(15),
         ]);
     }
 
